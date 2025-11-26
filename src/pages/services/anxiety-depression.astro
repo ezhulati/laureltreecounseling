@@ -7,18 +7,28 @@ import CTA from '../../components/CTA.astro';
 <BaseLayout
   title="Anxiety & Depression Treatment"
   description="Evidence-based therapy for anxiety and depression in Michigan. CBT, mindfulness, and holistic approaches to help you find relief and build resilience."
+  ogImage="/images/assets/laurel_tree_counseling_4_(1).webp"
 >
   <!-- Hero -->
-  <section class="bg-primary-light py-12 md:py-16">
-    <div class="container-custom">
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_4_(1).webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
       <div class="max-w-3xl">
-        <p class="text-primary font-medium mb-2">Our Services</p>
-        <div class="accent-line">
-          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+        <p class="text-gold font-medium mb-2">Our Services</p>
+        <div class="accent-line accent-line-white">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
             Anxiety & Depression Treatment
           </h1>
         </div>
-        <p class="subtitle text-xl">
+        <p class="text-xl text-white/90">
           Evidence-based therapy combined with holistic approaches to help you find relief, build resilience, and rediscover joy in your daily life.
         </p>
       </div>

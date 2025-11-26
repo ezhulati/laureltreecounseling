@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
+  rawTitle?: string;
   description?: string;
   canonicalUrl?: string;
   ogImage?: string;
@@ -12,12 +13,13 @@ interface Props {
 
 const {
   title,
+  rawTitle,
   description = "Virtual counseling for adults across Michigan using holistic and evidence-based care for anxiety, depression, trauma, and life transitions.",
   canonicalUrl,
-  ogImage = "/images/og-default.jpg"
+  ogImage = "/images/assets/laurel_tree_counseling_homepage_(1).webp"
 } = Astro.props;
 
-const siteTitle = title === "Home" ? "Laurel Tree Counseling | At the Root of Wellness" : `${title} | Laurel Tree Counseling`;
+const siteTitle = rawTitle ? rawTitle : (title === "Home" ? "Online Therapy Michigan | Laurel Tree Counseling" : `${title} | Laurel Tree Counseling`);
 const fullCanonicalUrl = canonicalUrl || Astro.url.href;
 ---
 

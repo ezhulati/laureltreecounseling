@@ -18,18 +18,28 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
 <BaseLayout
   title="Living with Anxiety and Finding Calm Through a Holistic Approach"
   description="Anxiety affects your whole being—mind, body, and spirit. Discover how a holistic approach to treatment can help you find lasting relief and build resilience."
+  ogImage="/images/assets/laurel_tree_counseling_4_(1).webp"
 >
   <!-- Hero -->
-  <section class="bg-primary-light py-12 md:py-16">
-    <div class="container-custom">
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_4_(1).webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
       <div class="max-w-3xl">
         <div class="mb-4">
-          <span class="badge">Mental Health</span>
+          <span class="badge badge-gold">Mental Health</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight">
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
           Living with Anxiety and Finding Calm Through a Holistic Approach
         </h1>
-        <div class="flex flex-wrap items-center gap-4 text-text-secondary">
+        <div class="flex flex-wrap items-center gap-4 text-white/80">
           <span>By Kristen Ross, LPC</span>
           <span aria-hidden="true">·</span>
           <span>{formattedDate}</span>

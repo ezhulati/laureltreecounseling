@@ -18,18 +18,28 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
 <BaseLayout
   title="The Emotional Side of Bariatric Surgery Nobody Tells You About"
   description="Bariatric surgery transforms your body, but the emotional journey is equally profound. Learn about the psychological aspects of weight loss surgery and how therapy can support lasting success."
+  ogImage="/images/assets/laurel_tree_counseling_5_(1).webp"
 >
   <!-- Hero -->
-  <section class="bg-primary-light py-12 md:py-16">
-    <div class="container-custom">
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_5_(1).webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
       <div class="max-w-3xl">
         <div class="mb-4">
-          <span class="badge">Bariatric Support</span>
+          <span class="badge badge-gold">Bariatric Support</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight">
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
           The Emotional Side of Bariatric Surgery Nobody Tells You About
         </h1>
-        <div class="flex flex-wrap items-center gap-4 text-text-secondary">
+        <div class="flex flex-wrap items-center gap-4 text-white/80">
           <span>By Kristen Ross, LPC</span>
           <span aria-hidden="true">·</span>
           <span>{formattedDate}</span>

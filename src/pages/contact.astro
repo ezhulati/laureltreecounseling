@@ -7,17 +7,27 @@ import Button from '../components/Button.astro';
 <BaseLayout
   title="Contact"
   description="Contact Laurel Tree Counseling to schedule a free consultation. Call 586-244-8087 or email info@laureltreecounseling.com. Serving all of Michigan via telehealth."
+  ogImage="/images/assets/laurel_tree_counseling_3_(1).webp"
 >
   <!-- Hero -->
-  <section class="bg-primary-light py-12 md:py-16">
-    <div class="container-custom">
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_3_(1).webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
       <div class="max-w-3xl">
-        <div class="accent-line">
-          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+        <div class="accent-line accent-line-white">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
             Contact Us
           </h1>
         </div>
-        <p class="subtitle text-xl">
+        <p class="text-xl text-white/90">
           Ready to take the first step? Reach out to schedule a free 15-minute consultation. We're here to answer your questions and help you get started.
         </p>
       </div>
