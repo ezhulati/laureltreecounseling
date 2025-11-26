@@ -73,7 +73,7 @@ const allPosts = getRecentPosts(10);
       </div>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+    <div class="grid md:grid-cols-2 gap-6 stagger-children">
       {allPosts.map((post, index) => (
         <div class={`fade-in fade-in-delay-${(index % 6) + 1}`}>
           <BlogCard {...post} />
