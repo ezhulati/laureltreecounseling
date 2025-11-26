@@ -2,46 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
-
-const insurancePlans = [
-  'Cigna (including all subsidiary plans)',
-  'Priority Health',
-];
-
-const specialties = [
-  {
-    title: 'Bariatric Surgery Support',
-    description: 'Pre- and post-op counseling for weight loss surgery patients. Emotional readiness, lifestyle adjustment, and long-term success strategies.',
-  },
-  {
-    title: 'Anxiety & Depression',
-    description: 'Evidence-based treatment using CBT, mindfulness, and somatic approaches for patients with mood disorders.',
-  },
-  {
-    title: 'Trauma & PTSD',
-    description: 'Trauma-informed care using somatic therapy and CBT to process past experiences.',
-  },
-  {
-    title: 'Chronic Illness Adjustment',
-    description: 'Support for patients adapting to new diagnoses, managing chronic conditions, and coping with health-related life changes.',
-  },
-  {
-    title: 'Life Transitions',
-    description: 'Support for major changes: diagnosis, retirement, career shifts, relationship changes, grief.',
-  },
-  {
-    title: 'Disordered Eating',
-    description: 'Specialized support for disordered eating patterns, binge eating, and emotional aspects of weight management.',
-  },
-  {
-    title: 'Weight Management (Dietitian)',
-    description: 'Nutrition counseling for weight management with a weight-inclusive, non-diet approach.',
-  },
-  {
-    title: 'Medical Nutrition Therapy',
-    description: 'RD services for GI issues, metabolic health, food allergies, and chronic disease management.',
-  },
-];
+import { insurancePlanNames } from '../data/insurance';
+import { specialties } from '../data/services';
+import { teamForProviders } from '../data/team';
 ---
 
 <BaseLayout
@@ -67,7 +30,7 @@ const specialties = [
 
   <!-- Quick Reference -->
   <Section>
-    <div class="grid lg:grid-cols-3 gap-8">
+    <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
       <!-- How Patients Book -->
       <div class="card">
         <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mb-4">
@@ -186,7 +149,7 @@ const specialties = [
 
       <div class="lg:col-span-3">
         <div class="space-y-3 mb-6">
-          {insurancePlans.map((plan) => (
+          {insurancePlanNames.map((plan) => (
             <div class="flex items-center gap-3 p-4 bg-background-surface rounded-lg border border-border">
               <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -225,86 +188,30 @@ const specialties = [
       </div>
 
       <div class="lg:col-span-3 space-y-6">
-        <!-- Kristen -->
-        <div class="card">
-          <div class="flex flex-col sm:flex-row gap-4">
-            <img
-              src="/images/kristen-ross.png"
-              alt="Kristen Ross, MA, LPC, CAM"
-              width="80"
-              height="80"
-              class="w-20 h-20 rounded-full object-cover flex-shrink-0"
-              loading="lazy"
-            />
-            <div>
-              <h3 class="text-xl font-bold text-text-primary">Kristen Ross, MA, LPC, CAM</h3>
-              <p class="text-primary font-medium text-sm mb-2">Licensed Professional Counselor · Practice Owner</p>
-              <p class="text-text-secondary text-sm mb-3">
-                14+ years experience. Former Corewell Health clinician specializing in bariatric surgery support. Expertise in anxiety, depression, trauma, eating disorders, and life transitions.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="badge">Bariatric Support</span>
-                <span class="badge">CBT</span>
-                <span class="badge">Trauma</span>
-                <span class="badge">Eating Disorders</span>
+        {teamForProviders.map((member) => (
+          <div class="card">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <img
+                src={member.image}
+                alt={`${member.name}, ${member.credentials}`}
+                width="80"
+                height="80"
+                class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-xl font-bold text-text-primary">{member.name}, {member.credentials}</h3>
+                <p class="text-primary font-medium text-sm mb-2">{member.title}</p>
+                <p class="text-text-secondary text-sm mb-3">{member.shortBio}</p>
+                <div class="flex flex-wrap gap-2">
+                  {member.providerBadges?.map((badge) => (
+                    <span class="badge">{badge}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Michele -->
-        <div class="card">
-          <div class="flex flex-col sm:flex-row gap-4">
-            <img
-              src="/images/michele-meyers.png"
-              alt="Michele Meyers, PsyD"
-              width="80"
-              height="80"
-              class="w-20 h-20 rounded-full object-cover flex-shrink-0"
-              loading="lazy"
-            />
-            <div>
-              <h3 class="text-xl font-bold text-text-primary">Michele Meyers, PsyD</h3>
-              <p class="text-primary font-medium text-sm mb-2">Licensed Psychologist</p>
-              <p class="text-text-secondary text-sm mb-3">
-                25 years experience in weight loss support, anxiety, depression, and emotional eating. CBT, Solution-Focused, and Person-Centered approaches.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="badge">Weight Loss Support</span>
-                <span class="badge">Anxiety</span>
-                <span class="badge">Depression</span>
-                <span class="badge">Emotional Eating</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Meghan -->
-        <div class="card">
-          <div class="flex flex-col sm:flex-row gap-4">
-            <img
-              src="/images/meghan-pendleton.png"
-              alt="Meghan Pendleton, RD"
-              width="80"
-              height="80"
-              class="w-20 h-20 rounded-full object-cover flex-shrink-0"
-              loading="lazy"
-            />
-            <div>
-              <h3 class="text-xl font-bold text-text-primary">Meghan Pendleton, RD</h3>
-              <p class="text-primary font-medium text-sm mb-2">Registered Dietitian · Available to non-therapy clients</p>
-              <p class="text-text-secondary text-sm mb-3">
-                Medical nutrition therapy with weight-inclusive, trauma-informed approach. Specializes in GI issues, metabolic health, eating disorders, bariatric support, and maternal health.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="badge">Nutrition Therapy</span>
-                <span class="badge">GI Health</span>
-                <span class="badge">Eating Disorders</span>
-                <span class="badge">Bariatric Support</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </Section>

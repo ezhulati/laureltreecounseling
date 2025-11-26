@@ -3,33 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
 import CTA from '../components/CTA.astro';
-
-const insurancePlans = [
-  {
-    name: 'Blue Cross Blue Shield',
-    logo: '/images/Blue-Cross-Blue-Shield-Logo-removebg-preview.avif',
-  },
-  {
-    name: 'Blue Care Network',
-    logo: '/images/blue+care+network.avif',
-  },
-  {
-    name: 'Aetna',
-    logo: '/images/1_Heart_Aetna_logo_sm_rgb_violet.png',
-  },
-  {
-    name: 'United Healthcare',
-    logo: '/images/UnitedHealthcare_(logo).svg.png',
-  },
-  {
-    name: 'Cigna',
-    logo: '/images/cigna-dentist-astoria.png',
-  },
-  {
-    name: 'Priority Health',
-    logo: '/images/priority-health-logo.avif',
-  },
-];
+import { insurancePlans } from '../data/insurance';
 ---
 
 <BaseLayout

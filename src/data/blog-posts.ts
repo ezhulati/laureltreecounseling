@@ -13,7 +13,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'emotional-side-bariatric-surgery',
-    title: 'The Emotional Side of Bariatric Surgery: What No One Tells You',
+    title: 'The Emotional Side of Bariatric Surgery Nobody Tells You About',
     excerpt: 'Bariatric surgery transforms your body, but the emotional journey is equally profound. Understanding the psychological aspects of weight loss surgery can help you prepare for lasting success.',
     category: 'Bariatric Support',
     author: 'Kristen Ross',
@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'understanding-emotional-eating',
-    title: 'Understanding Emotional Eating: Breaking the Cycle with Compassion',
+    title: 'Understanding Emotional Eating and Breaking the Cycle with Compassion',
     excerpt: 'Emotional eating is more than a lack of willpower—it\'s a coping mechanism that deserves understanding, not judgment. Learn how to build a healthier relationship with food.',
     category: 'Wellness',
     author: 'Kristen Ross',
@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'living-with-anxiety-holistic-approach',
-    title: 'Living with Anxiety: A Holistic Approach to Finding Calm',
+    title: 'Living with Anxiety and Finding Calm Through a Holistic Approach',
     excerpt: 'Anxiety affects your whole being—mind, body, and spirit. Discover how a holistic approach to treatment can help you find lasting relief and build resilience.',
     category: 'Mental Health',
     author: 'Kristen Ross',
@@ -46,7 +46,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'mind-body-connection-holistic-therapy',
-    title: 'The Mind-Body Connection: Why Holistic Therapy Works',
+    title: 'The Mind-Body Connection and Why Holistic Therapy Works',
     excerpt: 'Your mind and body are deeply connected. Learn why addressing both together through holistic therapy leads to more meaningful, lasting healing.',
     category: 'Wellness',
     author: 'Kristen Ross',

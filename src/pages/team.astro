@@ -2,51 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import CTA from '../components/CTA.astro';
-
-const team = [
-  {
-    id: 'kristen-ross',
-    name: 'Kristen Ross',
-    credentials: 'LPC',
-    title: 'Owner & Lead Counselor',
-    image: '/images/kristen-ross.png',
-    bio: [
-      "Kristen Ross is a Licensed Professional Counselor with over 14 years of experience in holistic health counseling. She spent more than a decade working at Corewell Health Hospital, where she helped thousands of clients navigate the complex journey of bariatric surgery, weight loss, and lifestyle transformation.",
-      "As the founder of Laurel Tree Counseling, Kristen brings her unique blend of evidence-based therapies and complementary medicine to support adults through anxiety, depression, trauma, life transitions, and eating disorders. Her approach integrates Cognitive Behavioral Therapy, mindfulness, somatic therapy, and motivational interviewing.",
-      "When she's not in session, Kristen enjoys cooking nutritious meals, growing her own food, maintaining an active lifestyle, and spending time with her family. She believes that wellness is a journey, not a destination, and is committed to walking alongside her clients every step of the way.",
-    ],
-    specializations: ['Bariatric Surgery Support', 'Anxiety & Depression', 'Trauma', 'Life Transitions', 'Eating Disorders'],
-    education: ['Master\'s in Counseling', 'Certification in Complementary Medicine & Wellness'],
-  },
-  {
-    id: 'michele-meyers',
-    name: 'Michele Meyers',
-    credentials: 'PsyD',
-    title: 'Licensed Psychologist',
-    image: '/images/michele-meyers.png',
-    bio: [
-      "Dr. Michele Meyers is a Licensed Psychologist with 25 years of specialized experience in weight loss support, anxiety, depression, and emotional eating. Her extensive background allows her to provide deeply informed, compassionate care to clients navigating complex challenges.",
-      "Michele's therapeutic approach combines Cognitive Behavioral Therapy (CBT), Solution-Focused therapy, and Person-Centered Therapy. She emphasizes a whole-person focus with realistic goal-setting, helping clients make sustainable changes that align with their values and lifestyle.",
-      "Outside of her practice, Michele enjoys gardening, spending time in nature, exercising, walking her dog, traveling, photography, and quality time with family. She brings this same sense of balance and appreciation for life's simple pleasures to her work with clients.",
-    ],
-    specializations: ['Weight Loss Support', 'Bariatric Surgery Transitions', 'Anxiety', 'Depression', 'Binge & Emotional Eating'],
-    education: ['Doctor of Psychology (PsyD)'],
-  },
-  {
-    id: 'meghan-pendleton',
-    name: 'Meghan Pendleton',
-    credentials: 'RD',
-    title: 'Registered Dietitian',
-    image: '/images/meghan-pendleton.png',
-    bio: [
-      "Meghan Pendleton is a Registered Dietitian specializing in medical nutrition therapy with a weight-inclusive, trauma-informed, and holistic approach. She understands the powerful connection between nutrition and mental well-being, and works collaboratively with clients to build a healthier relationship with food.",
-      "Meghan's areas of expertise include gastrointestinal issues, food allergies and intolerances, metabolic and cardiovascular health, hormonal and women's health, maternal health (fertility, pregnancy, postpartum), eating disorder recovery, bariatric surgery support, and chronic disease management.",
-      "Her approach honors each person's unique journey, recognizing that there is no one-size-fits-all solution to nutrition. Meghan works alongside our counseling team to provide comprehensive, integrated care that addresses both the nutritional and emotional aspects of wellness.",
-    ],
-    specializations: ['Eating Disorder Recovery', 'GI Health', 'Maternal Health', 'Bariatric Support', 'Metabolic Health'],
-    education: ['Registered Dietitian (RD)'],
-  },
-];
+import { team } from '../data/team';
 ---
 
 <BaseLayout
@@ -106,7 +62,7 @@ const team = [
           </div>
 
           <!-- Specializations & Education Grid -->
-          <div class="grid sm:grid-cols-2 gap-8 fade-in fade-in-delay-5">
+          <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 fade-in fade-in-delay-5">
             <!-- Specializations -->
             <div>
               <h3 class="text-sm font-semibold text-text-primary uppercase tracking-wide mb-3">

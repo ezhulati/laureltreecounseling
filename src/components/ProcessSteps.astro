@@ -1,0 +1,44 @@
+---
+export interface Step {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  steps: Step[];
+  layout?: 'horizontal' | 'centered' | 'grid';
+  class?: string;
+}
+
+const { steps, layout = 'horizontal', class: className = '' } = Astro.props;
+
+const containerClass = layout === 'grid'
+  ? 'grid md:grid-cols-3 gap-6 md:gap-8'
+  : layout === 'centered'
+  ? 'grid md:grid-cols-3 gap-6 md:gap-8'
+  : 'space-y-6';
+---
+
+<div class:list={[containerClass, 'stagger-children', className]}>
+  {steps.map((step, index) => (
+    layout === 'horizontal' ? (
+      <div class={`flex gap-4 fade-in fade-in-delay-${index + 1}`}>
+        <div class="step-indicator-gold flex-shrink-0">
+          {index + 1}
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-1">{step.title}</h3>
+          <p class="text-text-secondary">{step.description}</p>
+        </div>
+      </div>
+    ) : (
+      <div class="text-center fade-in">
+        <div class="step-indicator-gold mx-auto mb-4">
+          {index + 1}
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-2">{step.title}</h3>
+        <p class="text-text-secondary">{step.description}</p>
+      </div>
+    )
+  ))}
+</div>
