@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<article class="card text-center group relative">
+<article class="card text-center group relative h-full flex flex-col">
   <!-- Full card clickable link -->
   {href && (
     <a href={href} class="absolute inset-0 z-10" aria-label={`Read full bio of ${name}`}>
@@ -29,7 +29,7 @@ const {
   )}
 
   <!-- Photo -->
-  <div class="relative mb-6 mx-auto w-40 h-40 md:w-48 md:h-48">
+  <div class="relative mb-6 mx-auto w-40 h-40 md:w-48 md:h-48 flex-shrink-0">
     <img
       src={image}
       alt={`${name}, ${credentials}`}
@@ -41,7 +41,7 @@ const {
   </div>
 
   <!-- Info -->
-  <header class="mb-4">
+  <header class="mb-4 flex-shrink-0">
     <h3 class="text-xl font-heading font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
       {name}, {credentials}
     </h3>
@@ -49,22 +49,24 @@ const {
   </header>
 
   <!-- Bio -->
-  <p class="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-3">
+  <p class="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-3 flex-shrink-0">
     {bio}
   </p>
 
-  <!-- Specializations -->
-  {specializations.length > 0 && (
-    <div class="flex flex-wrap justify-center gap-2 mb-4">
-      {specializations.slice(0, 4).map((spec) => (
-        <span class="badge-gold text-xs">{spec}</span>
-      ))}
-    </div>
-  )}
+  <!-- Specializations - fixed height container for consistency -->
+  <div class="flex-grow flex flex-col justify-start">
+    {specializations.length > 0 && (
+      <div class="flex flex-wrap justify-center gap-2 mb-4">
+        {specializations.slice(0, 3).map((spec) => (
+          <span class="badge-gold text-xs">{spec}</span>
+        ))}
+      </div>
+    )}
+  </div>
 
-  <!-- Visual Link Indicator -->
+  <!-- Visual Link Indicator - always at bottom -->
   {href && (
-    <span class="text-primary font-medium text-sm inline-flex items-center gap-1">
+    <span class="text-primary font-medium text-sm inline-flex items-center justify-center gap-1 mt-auto pt-2">
       Read full bio
       <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

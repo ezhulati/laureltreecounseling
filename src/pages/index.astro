@@ -64,12 +64,12 @@ const team = [
 ];
 
 const insurances = [
-  'Blue Cross Blue Shield',
-  'Blue Care Network',
-  'Aetna',
-  'United Healthcare',
-  'Cigna',
-  'Priority Health',
+  { name: 'Blue Cross Blue Shield', logo: '/images/Blue-Cross-Blue-Shield-Logo-removebg-preview.avif' },
+  { name: 'Blue Care Network', logo: '/images/blue+care+network.avif' },
+  { name: 'Aetna', logo: '/images/1_Heart_Aetna_logo_sm_rgb_violet.png' },
+  { name: 'United Healthcare', logo: '/images/UnitedHealthcare_(logo).svg.png' },
+  { name: 'Cigna', logo: '/images/cigna-dentist-astoria.png' },
+  { name: 'Priority Health', logo: '/images/priority-health-logo.avif' },
 ];
 ---
 
@@ -257,8 +257,8 @@ const insurances = [
   </Section>
 
   <!-- Insurance Section -->
-  <Section id="insurance">
-    <div class="text-center mb-8">
+  <section class="py-12 bg-background overflow-hidden" id="insurance">
+    <div class="container-custom text-center mb-8">
       <div class="accent-line accent-line-center">
         <h2 class="text-2xl md:text-3xl font-heading font-bold text-text-primary mb-4">
           Insurance We Accept
@@ -269,16 +269,22 @@ const insurances = [
       </p>
     </div>
 
+    <!-- Full-width scrolling logos -->
     <div class="scroll-container">
-      <div class="scroll-content">
+      <div class="flex animate-scroll gap-12 md:gap-16 py-4">
         {[...insurances, ...insurances].map((insurance) => (
-          <div class="flex-shrink-0 px-6 py-3 bg-background-surface border border-border rounded-lg">
-            <span class="text-text-primary font-semibold whitespace-nowrap">{insurance}</span>
+          <div class="flex-shrink-0 flex items-center justify-center">
+            <img
+              src={insurance.logo}
+              alt={insurance.name}
+              class="h-5 md:h-7 w-auto object-contain opacity-60 hover:opacity-100 transition-all"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
     </div>
-  </Section>
+  </section>
 
   <!-- Michigan Coverage Section -->
   <Section background="surface" id="locations">

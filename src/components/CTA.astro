@@ -44,6 +44,7 @@ const isPrimary = variant === 'primary';
         href={buttonHref}
         variant={isPrimary ? 'secondary' : 'primary'}
         size="lg"
+        class="sm:min-w-[220px]"
         external
       >
         {buttonText}
@@ -52,12 +53,12 @@ const isPrimary = variant === 'primary';
       {isPrimary ? (
         <a
           href="/contact"
-          class="btn px-8 py-4 text-lg min-h-[56px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+          class="btn px-8 py-4 text-lg min-h-[56px] sm:min-w-[220px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
         >
           Ask a Question
         </a>
       ) : (
-        <Button href="/contact" variant="outline" size="lg">
+        <Button href="/contact" variant="outline" size="lg" class="sm:min-w-[220px]">
           Ask a Question
         </Button>
       )}

@@ -7,33 +7,27 @@ import CTA from '../components/CTA.astro';
 const insurancePlans = [
   {
     name: 'Blue Cross Blue Shield',
-    description: 'Including most BCBS plans in Michigan',
-    inNetwork: true,
+    logo: '/images/Blue-Cross-Blue-Shield-Logo-removebg-preview.avif',
   },
   {
     name: 'Blue Care Network',
-    description: 'BCN HMO and PPO plans',
-    inNetwork: true,
+    logo: '/images/blue+care+network.avif',
   },
   {
     name: 'Aetna',
-    description: 'Most Aetna plans accepted',
-    inNetwork: true,
+    logo: '/images/1_Heart_Aetna_logo_sm_rgb_violet.png',
   },
   {
     name: 'United Healthcare',
-    description: 'UHC commercial and employer plans',
-    inNetwork: true,
+    logo: '/images/UnitedHealthcare_(logo).svg.png',
   },
   {
     name: 'Cigna',
-    description: 'Including Priority Health (Cigna network)',
-    inNetwork: true,
+    logo: '/images/cigna-dentist-astoria.png',
   },
   {
     name: 'Priority Health',
-    description: 'Connected to Cigna network',
-    inNetwork: true,
+    logo: '/images/priority-health-logo.avif',
   },
 ];
 ---
@@ -72,17 +66,20 @@ const insurancePlans = [
         </p>
       </div>
 
-      <!-- Insurance Grid - Simple horizontal list -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+      <!-- Insurance Logos Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
         {insurancePlans.map((plan) => (
-          <div class="flex items-center gap-3 p-4 bg-background-surface rounded-lg border border-border hover:border-primary hover:shadow-soft transition-all">
-            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <div>
-              <p class="font-bold text-text-primary">{plan.name}</p>
-              <p class="text-sm text-text-secondary">{plan.description}</p>
-            </div>
+          <div class="flex items-center justify-center p-6 bg-background-surface rounded-xl border border-border hover:border-primary hover:shadow-soft transition-all h-24">
+            {plan.logo ? (
+              <img
+                src={plan.logo}
+                alt={plan.name}
+                class="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all"
+                loading="lazy"
+              />
+            ) : (
+              <span class="font-bold text-text-primary text-center">{plan.name}</span>
+            )}
           </div>
         ))}
       </div>
@@ -186,35 +183,33 @@ const insurancePlans = [
         </p>
       </div>
 
-      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6 stagger-children">
-        <div class="card fade-in fade-in-delay-1">
-          <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center mb-4">
+      <div class="lg:col-span-3 space-y-6 stagger-children">
+        <div class="card fade-in fade-in-delay-1 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center flex-shrink-0">
             <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-text-primary mb-3">Out-of-Network Benefits</h3>
-          <p class="text-text-secondary mb-4">
-            If we're not in-network with your insurance, you may still have out-of-network benefits. We can provide a superbill (detailed receipt) that you can submit to your insurance for potential reimbursement.
-          </p>
-          <p class="text-text-secondary text-sm">
-            Many clients receive 50-80% reimbursement for out-of-network mental health services.
-          </p>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Out-of-Network Benefits</h3>
+            <p class="text-text-secondary">
+              If we're not in-network with your insurance, you may still have out-of-network benefits. We can provide a superbill (detailed receipt) that you can submit for potential reimbursement. Many clients receive 50-80% back.
+            </p>
+          </div>
         </div>
 
-        <div class="card fade-in fade-in-delay-2">
-          <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center mb-4">
+        <div class="card fade-in fade-in-delay-2 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center flex-shrink-0">
             <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-text-primary mb-3">Private Pay</h3>
-          <p class="text-text-secondary mb-4">
-            We offer competitive private pay rates for those who prefer to pay out-of-pocket or don't have insurance coverage. Payment is due at the time of service.
-          </p>
-          <p class="text-text-secondary text-sm">
-            Contact us for current session rates. We accept all major credit cards.
-          </p>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Private Pay</h3>
+            <p class="text-text-secondary">
+              We offer competitive private pay rates for those who prefer to pay out-of-pocket. Payment is due at time of service. Contact us for current rates—we accept all major credit cards.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -234,10 +229,10 @@ const insurancePlans = [
         </p>
       </div>
       <div class="lg:col-span-2 flex flex-col sm:flex-row lg:flex-col gap-4 lg:items-end">
-        <Button href="/contact" variant="primary">
+        <Button href="/contact" variant="primary" class="sm:min-w-[180px] lg:min-w-[200px]">
           Contact Us
         </Button>
-        <Button href="tel:586-244-8087" variant="secondary">
+        <Button href="tel:586-244-8087" variant="secondary" class="sm:min-w-[180px] lg:min-w-[200px]">
           Call 586-244-8087
         </Button>
       </div>

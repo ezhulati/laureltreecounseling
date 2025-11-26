@@ -670,6 +670,15 @@
   }
 }
 
+/* Scrolling animation class */
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
