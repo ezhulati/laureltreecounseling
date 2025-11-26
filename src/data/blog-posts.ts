@@ -13,6 +13,18 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'psychology-weight-loss-self-compassion',
+    title: 'The Psychology of Weight Loss: Why Self-Compassion Matters More Than Willpower',
+    excerpt: 'Struggling with weight? The problem isn\'t willpower—it\'s the critical voice in your head. Learn how self-compassion transforms the weight loss journey and leads to lasting change.',
+    category: 'Wellness',
+    author: 'Michele Meyers',
+    authorCredentials: 'PsyD',
+    authorSlug: 'michele-meyers',
+    publishDate: '2025-01-25',
+    readTime: '10 min read',
+    featured: true,
+  },
+  {
     slug: 'gut-brain-connection-mood-food',
     title: 'The Gut-Brain Connection: How What You Eat Affects How You Feel',
     excerpt: 'Your gut and brain are in constant communication. Learn how nutrition impacts mental health and practical ways to support your mood through food.',
