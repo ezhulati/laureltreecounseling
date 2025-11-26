@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
     authorSlug: 'kristen-ross',
     publishDate: '2025-01-15',
     readTime: '8 min read',
-    featured: false,
+    featured: true,
   },
   {
     slug: 'understanding-emotional-eating',
