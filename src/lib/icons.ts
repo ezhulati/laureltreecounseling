@@ -6,7 +6,7 @@ export const serviceIcons = {
   anxiety: 'Brain',           // Mental clarity, calm mind
   depression: 'Sun',          // Light, hope, new beginning
   bariatric: 'Scale',         // Weight, balance, transformation
-  trauma: 'ShieldHeart',      // Protection combined with healing
+  trauma: 'HeartHandshake',   // Compassionate support and healing
   nutrition: 'Apple',         // Natural wellness, wholesome food
   transitions: 'Compass',     // Navigation, finding direction
   relationships: 'Users',     // Human connection

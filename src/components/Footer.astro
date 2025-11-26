@@ -48,10 +48,10 @@ const footerNav = {
           <img
             src="/images/lltc_ogo-white.png"
             alt="Laurel Tree Counseling"
-            width="160"
-            height="50"
+            width="200"
+            height="62"
             loading="lazy"
-            class="h-10 w-auto"
+            class="h-20 w-auto"
           />
         </a>
         <p class="text-white/70 text-sm max-w-xs mb-6">
@@ -83,8 +83,8 @@ const footerNav = {
       </div>
 
       <!-- Services Column -->
-      <nav aria-label="Footer services navigation">
-        <h3 class="text-white font-semibold text-sm mb-4">{footerNav.services.title}</h3>
+      <nav aria-label="Footer services navigation" class="lg:mt-16">
+        <h3 class="text-white font-semibold text-base mb-4">{footerNav.services.title}</h3>
         <ul class="space-y-2.5">
           {footerNav.services.links.map((link) => (
             <li>
@@ -97,8 +97,8 @@ const footerNav = {
       </nav>
 
       <!-- Company Column -->
-      <nav aria-label="Footer company navigation">
-        <h3 class="text-white font-semibold text-sm mb-4">{footerNav.company.title}</h3>
+      <nav aria-label="Footer company navigation" class="lg:mt-16">
+        <h3 class="text-white font-semibold text-base mb-4">{footerNav.company.title}</h3>
         <ul class="space-y-2.5">
           {footerNav.company.links.map((link) => (
             <li>
@@ -111,8 +111,8 @@ const footerNav = {
       </nav>
 
       <!-- Resources Column -->
-      <nav aria-label="Footer resources navigation">
-        <h3 class="text-white font-semibold text-sm mb-4">{footerNav.resources.title}</h3>
+      <nav aria-label="Footer resources navigation" class="lg:mt-16">
+        <h3 class="text-white font-semibold text-base mb-4">{footerNav.resources.title}</h3>
         <ul class="space-y-2.5">
           {footerNav.resources.links.map((link) => (
             <li>
@@ -130,9 +130,11 @@ const footerNav = {
       <p class="text-white/50 text-xs">
         © {currentYear} Laurel Tree Counseling, LLC · All rights reserved
       </p>
-      <p class="text-white/50 text-xs">
-        Telehealth services across all of Michigan
-      </p>
+      <div class="flex items-center gap-4 text-white/50 text-xs">
+        <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>·</span>
+        <a href="/terms-of-service" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
     </div>
   </div>
 </footer>
