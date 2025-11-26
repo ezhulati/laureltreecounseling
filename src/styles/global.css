@@ -186,8 +186,8 @@
   }
 
   .btn-secondary {
-    @apply btn bg-background-surface text-text-primary border border-border
-           hover:border-primary hover:text-primary hover:-translate-y-0.5
+    @apply btn bg-background-surface text-primary border border-border
+           hover:border-primary hover:-translate-y-0.5
            active:translate-y-0;
   }
 
