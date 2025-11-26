@@ -64,7 +64,7 @@ function isActive(item: NavItem): boolean {
 }
 ---
 
-<header class="bg-background-surface shadow-soft sticky top-0 z-50">
+<header id="main-header" class="bg-background-surface shadow-soft sticky top-0 z-50 transition-transform duration-300">
   <nav class="container-custom" aria-label="Main navigation">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
@@ -342,4 +342,39 @@ function isActive(item: NavItem): boolean {
       chevron?.classList.toggle('rotate-180');
     });
   });
+
+  // Scroll-aware header: hide on scroll down, show on scroll up
+  const header = document.getElementById('main-header');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+
+    if (header) {
+      // Only hide header after scrolling past 100px
+      if (currentScrollY > 100) {
+        if (currentScrollY > lastScrollY) {
+          // Scrolling down - hide header
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up - show header
+          header.style.transform = 'translateY(0)';
+        }
+      } else {
+        // Near top - always show header
+        header.style.transform = 'translateY(0)';
+      }
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
 </script>
