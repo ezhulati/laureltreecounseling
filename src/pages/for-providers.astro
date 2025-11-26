@@ -46,8 +46,8 @@ import { teamForProviders } from '../data/team';
     <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
       <!-- How Patients Book -->
       <div class="card">
-        <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mb-4">
-          <Icon name="Calendar" size={24} class="text-primary" />
+        <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mb-4">
+          <Icon name="Calendar" size={28} class="text-primary" />
         </div>
         <h2 class="text-xl font-bold text-text-primary mb-3">How Patients Book</h2>
         <p class="text-text-secondary mb-4">
@@ -60,8 +60,8 @@ import { teamForProviders } from '../data/team';
 
       <!-- Session Format -->
       <div class="card">
-        <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mb-4">
-          <Icon name="Video" size={24} class="text-primary" />
+        <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mb-4">
+          <Icon name="Video" size={28} class="text-primary" />
         </div>
         <h2 class="text-xl font-bold text-text-primary mb-3">Virtual Sessions Statewide</h2>
         <p class="text-text-secondary mb-4">
@@ -74,8 +74,8 @@ import { teamForProviders } from '../data/team';
 
       <!-- Contact -->
       <div class="card">
-        <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mb-4">
-          <Icon name="Phone" size={24} class="text-primary" />
+        <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mb-4">
+          <Icon name="Phone" size={28} class="text-primary" />
         </div>
         <h2 class="text-xl font-bold text-text-primary mb-3">Questions?</h2>
         <p class="text-text-secondary mb-4">
@@ -162,36 +162,43 @@ import { teamForProviders } from '../data/team';
 
   <!-- Insurance -->
   <Section background="surface">
-    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
-      <div class="lg:col-span-2">
-        <div class="accent-line">
-          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
-            Insurance Accepted
-          </h2>
-        </div>
-        <p class="subtitle">
-          Self-pay is also available for patients without coverage.
-        </p>
+    <div class="text-center mb-10">
+      <div class="accent-line accent-line-center">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+          Insurance Accepted
+        </h2>
       </div>
+      <p class="subtitle max-w-2xl mx-auto">
+        We also offer self-pay options for patients without coverage.
+      </p>
+    </div>
 
-      <div class="lg:col-span-3">
-        <div class="space-y-3 mb-6">
-          {insurancePlanNames.map((plan) => (
-            <div class="flex items-center gap-3 p-4 bg-background-surface rounded-lg border border-border">
-              <Icon name="Check" size={20} class="text-primary flex-shrink-0" />
-              <span class="font-medium text-text-primary">{plan}</span>
-            </div>
-          ))}
-          <div class="flex items-center gap-3 p-4 bg-background-surface rounded-lg border border-border">
-            <Icon name="Check" size={20} class="text-primary flex-shrink-0" />
-            <span class="font-medium text-text-primary">Self-pay available</span>
-          </div>
-        </div>
-        <div class="bg-background-elevated rounded-lg p-4 border-l-4 border-primary">
-          <p class="text-sm text-text-secondary">
-            <strong>Note:</strong> Priority Health is under the Cigna umbrella — most hospital system employees in Michigan are covered.
-          </p>
-        </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+      <div class="bg-white border border-border rounded-lg p-4 flex items-center justify-center h-20">
+        <img src="/images/cigna-dentist-astoria.png" alt="Cigna" class="max-h-12 max-w-full object-contain" loading="lazy" />
+      </div>
+      <div class="bg-white border border-border rounded-lg p-4 flex items-center justify-center h-20">
+        <img src="/images/priority-health-logo.avif" alt="Priority Health" class="max-h-12 max-w-full object-contain" loading="lazy" />
+      </div>
+      <div class="bg-white border border-border rounded-lg p-4 flex items-center justify-center h-20">
+        <img src="/images/Blue-Cross-Blue-Shield-Logo-removebg-preview.avif" alt="Blue Cross Blue Shield" class="max-h-12 max-w-full object-contain" loading="lazy" />
+      </div>
+      <div class="bg-white border border-border rounded-lg p-4 flex items-center justify-center h-20">
+        <img src="/images/blue+care+network.avif" alt="Blue Care Network" class="max-h-12 max-w-full object-contain" loading="lazy" />
+      </div>
+      <div class="bg-white border border-border rounded-lg p-4 flex items-center justify-center h-20">
+        <img src="/images/1_Heart_Aetna_logo_sm_rgb_violet.png" alt="Aetna" class="max-h-12 max-w-full object-contain" loading="lazy" />
+      </div>
+      <div class="bg-white border border-border rounded-lg p-4 flex items-center justify-center h-20">
+        <img src="/images/UnitedHealthcare_(logo).svg.png" alt="United Healthcare" class="max-h-12 max-w-full object-contain" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-background-elevated rounded-lg p-4 border-l-4 border-primary text-center">
+        <p class="text-sm text-text-secondary">
+          <strong>Note:</strong> Priority Health is under the Cigna umbrella — most hospital system employees in Michigan are covered.
+        </p>
       </div>
     </div>
   </Section>
