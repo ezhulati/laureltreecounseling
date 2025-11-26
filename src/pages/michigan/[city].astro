@@ -70,11 +70,12 @@ const services = [
 ];
 
 const insurances = [
-  'Blue Cross Blue Shield',
-  'Blue Care Network',
-  'Aetna',
-  'United Healthcare',
-  'Cigna / Priority Health',
+  { name: 'Blue Cross Blue Shield', logo: '/images/Blue-Cross-Blue-Shield-Logo-removebg-preview.avif' },
+  { name: 'Blue Care Network', logo: '/images/blue+care+network.avif' },
+  { name: 'Aetna', logo: '/images/1_Heart_Aetna_logo_sm_rgb_violet.png' },
+  { name: 'United Healthcare', logo: '/images/UnitedHealthcare_(logo).svg.png' },
+  { name: 'Cigna', logo: '/images/cigna-dentist-astoria.png' },
+  { name: 'Priority Health', logo: '/images/priority-health-logo.avif' },
 ];
 
 const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed counselors and psychologists offering anxiety, depression, trauma, life transitions, relationship, and bariatric support. ${city.description}`;
@@ -261,60 +262,36 @@ const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed
 
   <!-- Insurance -->
   <Section>
-    <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-center">
-      <div class="lg:col-span-2">
-        <div class="accent-line">
-          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
-            Insurance Accepted for {city.name} Residents
-          </h2>
-        </div>
-        <p class="subtitle mb-6 lg:mb-0">
-          We also offer out-of-network and private pay options.
-        </p>
+    <div class="text-center mb-10">
+      <div class="accent-line-center">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+          Insurance Accepted for {city.name} Residents
+        </h2>
       </div>
+      <p class="subtitle max-w-2xl mx-auto">
+        We also offer out-of-network and private pay options.
+      </p>
+    </div>
 
-      <div class="lg:col-span-3">
-        <div class="scroll-container mb-6">
-          <div class="scroll-content">
-            {[...insurances, ...insurances].map((insurance) => (
-              <div class="flex-shrink-0 px-6 py-3 bg-background-surface border border-border rounded-lg">
-                <span class="text-text-primary font-semibold whitespace-nowrap">{insurance}</span>
-              </div>
-            ))}
-          </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+      {insurances.map((insurance) => (
+        <div class="bg-background-surface border border-border rounded-lg p-4 flex items-center justify-center h-20">
+          <img
+            src={insurance.logo}
+            alt={insurance.name}
+            class="max-h-12 max-w-full object-contain"
+            loading="lazy"
+          />
         </div>
-        <div class="text-right">
-          <Button href="/insurance" variant="secondary">
-            View Insurance Details
-          </Button>
-        </div>
-      </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <Button href="/insurance" variant="secondary">
+        View Insurance Details
+      </Button>
     </div>
   </Section>
-
-  <style>
-    .insurance-scroll-container {
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-scroll {
-      animation: scroll 20s linear infinite;
-    }
-
-    .animate-scroll:hover {
-      animation-play-state: paused;
-    }
-  </style>
 
   <!-- Team Preview -->
   <Section background="surface">
