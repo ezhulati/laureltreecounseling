@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import CTA from '../components/CTA.astro';
+
+const insurancePlans = [
+  {
+    name: 'Blue Cross Blue Shield',
+    description: 'Including most BCBS plans in Michigan',
+    inNetwork: true,
+  },
+  {
+    name: 'Blue Care Network',
+    description: 'BCN HMO and PPO plans',
+    inNetwork: true,
+  },
+  {
+    name: 'Aetna',
+    description: 'Most Aetna plans accepted',
+    inNetwork: true,
+  },
+  {
+    name: 'United Healthcare',
+    description: 'UHC commercial and employer plans',
+    inNetwork: true,
+  },
+  {
+    name: 'Cigna',
+    description: 'Including Priority Health (Cigna network)',
+    inNetwork: true,
+  },
+  {
+    name: 'Priority Health',
+    description: 'Connected to Cigna network',
+    inNetwork: true,
+  },
+];
+---
+
+<BaseLayout
+  title="Insurance & Payment"
+  description="Learn about insurance plans accepted at Laurel Tree Counseling, including Blue Cross, Aetna, United Healthcare, Cigna, and private pay options."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Insurance & Payment
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          We accept most major insurance plans and offer flexible payment options to make quality mental health care accessible.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Plans -->
+  <Section>
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="accent-line accent-line-center">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+            Insurance Plans We Accept
+          </h2>
+        </div>
+        <p class="subtitle max-w-2xl mx-auto">
+          We're in-network with most major insurance providers in Michigan.
+        </p>
+      </div>
+
+      <!-- Insurance Grid - Simple horizontal list -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+        {insurancePlans.map((plan) => (
+          <div class="flex items-center gap-3 p-4 bg-background-surface rounded-lg border border-border hover:border-primary hover:shadow-soft transition-all">
+            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <p class="font-bold text-text-primary">{plan.name}</p>
+              <p class="text-sm text-text-secondary">{plan.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- All In-Network Badge -->
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-primary-light text-primary font-medium rounded-full">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          All plans listed are In-Network
+        </span>
+      </div>
+
+      <!-- Info Box -->
+      <div class="bg-background-elevated rounded-xl p-6 border-l-4 border-primary">
+        <h3 class="text-lg font-bold text-text-primary mb-3">
+          Cigna & Priority Health Connection
+        </h3>
+        <p class="text-text-secondary mb-3">
+          Many people don't realize that <strong>Priority Health</strong> is connected to the <strong>Cigna</strong> network. If you have Priority Health insurance (common for Corewell Health / hospital employees), your mental health benefits may be covered under the Cigna behavioral health network.
+        </p>
+        <p class="text-text-secondary">
+          We recommend verifying your specific benefits by calling the number on your insurance card or contacting us directly—we're happy to help you understand your coverage.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Verify Coverage -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="lg:sticky lg:top-24">
+          <div class="accent-line">
+            <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+              How to Verify Your Coverage
+            </h2>
+          </div>
+          <p class="subtitle">
+            Follow these steps to confirm your mental health benefits before your first appointment.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 space-y-6 stagger-children">
+        <div class="flex gap-4 fade-in fade-in-delay-1">
+          <div class="step-indicator-gold flex-shrink-0">
+            1
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Call Your Insurance Company</h3>
+            <p class="text-text-secondary">Use the member services number on the back of your insurance card. Ask about your behavioral health or mental health benefits.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-2">
+          <div class="step-indicator-gold flex-shrink-0">
+            2
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Ask About Telehealth Coverage</h3>
+            <p class="text-text-secondary">Confirm that virtual/telehealth therapy sessions are covered under your plan. Most plans now cover telehealth at the same rate as in-person visits.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-3">
+          <div class="step-indicator-gold flex-shrink-0">
+            3
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Verify Laurel Tree Counseling</h3>
+            <p class="text-text-secondary">Ask if Laurel Tree Counseling (or our individual providers) are in-network. You can also ask about your deductible, copay, and session limits.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-4">
+          <div class="step-indicator-gold flex-shrink-0">
+            4
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Contact Us for Help</h3>
+            <p class="text-text-secondary">Not sure about your coverage? Reach out to us and we'll help verify your benefits before your first appointment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Other Payment Options -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Other Payment Options
+          </h2>
+        </div>
+        <p class="subtitle">
+          We offer flexible alternatives for clients who don't have in-network coverage.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6 stagger-children">
+        <div class="card fade-in fade-in-delay-1">
+          <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-text-primary mb-3">Out-of-Network Benefits</h3>
+          <p class="text-text-secondary mb-4">
+            If we're not in-network with your insurance, you may still have out-of-network benefits. We can provide a superbill (detailed receipt) that you can submit to your insurance for potential reimbursement.
+          </p>
+          <p class="text-text-secondary text-sm">
+            Many clients receive 50-80% reimbursement for out-of-network mental health services.
+          </p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-2">
+          <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-text-primary mb-3">Private Pay</h3>
+          <p class="text-text-secondary mb-4">
+            We offer competitive private pay rates for those who prefer to pay out-of-pocket or don't have insurance coverage. Payment is due at the time of service.
+          </p>
+          <p class="text-text-secondary text-sm">
+            Contact us for current session rates. We accept all major credit cards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Questions -->
+  <Section background="elevated">
+    <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-center">
+      <div class="lg:col-span-3">
+        <div class="accent-line">
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+            Questions About Insurance?
+          </h2>
+        </div>
+        <p class="subtitle mb-6 lg:mb-0">
+          Insurance can be confusing. We're here to help you understand your benefits and make mental health care as accessible as possible.
+        </p>
+      </div>
+      <div class="lg:col-span-2 flex flex-col sm:flex-row lg:flex-col gap-4 lg:items-end">
+        <Button href="/contact" variant="primary">
+          Contact Us
+        </Button>
+        <Button href="tel:586-244-8087" variant="secondary">
+          Call 586-244-8087
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA variant="surface" />
+</BaseLayout>

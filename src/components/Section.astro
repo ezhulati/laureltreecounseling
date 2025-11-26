@@ -1,0 +1,36 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  background?: 'default' | 'surface' | 'elevated' | 'primary';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  id,
+  class: className = '',
+  background = 'default',
+  size = 'md',
+} = Astro.props;
+
+const bgClasses = {
+  default: 'bg-background',
+  surface: 'bg-background-surface',
+  elevated: 'bg-background-elevated',
+  primary: 'bg-primary text-text-inverse',
+};
+
+const sizeClasses = {
+  sm: 'section-sm',
+  md: 'section',
+  lg: 'py-20 md:py-24 lg:py-32',
+};
+
+const classes = [bgClasses[background], sizeClasses[size], className].join(' ');
+---
+
+<section id={id} class={classes}>
+  <div class="container-custom">
+    <slot />
+  </div>
+</section>

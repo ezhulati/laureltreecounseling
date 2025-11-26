@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TeamCard from '../components/TeamCard.astro';
+import CTA from '../components/CTA.astro';
+
+const services = [
+  {
+    title: 'Anxiety & Depression',
+    description: 'Evidence-based treatment combining CBT, mindfulness, and holistic approaches to help you find relief and build resilience.',
+    icon: 'anxiety',
+    href: '/services/anxiety-depression',
+  },
+  {
+    title: 'Bariatric Surgery Support',
+    description: 'Specialized counseling before and after bariatric surgery, helping you navigate the emotional and lifestyle changes.',
+    icon: 'bariatric',
+    href: '/services/bariatric-support',
+  },
+  {
+    title: 'Trauma & PTSD',
+    description: 'Compassionate, trauma-informed care using somatic therapy and CBT to help you heal from past experiences.',
+    icon: 'trauma',
+    href: '/services/trauma',
+  },
+  {
+    title: 'Nutrition Counseling',
+    description: 'Weight-inclusive, holistic nutrition therapy addressing eating disorders, GI issues, and the food-mood connection.',
+    icon: 'nutrition',
+    href: '/services/nutrition',
+  },
+];
+
+const team = [
+  {
+    name: 'Kristen Ross',
+    credentials: 'LPC',
+    title: 'Owner & Lead Counselor',
+    image: '/images/kristen-ross.png',
+    bio: 'Over 14 years of experience in holistic health counseling, specializing in bariatric surgery support and lifestyle transformation.',
+    specializations: ['Bariatric Support', 'Anxiety', 'Life Transitions'],
+    href: '/team#kristen-ross',
+  },
+  {
+    name: 'Michele Meyers',
+    credentials: 'PsyD',
+    title: 'Licensed Psychologist',
+    image: '/images/michele-meyers.png',
+    bio: '25 years specializing in weight loss, anxiety, depression, and emotional eating using CBT and solution-focused approaches.',
+    specializations: ['Weight Loss', 'Anxiety', 'Depression'],
+    href: '/team#michele-meyers',
+  },
+  {
+    name: 'Meghan Pendleton',
+    credentials: 'RD',
+    title: 'Registered Dietitian',
+    image: '/images/meghan-pendleton.png',
+    bio: 'Weight-inclusive, trauma-informed dietitian specializing in eating disorders, GI health, and the nutrition-mental health connection.',
+    specializations: ['Eating Disorders', 'GI Health', 'Maternal Health'],
+    href: '/team#meghan-pendleton',
+  },
+];
+
+const insurances = [
+  'Blue Cross Blue Shield',
+  'Blue Care Network',
+  'Aetna',
+  'United Healthcare',
+  'Cigna',
+  'Priority Health',
+];
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/hero.jpg"
+        alt=""
+        class="w-full h-full object-cover opacity-20"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary-dark/90"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container-custom relative z-10 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-primary-light font-medium mb-6 tracking-wide uppercase text-sm">
+          At the Root of Wellness
+        </p>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-8 tracking-tight">
+          Your Healing Journey Starts Here
+        </h1>
+
+        <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-10 max-w-3xl mx-auto">
+          Individual virtual counseling for adults across Michigan. We blend holistic and evidence-based approaches to support you through anxiety, depression, trauma, and life transitions.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="https://laureltreecounselingllc.clientsecure.me" variant="secondary" size="lg" external>
+            Book Free Consultation
+          </Button>
+          <a
+            href="/services"
+            class="btn px-8 py-4 text-lg min-h-[56px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
+          >
+            Explore Our Services
+          </a>
+        </div>
+
+        <p class="mt-6 text-white/60 text-sm">
+          No commitment required · Response within 24 hours
+        </p>
+
+        <div class="mt-16 flex flex-wrap items-center justify-center gap-8">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white/80 text-sm">Licensed Professionals</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white/80 text-sm">Telehealth Across Michigan</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white/80 text-sm">Most Insurance Accepted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Help Section - Asymmetric Layout -->
+  <Section background="surface" id="who-we-help">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <!-- Left column - Header (takes 2 cols) -->
+      <div class="lg:col-span-2 lg:sticky lg:top-24">
+        <div class="accent-line">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+            Who We Help
+          </h2>
+        </div>
+        <p class="subtitle max-w-md">
+          We believe healing is most effective when it addresses the whole person—not just symptoms. Our practice integrates emotional, physical, and spiritual well-being.
+        </p>
+      </div>
+
+      <!-- Right column - Features (takes 3 cols) -->
+      <div class="lg:col-span-3 space-y-8">
+        <div class="flex gap-4 fade-in fade-in-delay-1">
+          <div class="flex-shrink-0 w-14 h-14 rounded-full bg-primary-light flex items-center justify-center">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Adults Seeking Support</h3>
+            <p class="text-text-secondary">For anxiety, depression, relationship challenges, and personal growth.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-2">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Bariatric Surgery Patients</h3>
+            <p class="text-text-secondary">Pre and post-surgery support for the emotional journey of weight loss.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-3">
+          <div class="flex-shrink-0 w-14 h-14 rounded-full bg-primary-light flex items-center justify-center">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Trauma Survivors</h3>
+            <p class="text-text-secondary">Compassionate, trauma-informed care to help you heal and move forward.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-4">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Nutrition & Eating Concerns</h3>
+            <p class="text-text-secondary">Holistic nutrition counseling for eating disorders, GI issues, and wellness.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Services Section -->
+  <Section id="services">
+    <div class="text-center mb-12">
+      <div class="accent-line accent-line-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+          Our Services
+        </h2>
+      </div>
+      <p class="subtitle max-w-2xl mx-auto">
+        We offer a range of therapeutic services tailored to your unique needs, combining traditional and holistic approaches.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto stagger-children">
+      {services.map((service) => (
+        <ServiceCard {...service} class="fade-in" />
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <Button href="/services" variant="secondary">
+        View All Services
+      </Button>
+    </div>
+  </Section>
+
+  <!-- Team Section -->
+  <Section background="surface" id="team">
+    <div class="text-center mb-12">
+      <div class="accent-line accent-line-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+          Meet Our Team
+        </h2>
+      </div>
+      <p class="subtitle max-w-2xl mx-auto">
+        Our compassionate team brings decades of combined experience in mental health, nutrition, and holistic wellness.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 stagger-children">
+      {team.map((member) => (
+        <TeamCard {...member} class="fade-in" />
+      ))}
+    </div>
+  </Section>
+
+  <!-- Insurance Section -->
+  <Section id="insurance">
+    <div class="text-center mb-8">
+      <div class="accent-line accent-line-center">
+        <h2 class="text-2xl md:text-3xl font-heading font-bold text-text-primary mb-4">
+          Insurance We Accept
+        </h2>
+      </div>
+      <p class="text-text-secondary max-w-xl mx-auto">
+        We accept most major insurance plans. Don't see yours? <a href="/insurance" class="text-primary hover:underline">View our full list</a> or contact us.
+      </p>
+    </div>
+
+    <div class="scroll-container">
+      <div class="scroll-content">
+        {[...insurances, ...insurances].map((insurance) => (
+          <div class="flex-shrink-0 px-6 py-3 bg-background-surface border border-border rounded-lg">
+            <span class="text-text-primary font-semibold whitespace-nowrap">{insurance}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Michigan Coverage Section -->
+  <Section background="surface" id="locations">
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <div class="accent-line accent-line-center">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+            Serving All of Michigan
+          </h2>
+        </div>
+        <p class="subtitle max-w-2xl mx-auto">
+          From Metro Detroit to the Upper Peninsula, we provide telehealth therapy to adults in every corner of the state.
+        </p>
+      </div>
+
+      <!-- Regions Grid -->
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <a href="/michigan" class="group p-6 bg-background-surface rounded-xl border border-border hover:border-primary hover:shadow-md transition-all text-center">
+          <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-primary group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">Metro Detroit</h3>
+          <p class="text-sm text-text-secondary">Detroit, Warren, Sterling Heights, Troy, Ann Arbor & more</p>
+        </a>
+
+        <a href="/michigan" class="group p-6 bg-background-surface rounded-xl border border-border hover:border-primary hover:shadow-md transition-all text-center">
+          <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-primary group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">West & Central</h3>
+          <p class="text-sm text-text-secondary">Grand Rapids, Lansing, Kalamazoo, Battle Creek & more</p>
+        </a>
+
+        <a href="/michigan" class="group p-6 bg-background-surface rounded-xl border border-border hover:border-primary hover:shadow-md transition-all text-center">
+          <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-primary group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">Northern & UP</h3>
+          <p class="text-sm text-text-secondary">Traverse City, Marquette, Petoskey, Sault Ste. Marie & more</p>
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <p class="text-text-secondary mb-4">We serve 50+ cities across all regions of Michigan</p>
+        <Button href="/michigan" variant="primary">
+          Find Your City
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA Section -->
+  <CTA />
+</BaseLayout>

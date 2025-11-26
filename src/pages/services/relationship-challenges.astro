@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Relationship Therapy | Communication, Boundaries & Family"
+  description="Feeling stuck in unhealthy relationship patterns? Individual therapy for communication, boundaries, and family dynamics in Michigan. Virtual sessions available."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <p class="text-primary font-medium mb-2">Our Services</p>
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Relationship Challenges
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Individual therapy to help you improve communication, establish healthy boundaries, and build more fulfilling connections with the people in your life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Relationships Shape Our Lives
+          </h2>
+        </div>
+      </div>
+      <div class="lg:col-span-3 space-y-4 text-text-secondary text-lg stagger-children">
+        <p class="fade-in fade-in-delay-1">
+          Your relationships shape your mental health. Partners, family, friends, coworkers—they all affect how you feel day to day. When these bonds become strained, you may feel isolated, anxious, or stuck in painful cycles.
+        </p>
+        <p class="fade-in fade-in-delay-2">
+          Individual therapy helps you break those patterns. You'll learn healthier ways to connect and build skills for better relationships. You don't need anyone else in the room. The work starts with you.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Common Challenges -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Challenges We Address
+          </h2>
+        </div>
+        <p class="subtitle">
+          Whatever relationship struggles you're facing, we can help you find a path forward.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 grid md:grid-cols-2 gap-8 stagger-children">
+        <div class="fade-in fade-in-delay-1">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            Romantic Relationships
+          </h3>
+          <ul class="space-y-2">
+            {[
+              'Communication breakdowns',
+              'Trust issues or infidelity recovery',
+              'Intimacy and connection problems',
+              'Navigating conflict constructively',
+              'Deciding whether to stay or leave',
+              'Dating and attachment patterns',
+            ].map((item) => (
+              <li class="flex gap-2 text-text-secondary">
+                <span class="text-primary">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="fade-in fade-in-delay-2">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            Family Dynamics
+          </h3>
+          <ul class="space-y-2">
+            {[
+              'Setting boundaries with family',
+              'Healing from family dysfunction',
+              'Parent-child relationship issues',
+              'Sibling conflicts',
+              'In-law challenges',
+              'Intergenerational patterns',
+            ].map((item) => (
+              <li class="flex gap-2 text-text-secondary">
+                <span class="text-primary">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="fade-in fade-in-delay-3">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            Social & Professional
+          </h3>
+          <ul class="space-y-2">
+            {[
+              'Workplace relationship difficulties',
+              'Friendship challenges',
+              'Social anxiety in relationships',
+              'People-pleasing patterns',
+              'Difficulty making connections',
+              'Loneliness and isolation',
+            ].map((item) => (
+              <li class="flex gap-2 text-text-secondary">
+                <span class="text-primary">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="fade-in fade-in-delay-4">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Boundaries & Self-Worth
+          </h3>
+          <ul class="space-y-2">
+            {[
+              'Difficulty saying no',
+              'Codependency patterns',
+              'Feeling taken advantage of',
+              'Low self-esteem in relationships',
+              'Fear of abandonment',
+              'Attracting unhealthy partners',
+            ].map((item) => (
+              <li class="flex gap-2 text-text-secondary">
+                <span class="text-primary">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Approach -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="lg:sticky lg:top-24">
+          <div class="accent-line">
+            <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+              How We Can Help
+            </h2>
+          </div>
+          <p class="subtitle">
+            Individual therapy focused on transforming your relationships from the inside out.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 space-y-4 stagger-children">
+        <div class="card fade-in fade-in-delay-1">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Understanding Your Patterns</h3>
+          <p class="text-text-secondary">We explore how your attachment style, family history, and past experiences shape the way you relate to others today. Awareness is the first step toward change.</p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-2">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Building Communication Skills</h3>
+          <p class="text-text-secondary">Learn to express your needs clearly, listen with empathy, and navigate difficult conversations without escalating conflict or shutting down.</p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-3">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Establishing Healthy Boundaries</h3>
+          <p class="text-text-secondary">Discover how to set and maintain boundaries that protect your well-being while staying connected to the people you care about.</p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-4">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Developing Self-Compassion</h3>
+          <p class="text-text-secondary">The relationship you have with yourself influences all your other relationships. We help you build a foundation of self-worth and self-acceptance.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- What to Expect -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            What to Expect
+          </h2>
+        </div>
+      </div>
+      <div class="lg:col-span-3 space-y-4 stagger-children">
+        <p class="text-text-secondary text-lg fade-in fade-in-delay-1">
+          Our sessions provide a safe, confidential space to explore your relationship challenges. You'll gain insight into your patterns, practice new skills, and develop strategies for daily interactions.
+        </p>
+        <p class="text-text-secondary fade-in fade-in-delay-2">
+          We don't offer couples or family therapy. But individual work creates real relationship change. When you change how you show up, the dynamics shift. Many clients see major improvements through their own growth work.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Ready to Improve Your Relationships?"
+    description="Take the first step toward healthier connections. Schedule a free consultation to discuss how we can help you build the relationships you deserve."
+  />
+</BaseLayout>

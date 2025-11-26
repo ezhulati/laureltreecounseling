@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Trauma & PTSD Treatment"
+  description="Compassionate trauma therapy in Michigan. Trauma-informed care using somatic therapy and CBT to help you heal from past experiences and build a path forward."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <p class="text-primary font-medium mb-2">Our Services</p>
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Trauma & PTSD Treatment
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Compassionate, trauma-informed care to help you process past experiences, reduce symptoms, and build a path toward healing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Healing is Possible
+          </h2>
+        </div>
+      </div>
+      <div class="lg:col-span-3 space-y-4 text-text-secondary text-lg stagger-children">
+        <p class="fade-in fade-in-delay-1">
+          Trauma affects everyone differently. Whether you've experienced a single overwhelming event or ongoing difficult circumstances, the impact can show up in many ways—anxiety, depression, relationship difficulties, physical symptoms, or simply a feeling that something isn't right.
+        </p>
+        <p class="fade-in fade-in-delay-2">
+          Our trauma-informed approach recognizes that healing happens at your own pace, in a safe environment where you feel in control. We don't push you to relive painful experiences before you're ready. Instead, we focus first on building safety, stabilization, and coping skills—then gently work toward processing and integration.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Understanding Trauma -->
+  <Section background="surface">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
+        Understanding Trauma
+      </h2>
+
+      <p class="text-text-secondary text-lg text-center mb-8">
+        Trauma can result from many different experiences, including:
+      </p>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          'Childhood abuse or neglect',
+          'Domestic violence',
+          'Sexual assault',
+          'Accidents or injuries',
+          'Medical trauma',
+          'Loss of a loved one',
+          'Natural disasters',
+          'Combat or military service',
+          'Witnessing violence',
+          'Emotional abuse',
+          'Bullying',
+          'Chronic stress or instability',
+        ].map((item) => (
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-background-surface">
+            <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+            </svg>
+            <span class="text-text-secondary text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-text-secondary text-center mt-8">
+        If your experience isn't listed here, that doesn't mean it wasn't traumatic. Trauma is defined by your response to an event, not by the event itself.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Symptoms -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
+        Signs of Trauma or PTSD
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Re-experiencing</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• Intrusive memories or flashbacks</li>
+            <li>• Nightmares</li>
+            <li>• Emotional or physical reactions to reminders</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Avoidance</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• Avoiding thoughts or feelings about the trauma</li>
+            <li>• Avoiding places, people, or activities</li>
+            <li>• Emotional numbing or detachment</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Hyperarousal</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• Difficulty sleeping</li>
+            <li>• Being easily startled</li>
+            <li>• Irritability or anger outbursts</li>
+            <li>• Difficulty concentrating</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Negative Changes</h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li>• Negative beliefs about yourself or the world</li>
+            <li>• Distorted blame or guilt</li>
+            <li>• Loss of interest in activities</li>
+            <li>• Feeling detached from others</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Approach -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
+        Our Trauma-Informed Approach
+      </h2>
+
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="step-indicator-gold">1</div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Safety & Stabilization</h3>
+            <p class="text-text-secondary">First, we establish a sense of safety and build coping skills to manage distressing symptoms. This foundation is essential before processing trauma.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="step-indicator-gold">2</div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Processing & Integration</h3>
+            <p class="text-text-secondary">When you're ready, we gently work through traumatic memories using techniques that help your brain process and integrate these experiences.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="step-indicator-gold">3</div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Reconnection & Growth</h3>
+            <p class="text-text-secondary">The final phase focuses on reconnecting with yourself and others, finding meaning, and building a fulfilling life beyond trauma.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-background-surface rounded-xl">
+        <h3 class="text-lg font-bold text-text-primary mb-3">Techniques We Use</h3>
+        <div class="flex flex-wrap gap-2">
+          {[
+            'Somatic Therapy',
+            'Cognitive Behavioral Therapy',
+            'Mindfulness',
+            'Grounding Techniques',
+            'Parts Work',
+            'Nervous System Regulation',
+          ].map((tech) => (
+            <span class="badge">{tech}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="You Deserve to Heal"
+    description="Taking the first step can feel scary, but you don't have to do it alone. Schedule a free consultation to learn how we can support your healing journey."
+  />
+</BaseLayout>

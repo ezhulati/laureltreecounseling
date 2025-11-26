@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('living-with-anxiety-holistic-approach');
+const relatedPosts = getRelatedPosts('living-with-anxiety-holistic-approach', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+---
+
+<BaseLayout
+  title="Living with Anxiety: A Holistic Approach to Finding Calm"
+  description="Anxiety affects your whole being—mind, body, and spirit. Discover how a holistic approach to treatment can help you find lasting relief and build resilience."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge">Mental Health</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight">
+          Living with Anxiety: A Holistic Approach to Finding Calm
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-text-secondary">
+          <span>By Kristen Ross, LPC</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          Your heart races. Your thoughts spiral. Your chest feels tight, and no matter how many deep breaths you take, you can't seem to settle your nervous system. Maybe you've been here before—lying awake at 3 AM, replaying conversations, worrying about tomorrow, next week, next year. Anxiety has a way of making you feel trapped in your own mind and body.
+        </p>
+
+        <p>
+          If this resonates with you, please know that you're not alone. Anxiety is one of the most common mental health challenges, affecting millions of adults. And while it can feel overwhelming and isolating, it's also highly treatable—especially when we address it holistically, recognizing that anxiety affects your whole being, not just your thoughts.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Recognizing Anxiety Beyond "Feeling Worried"
+        </h2>
+
+        <p>
+          Many people think of anxiety as simply worrying too much. And while excessive worry is certainly one aspect of anxiety, it's far from the complete picture. Anxiety is a whole-body experience that shows up differently in different people.
+        </p>
+
+        <p>
+          You might experience anxiety primarily in your thoughts—racing mind, difficulty concentrating, catastrophizing, or getting stuck in "what if" thinking. Or you might feel it more in your body—tension headaches, digestive issues, muscle tightness, or that persistent knot in your stomach.
+        </p>
+
+        <p>
+          Some people experience anxiety as a constant background hum of unease, while others have intense episodes that feel like panic attacks. Some feel anxious about specific situations, while others experience a more generalized, free-floating anxiety that attaches to whatever seems available to worry about.
+        </p>
+
+        <p>
+          Understanding how anxiety uniquely manifests for you is the first step toward addressing it effectively.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Physical Symptoms People Often Overlook
+        </h2>
+
+        <p>
+          One of the most important things to understand about anxiety is that it's not "all in your head." Anxiety produces very real physical symptoms, and sometimes these physical symptoms are the most prominent part of someone's experience.
+        </p>
+
+        <p>
+          Common physical symptoms of anxiety include rapid heartbeat or heart palpitations, shortness of breath or feeling like you can't get a full breath, muscle tension (especially in the neck, shoulders, and jaw), digestive problems like nausea, stomach pain, or IBS symptoms, headaches, fatigue and exhaustion, sleep difficulties, sweating or hot flashes, and dizziness or lightheadedness.
+        </p>
+
+        <p>
+          Many people with anxiety visit doctor after doctor trying to find out what's wrong with them physically, not realizing that their symptoms are anxiety-related. This isn't because anxiety is imaginary—it's because anxiety triggers very real physiological responses. Your body doesn't know the difference between a real threat and a perceived one; it responds the same way.
+        </p>
+
+        <p>
+          Recognizing the physical dimension of anxiety is crucial because it opens up additional pathways for healing. If anxiety lives in your body as well as your mind, we can address it through the body as well as through thoughts.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Mind-Body Connection in Anxiety
+        </h2>
+
+        <p>
+          Your mind and body exist in constant communication. When you perceive a threat—whether it's a car swerving toward you or an email from your boss—your brain sends signals that activate your body's stress response. Heart rate increases, breathing becomes shallow, muscles tense, and stress hormones flood your system.
+        </p>
+
+        <p>
+          This is your fight-or-flight response, and it's designed to help you survive genuine danger. The problem is that in modern life, our brains often perceive threats where there are none, triggering this response when we're stuck in traffic, anticipating a difficult conversation, or scrolling through the news.
+        </p>
+
+        <p>
+          When the stress response is activated frequently or continuously, it takes a toll on our physical and mental health. Chronic anxiety keeps the body in a state of high alert, which is exhausting and can contribute to a range of health issues over time.
+        </p>
+
+        <p>
+          But here's the good news: the communication between mind and body goes both ways. Just as anxious thoughts can trigger physical symptoms, calming the body can quiet anxious thoughts. This is why practices like deep breathing, progressive muscle relaxation, and other body-based interventions can be so effective for anxiety.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Evidence-Based Approaches That Work
+        </h2>
+
+        <p>
+          When it comes to treating anxiety, several approaches have strong research support. In my practice, I often integrate multiple methods based on each person's unique needs and preferences.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Cognitive Behavioral Therapy (CBT)</strong> is one of the most well-researched treatments for anxiety. It helps you identify and challenge the thought patterns that fuel anxiety, developing more balanced, realistic ways of thinking. CBT also involves behavioral strategies like gradually facing feared situations.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Mindfulness-based approaches</strong> teach you to observe your thoughts and feelings without getting caught up in them. Rather than trying to stop anxious thoughts (which often backfires), mindfulness helps you change your relationship to them. You learn to notice "I'm having an anxious thought" without believing you must act on it.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Somatic (body-based) therapies</strong> work directly with the physical experience of anxiety. These might include breath work, body awareness exercises, movement, or techniques that help discharge stored tension from the nervous system. For people who carry anxiety primarily in their bodies, somatic approaches can be especially powerful.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Acceptance and Commitment Therapy (ACT)</strong> helps you accept uncomfortable feelings while committing to actions aligned with your values. Rather than fighting anxiety, you learn to make room for it while still living a full, meaningful life.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Lifestyle Factors: Sleep, Nutrition, and Movement
+        </h2>
+
+        <p>
+          While therapy is often essential for addressing anxiety, lifestyle factors play a significant supporting role. In a holistic approach, we look at the whole picture of your life and health.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Sleep</strong> and anxiety have a bidirectional relationship—anxiety disrupts sleep, and poor sleep increases anxiety. Prioritizing sleep hygiene can be a powerful intervention. This includes keeping a consistent sleep schedule, creating a calm sleep environment, limiting screens before bed, and developing a relaxing bedtime routine.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Nutrition</strong> affects brain chemistry and energy levels, both of which influence anxiety. Blood sugar fluctuations can trigger or worsen anxiety symptoms, so stable, balanced eating matters. Some people are sensitive to caffeine, which can increase anxiety symptoms. And there's growing research on the gut-brain connection and how gut health affects mental health.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Movement</strong> is one of the most effective natural anxiety reducers available. Exercise burns off stress hormones, releases endorphins, and helps reset the nervous system. You don't need intense workouts—even walking, gentle yoga, or stretching can help. The key is regular movement that you actually enjoy.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Connection</strong> is often overlooked but crucial. Humans are wired for connection, and isolation tends to amplify anxiety. Nurturing supportive relationships and community can provide a buffer against stress.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          When to Seek Professional Support
+        </h2>
+
+        <p>
+          You don't have to wait until anxiety is unbearable to seek help. In fact, earlier intervention often leads to better outcomes. Consider reaching out if anxiety is interfering with your daily life, relationships, or work, if you're avoiding situations because of anxiety, if physical symptoms are concerning you, if you're using alcohol, substances, or other behaviors to cope with anxiety, or if you're just tired of feeling this way and ready for something different.
+        </p>
+
+        <p>
+          A good therapist will help you understand your anxiety, develop personalized strategies for managing it, and support you in building a life that feels calmer and more fulfilling. You don't have to figure this out alone.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Building Your Personal Anxiety Toolkit
+        </h2>
+
+        <p>
+          Managing anxiety is an ongoing practice, not a one-time fix. Over time, you can build a personalized toolkit of strategies that work for you—a collection of resources to draw on when anxiety shows up.
+        </p>
+
+        <p>
+          Your toolkit might include calming techniques for acute anxiety, like specific breathing exercises or grounding practices. It might include daily habits that build resilience, like morning meditation, regular exercise, or journaling. It might include strategies for specific situations that trigger your anxiety, like speaking up in meetings or navigating social events.
+        </p>
+
+        <p>
+          Building an effective toolkit takes experimentation. Not every strategy works for every person, and what works in one situation might not work in another. A therapist can help you identify and refine the tools that are most effective for you.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Finding Hope: Anxiety Is Treatable
+        </h2>
+
+        <p>
+          If you're reading this through a lens of anxiety, wondering if things can really get better, I want to offer you hope: anxiety is one of the most treatable mental health conditions. With the right support and strategies, people consistently experience significant improvement.
+        </p>
+
+        <p>
+          This doesn't mean anxiety disappears entirely—some degree of anxiety is a normal part of being human. But you can learn to manage anxiety so it doesn't manage you. You can build a life where anxiety is a visitor that passes through rather than a constant resident controlling your decisions.
+        </p>
+
+        <p>
+          Recovery isn't linear. There will be harder days and easier days, steps forward and steps back. But over time, with patience and practice, you can develop a new relationship with anxiety—one where you feel more in control, more resilient, and more at peace.
+        </p>
+
+        <p>
+          Your journey with anxiety is unique, and healing happens at your own pace. Be gentle with yourself as you learn and grow. Every small step toward understanding and managing your anxiety is meaningful.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Ready to find relief from anxiety?</p>
+          <p class="text-text-secondary text-sm">
+            At Laurel Tree Counseling, we take a holistic approach to anxiety treatment, addressing mind, body, and spirit. Our team will work with you to develop personalized strategies for lasting calm. <a href="/contact" class="text-primary hover:text-primary-hover">Schedule a consultation</a> to learn how we can support your journey.
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/kristen-ross.png"
+          alt="Kristen Ross, LPC"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Kristen Ross, LPC
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Kristen Ross is a Licensed Professional Counselor with over 14 years of experience in holistic health counseling. She integrates evidence-based approaches like CBT with mindfulness and somatic techniques to help clients find lasting relief from anxiety. Her whole-person approach addresses the mental, physical, and emotional dimensions of healing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Take the First Step Toward Calm"
+    description="Schedule a free consultation to explore how holistic therapy can help with your anxiety."
+  />
+</BaseLayout>

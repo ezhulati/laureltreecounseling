@@ -1,0 +1,73 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  variant?: 'primary' | 'surface';
+}
+
+const {
+  title = "Your Healing Starts with One Conversation",
+  description = "Book a free 15-minute consultation. No pressure, no commitment—just a chance to see if we're the right fit for you.",
+  buttonText = "Book Free Consultation",
+  buttonHref = "https://laureltreecounselingllc.clientsecure.me",
+  variant = 'primary',
+} = Astro.props;
+
+const isPrimary = variant === 'primary';
+---
+
+<section class:list={[
+  'section',
+  isPrimary ? 'bg-primary' : 'bg-background-elevated'
+]}>
+  <div class="container-custom text-center">
+    <h2 class:list={[
+      'text-3xl md:text-4xl font-heading font-bold mb-4 max-w-heading mx-auto',
+      isPrimary ? 'text-white' : 'text-text-primary'
+    ]}>
+      {title}
+    </h2>
+
+    <p class:list={[
+      'text-lg max-w-prose mx-auto mb-8',
+      isPrimary ? 'text-white/90' : 'text-text-secondary'
+    ]}>
+      {description}
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button
+        href={buttonHref}
+        variant={isPrimary ? 'secondary' : 'primary'}
+        size="lg"
+        external
+      >
+        {buttonText}
+      </Button>
+
+      {isPrimary ? (
+        <a
+          href="/contact"
+          class="btn px-8 py-4 text-lg min-h-[56px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+        >
+          Ask a Question
+        </a>
+      ) : (
+        <Button href="/contact" variant="outline" size="lg">
+          Ask a Question
+        </Button>
+      )}
+    </div>
+
+    <p class:list={[
+      'mt-6 text-sm',
+      isPrimary ? 'text-white/70' : 'text-text-tertiary'
+    ]}>
+      100% confidential · No commitment required · Response within 24 hours
+    </p>
+  </div>
+</section>

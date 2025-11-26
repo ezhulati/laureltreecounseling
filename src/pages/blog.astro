@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import BlogCard from '../components/BlogCard.astro';
+import CTA from '../components/CTA.astro';
+import { blogPosts, getFeaturedPosts, getRecentPosts } from '../data/blog-posts';
+
+const featuredPosts = getFeaturedPosts();
+const allPosts = getRecentPosts(10);
+---
+
+<BaseLayout
+  title="Blog"
+  description="Expert articles on mental health, wellness, bariatric support, and holistic approaches to therapy from Laurel Tree Counseling."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Blog
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Expert guidance on mental health, wellness, and holistic approaches to support your journey toward lasting well-being.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles -->
+  {featuredPosts.length > 0 && (
+    <Section>
+      <div class="mb-10">
+        <div class="accent-line">
+          <h2 class="text-2xl font-heading font-bold text-text-primary">
+            Featured Articles
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 stagger-children">
+        {featuredPosts.map((post, index) => (
+          <div class={`fade-in fade-in-delay-${index + 1}`}>
+            <BlogCard {...post} featured={true} />
+          </div>
+        ))}
+      </div>
+    </Section>
+  )}
+
+  <!-- All Articles -->
+  <Section background="surface">
+    <div class="mb-10">
+      <div class="accent-line">
+        <h2 class="text-2xl font-heading font-bold text-text-primary">
+          All Articles
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+      {allPosts.map((post, index) => (
+        <div class={`fade-in fade-in-delay-${(index % 6) + 1}`}>
+          <BlogCard {...post} />
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Topics We Cover -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Topics We Cover
+          </h2>
+        </div>
+        <p class="subtitle">
+          Our articles explore the many facets of mental health and wellness, always with a holistic, compassionate perspective.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6 stagger-children">
+        <div class="flex gap-4 fade-in fade-in-delay-1">
+          <div class="icon-container-sm flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Mental Health</h3>
+            <p class="text-text-secondary">Anxiety, depression, trauma, and emotional well-being</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-2">
+          <div class="icon-container-sm flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Bariatric Support</h3>
+            <p class="text-text-secondary">Pre and post-surgery emotional wellness</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-3">
+          <div class="icon-container-sm flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Wellness</h3>
+            <p class="text-text-secondary">Holistic health, self-care, and lifestyle balance</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-4">
+          <div class="icon-container-sm flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-1">Nutrition & Eating</h3>
+            <p class="text-text-secondary">Emotional eating, food relationships, and nourishment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Still Deciding? We're Here to Help"
+    description="Book a free 15-minute call to discuss your needs. No pressure—just a conversation."
+  />
+</BaseLayout>

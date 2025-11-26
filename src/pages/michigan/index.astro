@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import CTA from '../../components/CTA.astro';
+import { cities } from '../../content/cities';
+
+// Group cities by region
+const regions = cities.reduce((acc, city) => {
+  if (!acc[city.region]) {
+    acc[city.region] = [];
+  }
+  acc[city.region].push(city);
+  return acc;
+}, {} as Record<string, typeof cities>);
+
+// Define region order
+const regionOrder = [
+  'Metro Detroit',
+  'West Michigan',
+  'Central Michigan',
+  'Southwest Michigan',
+  'Northern Michigan',
+  'Upper Peninsula',
+  'East Michigan',
+];
+---
+
+<BaseLayout
+  title="Telehealth Therapy Across Michigan"
+  description="Laurel Tree Counseling provides professional telehealth therapy services to adults across all of Michigan. Find mental health support in your city."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Telehealth Therapy Across Michigan
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          No matter where you are in Michigan, quality mental health care is just a video call away. We serve adults statewide through secure, HIPAA-compliant telehealth sessions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Telehealth -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Why Telehealth Works
+          </h2>
+        </div>
+        <p class="subtitle">
+          Telehealth removes barriers to mental health care, making therapy accessible from the comfort and privacy of your own home.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 space-y-6 stagger-children">
+        <div class="flex gap-4 fade-in fade-in-delay-1">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Convenient</h3>
+            <p class="text-text-secondary">No commute, no waiting rooms. Connect from home, work, or anywhere private.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-2">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Secure</h3>
+            <p class="text-text-secondary">HIPAA-compliant video sessions ensure your privacy and confidentiality.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-3">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Same Quality Care</h3>
+            <p class="text-text-secondary">Research shows telehealth therapy is just as effective as in-person sessions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Cities by Region -->
+  <Section background="surface">
+    <div class="mb-12">
+      <div class="accent-line">
+        <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+          Find Your City
+        </h2>
+      </div>
+      <p class="subtitle max-w-2xl">
+        We proudly serve residents in communities across Michigan. Select your city to learn more about our services in your area.
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      {regionOrder.map((regionName) => {
+        const regionCities = regions[regionName];
+        if (!regionCities) return null;
+
+        return (
+          <div>
+            <h3 class="text-xl font-heading font-bold text-text-primary mb-6 pb-2 border-b border-border">
+              {regionName}
+            </h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {regionCities.map((city) => (
+                <a
+                  href={`/michigan/${city.slug}`}
+                  class="px-4 py-3 bg-background-surface rounded-lg text-center text-text-secondary hover:text-primary hover:bg-primary-light transition-colors text-sm font-medium"
+                >
+                  {city.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </Section>
+
+  <!-- Services Available -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Services Available Statewide
+          </h2>
+        </div>
+        <p class="subtitle">
+          All of our therapy services are available via telehealth to Michigan residents.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-4 stagger-children">
+        <a href="/services/anxiety-depression" class="card group fade-in fade-in-delay-1">
+          <h3 class="text-lg font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
+            Anxiety & Depression
+          </h3>
+          <p class="text-sm text-text-secondary">
+            Evidence-based therapy for managing anxiety and depression symptoms.
+          </p>
+        </a>
+
+        <a href="/services/bariatric-support" class="card group fade-in fade-in-delay-2">
+          <h3 class="text-lg font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
+            Bariatric Surgery Support
+          </h3>
+          <p class="text-sm text-text-secondary">
+            Pre and post-surgery counseling from specialists with 14+ years experience.
+          </p>
+        </a>
+
+        <a href="/services/trauma" class="card group fade-in fade-in-delay-3">
+          <h3 class="text-lg font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
+            Trauma & PTSD
+          </h3>
+          <p class="text-sm text-text-secondary">
+            Trauma-informed care using somatic and evidence-based approaches.
+          </p>
+        </a>
+
+        <a href="/services/nutrition" class="card group fade-in fade-in-delay-4">
+          <h3 class="text-lg font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
+            Nutrition Counseling
+          </h3>
+          <p class="text-sm text-text-secondary">
+            Weight-inclusive nutrition support from our registered dietitian.
+          </p>
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Virtual Therapy, Wherever You Are in Michigan"
+    description="Book a free consultation to see how we can support you—no matter where you live."
+  />
+</BaseLayout>

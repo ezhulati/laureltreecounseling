@@ -1,0 +1,302 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+import { cities, getCityBySlug, type City } from '../../content/cities';
+
+export function getStaticPaths() {
+  return cities.map(city => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+interface Props {
+  city: City;
+}
+
+const { city } = Astro.props;
+
+const services = [
+  {
+    title: 'Anxiety & Depression',
+    description: 'Evidence-based treatment combining CBT, mindfulness, and holistic approaches.',
+    icon: 'anxiety',
+    href: '/services/anxiety-depression',
+  },
+  {
+    title: 'Bariatric Surgery Support',
+    description: 'Specialized counseling for before and after weight loss surgery.',
+    icon: 'bariatric',
+    href: '/services/bariatric-support',
+  },
+  {
+    title: 'Trauma & PTSD',
+    description: 'Compassionate, trauma-informed care to help you heal.',
+    icon: 'trauma',
+    href: '/services/trauma',
+  },
+  {
+    title: 'Nutrition Counseling',
+    description: 'Weight-inclusive nutrition therapy with our registered dietitian.',
+    icon: 'nutrition',
+    href: '/services/nutrition',
+  },
+];
+
+const insurances = [
+  'Blue Cross Blue Shield',
+  'Blue Care Network',
+  'Aetna',
+  'United Healthcare',
+  'Cigna / Priority Health',
+];
+
+const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed counselors and psychologists offering anxiety, depression, trauma, and bariatric support. ${city.description}`;
+---
+
+<BaseLayout
+  title={`Telehealth Therapy in ${city.name}, Michigan`}
+  description={metaDescription}
+>
+  <!-- Schema.org LocalBusiness Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": `Laurel Tree Counseling - ${city.name}`,
+    "description": metaDescription,
+    "url": `https://laureltreecounseling.com/michigan/${city.slug}`,
+    "telephone": "586-244-8087",
+    "email": "info@laureltreecounseling.com",
+    "areaServed": {
+      "@type": "City",
+      "name": city.name,
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Michigan"
+      }
+    },
+    "medicalSpecialty": [
+      "Mental Health",
+      "Psychology",
+      "Nutrition"
+    ],
+    "availableService": [
+      {
+        "@type": "MedicalTherapy",
+        "name": "Telehealth Counseling"
+      }
+    ]
+  })} slot="head" />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark py-16 md:py-24">
+    <div class="container-custom text-center">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-primary-light font-medium mb-2 tracking-wide uppercase text-sm">
+          {city.region}
+        </p>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+          Telehealth Therapy in {city.name}, Michigan
+        </h1>
+        <p class="text-xl text-white/90 leading-relaxed mb-8">
+          {city.description} Our licensed counselors, psychologists, and dietitians provide comprehensive virtual care for anxiety, depression, trauma, and more.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="https://laureltreecounselingllc.clientsecure.me" variant="secondary" size="lg" external>
+            Schedule a Session
+          </Button>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center font-body font-semibold rounded-md px-8 py-4 text-lg min-h-[56px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-fast ease-out-expo hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
+          >
+            Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Telehealth -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Quality Therapy from the Comfort of Home
+          </h2>
+        </div>
+        <p class="subtitle">
+          {city.name} residents can now access expert mental health care without leaving home. Our secure telehealth platform brings licensed professionals directly to you.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 space-y-6 stagger-children">
+        <div class="flex gap-4 fade-in fade-in-delay-1">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">No Commute</h3>
+            <p class="text-text-secondary">Save time and attend sessions from anywhere in {city.name}.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-2">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">HIPAA Secure</h3>
+            <p class="text-text-secondary">Your sessions are private and protected.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 fade-in fade-in-delay-3">
+          <div class="icon-container-gold">
+            <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Flexible Scheduling</h3>
+            <p class="text-text-secondary">Evening and weekend appointments available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Services -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Services Available in {city.name}
+          </h2>
+        </div>
+        <p class="subtitle mb-6">
+          Our team offers comprehensive mental health and nutrition services to {city.name} residents.
+        </p>
+        <Button href="/services" variant="secondary">
+          View All Services
+        </Button>
+      </div>
+
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-4 stagger-children">
+        {services.map((service, index) => (
+          <div class={`fade-in fade-in-delay-${index + 1}`}>
+            <ServiceCard {...service} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Insurance -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-center">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+            Insurance Accepted for {city.name} Residents
+          </h2>
+        </div>
+        <p class="subtitle mb-6 lg:mb-0">
+          We also offer out-of-network and private pay options.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div class="scroll-container mb-6">
+          <div class="scroll-content">
+            {[...insurances, ...insurances].map((insurance) => (
+              <div class="flex-shrink-0 px-6 py-3 bg-background-surface border border-border rounded-lg">
+                <span class="text-text-primary font-semibold whitespace-nowrap">{insurance}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="text-right">
+          <Button href="/insurance" variant="secondary">
+            View Insurance Details
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <style>
+    .insurance-scroll-container {
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll {
+      animation: scroll 20s linear infinite;
+    }
+
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+  </style>
+
+  <!-- Team Preview -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+            Meet Your {city.name} Care Team
+          </h2>
+        </div>
+        <p class="subtitle mb-6">
+          Our licensed professionals are ready to support your wellness journey.
+        </p>
+        <Button href="/team" variant="secondary">
+          Read Full Bios
+        </Button>
+      </div>
+
+      <div class="lg:col-span-3 grid grid-cols-3 gap-6 stagger-children">
+        <div class="text-center fade-in fade-in-delay-1">
+          <img src="/images/kristen-ross.png" alt="Kristen Ross, LPC" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md" loading="lazy" />
+          <h3 class="text-sm font-semibold text-text-primary">Kristen Ross, LPC</h3>
+          <p class="text-primary text-xs">Lead Counselor</p>
+        </div>
+        <div class="text-center fade-in fade-in-delay-2">
+          <img src="/images/michele-meyers.png" alt="Michele Meyers, PsyD" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md" loading="lazy" />
+          <h3 class="text-sm font-semibold text-text-primary">Michele Meyers, PsyD</h3>
+          <p class="text-primary text-xs">Psychologist</p>
+        </div>
+        <div class="text-center fade-in fade-in-delay-3">
+          <img src="/images/meghan-pendleton.png" alt="Meghan Pendleton, RD" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md" loading="lazy" />
+          <h3 class="text-sm font-semibold text-text-primary">Meghan Pendleton, RD</h3>
+          <p class="text-primary text-xs">Dietitian</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title={`Ready to Start Therapy in ${city.name}?`}
+    description="Schedule a free 15-minute consultation to discuss your needs and learn how we can support your wellness journey."
+  />
+</BaseLayout>

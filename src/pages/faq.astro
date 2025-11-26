@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import CTA from '../components/CTA.astro';
+
+const faqs = [
+  {
+    category: 'Getting Started',
+    questions: [
+      {
+        q: 'How do I get started?',
+        a: 'Getting started is easy! Simply reach out via our contact page, email, or phone to schedule a free 15-minute consultation. During this brief call, we\'ll discuss your needs and explain how our holistic approach can support you. If we\'re a good fit, we\'ll schedule your first session.',
+      },
+      {
+        q: 'What can I expect in a typical session?',
+        a: 'Sessions are client-focused and collaborative. You\'ll have a safe, confidential space to share your thoughts and feelings. Together, we\'ll work using tools and techniques tailored to your concerns—whether that\'s managing anxiety, navigating life changes, processing trauma, or adapting to bariatric surgery. Sessions are typically 50-60 minutes.',
+      },
+      {
+        q: 'How long does therapy take?',
+        a: 'The length of therapy varies based on your unique needs and goals. Some clients find relief after a few months of weekly sessions, while others benefit from longer-term support. We\'ll regularly check in on your progress and adjust our approach as needed.',
+      },
+    ],
+  },
+  {
+    category: 'Services & Specializations',
+    questions: [
+      {
+        q: 'What issues do you specialize in treating?',
+        a: 'We provide support for anxiety, depression, trauma, relationship challenges, chronic health issues, eating disorders, and life transitions. We also have specialized expertise in helping clients before and after bariatric surgery, as well as nutrition counseling for various conditions.',
+      },
+      {
+        q: 'How do you tailor therapy to each individual?',
+        a: 'Every client is unique. We use an eclectic blend of evidence-based approaches like CBT and motivational interviewing combined with mindfulness and somatic therapies. Together, we create a personalized plan that fits your goals, values, and preferences.',
+      },
+      {
+        q: 'Do you offer nutrition counseling?',
+        a: 'Yes! Our Registered Dietitian, Meghan Pendleton, offers weight-inclusive, trauma-informed nutrition counseling. She specializes in eating disorders, GI issues, maternal health, and the food-mood connection. Nutrition clients don\'t need to also be in therapy—you can work with Meghan independently.',
+      },
+    ],
+  },
+  {
+    category: 'Insurance & Payment',
+    questions: [
+      {
+        q: 'What insurance do you accept?',
+        a: 'We accept Blue Cross Blue Shield, Blue Care Network, Aetna, United Healthcare, and Cigna (including Priority Health, which is connected to the Cigna network). We also offer out-of-network options and private pay. Visit our Insurance page for details.',
+      },
+      {
+        q: 'What if my insurance isn\'t listed?',
+        a: 'You may still have out-of-network benefits! We can provide a superbill (detailed receipt) for you to submit to your insurance for potential reimbursement. Many clients receive 50-80% back for out-of-network mental health services. We also offer competitive private pay rates.',
+      },
+    ],
+  },
+  {
+    category: 'About Our Team',
+    questions: [
+      {
+        q: 'What qualifications do your clinicians have?',
+        a: 'Our team includes a Licensed Professional Counselor (LPC) with over 14 years of experience, a Licensed Psychologist (PsyD) with 25 years of experience, and a Registered Dietitian (RD). We hold advanced degrees and certifications in our specialties, including complementary medicine and wellness.',
+      },
+      {
+        q: 'Can I choose which clinician to work with?',
+        a: 'Absolutely! During your consultation, we\'ll discuss which clinician might be the best fit based on your needs and preferences. You can also view our team page to learn more about each provider\'s background and specializations.',
+      },
+    ],
+  },
+  {
+    category: 'Telehealth & Logistics',
+    questions: [
+      {
+        q: 'How do telehealth sessions work?',
+        a: 'All sessions are conducted via secure, HIPAA-compliant video. You\'ll receive a link before your appointment—just click to join from any device with a camera and internet connection. We recommend finding a quiet, private space where you feel comfortable.',
+      },
+      {
+        q: 'Do you see clients in person?',
+        a: 'Currently, all of our services are provided via telehealth, allowing us to serve clients across all of Michigan. This format offers flexibility, convenience, and the same quality of care as in-person sessions.',
+      },
+      {
+        q: 'What areas do you serve?',
+        a: 'We serve adults throughout the entire state of Michigan via telehealth. Whether you\'re in Metro Detroit, Grand Rapids, Traverse City, the Upper Peninsula, or anywhere in between—we\'re here for you.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ"
+  description="Frequently asked questions about Laurel Tree Counseling services, insurance, telehealth sessions, and getting started with therapy."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Frequently Asked Questions
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Find answers to common questions about our services, insurance, and what to expect from therapy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Sections -->
+  {faqs.map((section, sectionIndex) => (
+    <Section background={sectionIndex % 2 === 0 ? 'default' : 'surface'}>
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-start">
+        <!-- Category Header -->
+        <div class="lg:col-span-2">
+          <div class="lg:sticky lg:top-24">
+            <div class="accent-line">
+              <h2 class="text-2xl font-heading font-bold text-text-primary">
+                {section.category}
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Questions -->
+        <div class="lg:col-span-3 space-y-4 stagger-children">
+          {section.questions.map((faq, qIndex) => (
+            <details class={`group card cursor-pointer fade-in fade-in-delay-${qIndex + 1}`}>
+              <summary class="flex items-center justify-between list-none font-bold text-text-primary pr-2">
+                <span>{faq.q}</span>
+                <svg
+                  class="w-5 h-5 text-primary transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-text-secondary leading-relaxed">
+                {faq.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </Section>
+  ))}
+
+  <!-- Still Have Questions -->
+  <Section background="elevated">
+    <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-center">
+      <div class="lg:col-span-3">
+        <div class="accent-line">
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+            Still Have Questions?
+          </h2>
+        </div>
+        <p class="subtitle mb-6 lg:mb-0">
+          We're here to help. Reach out and we'll be happy to answer any questions you have about our services.
+        </p>
+      </div>
+      <div class="lg:col-span-2 flex flex-col sm:flex-row lg:flex-col gap-4 lg:items-end">
+        <Button href="/contact" variant="primary">
+          Contact Us
+        </Button>
+        <Button href="tel:586-244-8087" variant="secondary">
+          Call 586-244-8087
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA variant="surface" />
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Focus styles for FAQ accordion */
+  details summary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(158, 100%, 26%);
+    border-radius: 0.5rem;
+  }
+
+  /* Hover state for better interactivity feedback */
+  details:not([open]) summary:hover {
+    color: hsl(158, 100%, 26%);
+  }
+</style>

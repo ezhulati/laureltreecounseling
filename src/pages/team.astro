@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import CTA from '../components/CTA.astro';
+
+const team = [
+  {
+    id: 'kristen-ross',
+    name: 'Kristen Ross',
+    credentials: 'LPC',
+    title: 'Owner & Lead Counselor',
+    image: '/images/kristen-ross.png',
+    bio: [
+      "Kristen Ross is a Licensed Professional Counselor with over 14 years of experience in holistic health counseling. She spent more than a decade working at Corewell Health Hospital, where she helped thousands of clients navigate the complex journey of bariatric surgery, weight loss, and lifestyle transformation.",
+      "As the founder of Laurel Tree Counseling, Kristen brings her unique blend of evidence-based therapies and complementary medicine to support adults through anxiety, depression, trauma, life transitions, and eating disorders. Her approach integrates Cognitive Behavioral Therapy, mindfulness, somatic therapy, and motivational interviewing.",
+      "When she's not in session, Kristen enjoys cooking nutritious meals, growing her own food, maintaining an active lifestyle, and spending time with her family. She believes that wellness is a journey, not a destination, and is committed to walking alongside her clients every step of the way.",
+    ],
+    specializations: ['Bariatric Surgery Support', 'Anxiety & Depression', 'Trauma', 'Life Transitions', 'Eating Disorders'],
+    education: ['Master\'s in Counseling', 'Certification in Complementary Medicine & Wellness'],
+  },
+  {
+    id: 'michele-meyers',
+    name: 'Michele Meyers',
+    credentials: 'PsyD',
+    title: 'Licensed Psychologist',
+    image: '/images/michele-meyers.png',
+    bio: [
+      "Dr. Michele Meyers is a Licensed Psychologist with 25 years of specialized experience in weight loss support, anxiety, depression, and emotional eating. Her extensive background allows her to provide deeply informed, compassionate care to clients navigating complex challenges.",
+      "Michele's therapeutic approach combines Cognitive Behavioral Therapy (CBT), Solution-Focused therapy, and Person-Centered Therapy. She emphasizes a whole-person focus with realistic goal-setting, helping clients make sustainable changes that align with their values and lifestyle.",
+      "Outside of her practice, Michele enjoys gardening, spending time in nature, exercising, walking her dog, traveling, photography, and quality time with family. She brings this same sense of balance and appreciation for life's simple pleasures to her work with clients.",
+    ],
+    specializations: ['Weight Loss Support', 'Bariatric Surgery Transitions', 'Anxiety', 'Depression', 'Binge & Emotional Eating'],
+    education: ['Doctor of Psychology (PsyD)'],
+  },
+  {
+    id: 'meghan-pendleton',
+    name: 'Meghan Pendleton',
+    credentials: 'RD',
+    title: 'Registered Dietitian',
+    image: '/images/meghan-pendleton.png',
+    bio: [
+      "Meghan Pendleton is a Registered Dietitian specializing in medical nutrition therapy with a weight-inclusive, trauma-informed, and holistic approach. She understands the powerful connection between nutrition and mental well-being, and works collaboratively with clients to build a healthier relationship with food.",
+      "Meghan's areas of expertise include gastrointestinal issues, food allergies and intolerances, metabolic and cardiovascular health, hormonal and women's health, maternal health (fertility, pregnancy, postpartum), eating disorder recovery, bariatric surgery support, and chronic disease management.",
+      "Her approach honors each person's unique journey, recognizing that there is no one-size-fits-all solution to nutrition. Meghan works alongside our counseling team to provide comprehensive, integrated care that addresses both the nutritional and emotional aspects of wellness.",
+    ],
+    specializations: ['Eating Disorder Recovery', 'GI Health', 'Maternal Health', 'Bariatric Support', 'Metabolic Health'],
+    education: ['Registered Dietitian (RD)'],
+  },
+];
+---
+
+<BaseLayout
+  title="Our Team"
+  description="Meet the compassionate team at Laurel Tree Counseling: Licensed counselors, psychologists, and dietitians dedicated to your wellness journey."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Meet Our Team
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Our compassionate team brings decades of combined experience in mental health, nutrition, and holistic wellness to support your journey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members -->
+  {team.map((member, index) => (
+    <Section background={index % 2 === 0 ? 'default' : 'surface'} id={member.id}>
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+        <!-- Photo -->
+        <div class="lg:col-span-2">
+          <div class="sticky top-24 fade-in">
+            <img
+              src={member.image}
+              alt={`${member.name}, ${member.credentials}`}
+              width="300"
+              height="300"
+              class="w-64 h-64 md:w-80 md:h-80 rounded-full mx-auto lg:mx-0 object-cover shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="lg:col-span-3">
+          <header class="mb-6 fade-in fade-in-delay-1">
+            <div class="accent-line">
+              <h2 class="text-3xl font-heading font-bold text-text-primary">
+                {member.name}, {member.credentials}
+              </h2>
+            </div>
+            <p class="text-primary text-lg font-medium">{member.title}</p>
+          </header>
+
+          <!-- Bio -->
+          <div class="space-y-4 text-text-secondary mb-8 stagger-children">
+            {member.bio.map((paragraph, pIndex) => (
+              <p class={`fade-in fade-in-delay-${pIndex + 2}`}>{paragraph}</p>
+            ))}
+          </div>
+
+          <!-- Specializations & Education Grid -->
+          <div class="grid sm:grid-cols-2 gap-8 fade-in fade-in-delay-5">
+            <!-- Specializations -->
+            <div>
+              <h3 class="text-sm font-semibold text-text-primary uppercase tracking-wide mb-3">
+                Specializations
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {member.specializations.map((spec) => (
+                  <span class="badge">{spec}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div>
+              <h3 class="text-sm font-semibold text-text-primary uppercase tracking-wide mb-3">
+                Education & Credentials
+              </h3>
+              <ul class="space-y-1">
+                {member.education.map((edu) => (
+                  <li class="flex items-center gap-2 text-text-secondary">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {edu}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  ))}
+
+  <!-- CTA -->
+  <CTA
+    title="Find the Right Clinician for You"
+    description="Book a free consultation to meet with one of our team members and see if we're a good fit."
+  />
+</BaseLayout>

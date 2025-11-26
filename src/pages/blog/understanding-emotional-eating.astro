@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('understanding-emotional-eating');
+const relatedPosts = getRelatedPosts('understanding-emotional-eating', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+---
+
+<BaseLayout
+  title="Understanding Emotional Eating: Breaking the Cycle with Compassion"
+  description="Emotional eating is more than a lack of willpower. Learn what drives this behavior, why shame doesn't help, and how to build a healthier relationship with food."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge">Wellness</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight">
+          Understanding Emotional Eating: Breaking the Cycle with Compassion
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-text-secondary">
+          <span>By Kristen Ross, LPC</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          You've had a long, stressful day. You're exhausted, frustrated, maybe a little lonely. Before you even realize what's happening, you find yourself standing in front of the refrigerator, reaching for something—anything—to make the feelings go away. Later, you feel guilty, ashamed, wondering why you can't just "have more willpower."
+        </p>
+
+        <p>
+          If this sounds familiar, you're not alone. Emotional eating is incredibly common, and it's far more complex than simply lacking self-control. In fact, understanding why willpower isn't the answer is the first step toward building a healthier, more peaceful relationship with food.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Emotional Eating Actually Is (And Isn't)
+        </h2>
+
+        <p>
+          Emotional eating is the practice of using food to manage emotions rather than to satisfy physical hunger. It's turning to food for comfort, stress relief, reward, or distraction from uncomfortable feelings. And here's what's important to understand: it's a coping mechanism, not a character flaw.
+        </p>
+
+        <p>
+          Emotional eating isn't about being weak or undisciplined. It's about being human. Food has been intertwined with comfort and connection since infancy. We celebrate with food, we mourn with food, we show love with food. It makes perfect sense that we might turn to food when we're seeking comfort or struggling with difficult emotions.
+        </p>
+
+        <p>
+          The problem isn't that food sometimes serves emotional purposes—that's natural and even healthy in moderation. The challenge arises when food becomes our primary or only way of coping with emotions, leading to patterns that don't serve our physical or emotional well-being.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Common Triggers: Recognizing Your Patterns
+        </h2>
+
+        <p>
+          Understanding what triggers your emotional eating is essential for change. While everyone's patterns are unique, there are several common emotional triggers that lead people to turn to food.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Stress</strong> is perhaps the most common trigger. When we're stressed, our bodies produce cortisol, which can increase appetite, particularly for high-fat, high-sugar foods. Beyond biology, stress also depletes our mental energy, making it harder to make mindful choices.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Boredom</strong> drives many people to eat when they're not hungry. Food provides stimulation, something to do, a way to fill empty time. If you find yourself wandering to the kitchen when you're understimulated or restless, boredom may be a trigger for you.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Loneliness and disconnection</strong> often lead to emotional eating. Food can feel like a companion, a source of comfort when we're craving connection. For some, it might be the most reliable source of pleasure available.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Negative emotions</strong> like sadness, anxiety, anger, and shame commonly trigger eating. Food provides a temporary escape, a way to numb or distract from painful feelings. It works—in the moment. That's why the pattern persists.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Positive emotions</strong> can also trigger eating. Celebration, excitement, and happiness are often marked with special foods. While this is a normal part of life, some people find that any heightened emotion—positive or negative—triggers the urge to eat.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Brain Science Behind Food and Mood
+        </h2>
+
+        <p>
+          There's a biological reason why food—especially certain types of food—is so effective at changing how we feel. When we eat highly palatable foods (typically those high in sugar, fat, or salt), our brains release dopamine, the neurotransmitter associated with pleasure and reward.
+        </p>
+
+        <p>
+          This dopamine response creates a powerful association: feeling bad → eating → feeling better. Over time, this pathway becomes automatic, like a well-worn trail through the woods. The brain learns to suggest food whenever emotional discomfort arises.
+        </p>
+
+        <p>
+          Additionally, eating can activate the parasympathetic nervous system, the "rest and digest" mode that counters the stress response. This is why eating can feel genuinely calming when we're anxious or overwhelmed.
+        </p>
+
+        <p>
+          Understanding this biology isn't meant to make you feel hopeless—quite the opposite. Recognizing that there are real neurological processes at play helps explain why "just stop doing it" doesn't work. It also means that new pathways can be created, new associations can be formed, and lasting change is absolutely possible.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Why Willpower Alone Doesn't Work
+        </h2>
+
+        <p>
+          If you've tried to overcome emotional eating through sheer willpower, you've probably discovered that it doesn't hold up over time. There's a reason for this, and it's not that you're weak.
+        </p>
+
+        <p>
+          Willpower is a limited resource. Research shows that self-control depletes throughout the day, especially when we're stressed, tired, or making lots of decisions. By evening—often when emotional eating is strongest—our willpower reserves are at their lowest.
+        </p>
+
+        <p>
+          More importantly, willpower approaches the problem at the wrong level. They focus on behavior (stopping eating) without addressing the underlying cause (the emotional need driving the eating). It's like trying to stop a leak by mopping the floor instead of fixing the pipe.
+        </p>
+
+        <p>
+          Restriction and deprivation can also backfire, increasing preoccupation with food and setting up binge-restrict cycles. When we tell ourselves we "can't" have something, it often makes us want it more.
+        </p>
+
+        <p>
+          Lasting change requires addressing the root causes of emotional eating, not just trying harder to resist it.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Practical Strategies for Building Awareness
+        </h2>
+
+        <p>
+          The first step toward change is developing awareness of your patterns. Without judgment, start noticing when you eat emotionally and what's happening in those moments.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Pause before eating.</strong> Before you reach for food, take a moment to check in with yourself. Ask: Am I physically hungry? When did I last eat? What am I feeling right now? What do I really need? This pause creates space for choice.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Keep a food and mood journal.</strong> Write down not just what you eat, but what you were feeling before, during, and after. Over time, patterns will emerge that help you understand your triggers.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Practice distinguishing hunger types.</strong> Physical hunger builds gradually, can be satisfied by various foods, and stops when you're full. Emotional hunger often comes suddenly, craves specific comfort foods, and isn't satisfied by eating.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Identify your vulnerable times.</strong> Notice when emotional eating most often occurs. Is it late at night? After work? On weekends? When you're alone? Understanding your patterns helps you prepare.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          How Therapy Helps Uncover Root Causes
+        </h2>
+
+        <p>
+          While awareness and practical strategies are valuable, truly transforming your relationship with food often requires going deeper. Therapy provides a space to explore the root causes of emotional eating.
+        </p>
+
+        <p>
+          Sometimes emotional eating connects to past experiences—childhood patterns around food, early messages about your body, or traumatic events that food helped you cope with. Understanding these connections can be profoundly healing.
+        </p>
+
+        <p>
+          Therapy also helps identify and process the emotions you may be trying to avoid through eating. Many people who struggle with emotional eating have difficulty tolerating uncomfortable feelings or may not even be fully aware of what they're feeling. Learning to recognize, name, and sit with emotions is a skill that develops with practice and support.
+        </p>
+
+        <p>
+          A therapist can also help you develop a toolkit of alternative coping strategies—ways to address your emotional needs that don't involve food. Different strategies work for different people and different situations, and building a robust toolkit takes time and experimentation.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Self-Compassion: The Most Powerful Tool for Change
+        </h2>
+
+        <p>
+          If there's one thing I want you to take away from this article, it's this: shame and self-criticism don't lead to lasting change. They actually make emotional eating worse.
+        </p>
+
+        <p>
+          When we shame ourselves for eating emotionally, we add more painful emotions to the mix—emotions we then need to cope with, often by eating more. It becomes a vicious cycle.
+        </p>
+
+        <p>
+          Self-compassion, on the other hand, breaks the cycle. When you can acknowledge that you're struggling without judgment, when you can treat yourself with the same kindness you'd offer a friend, you create space for genuine change.
+        </p>
+
+        <p>
+          Self-compassion doesn't mean giving up or not caring about your health. It means approaching yourself with understanding rather than criticism. It means recognizing that emotional eating developed for a reason and served a purpose, even if it's no longer serving you well.
+        </p>
+
+        <p>
+          Research consistently shows that self-compassion is associated with better health behaviors, including healthier eating patterns. When we're kind to ourselves, we're more motivated to take care of ourselves.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Moving Forward: Building a Healthier Relationship with Food
+        </h2>
+
+        <p>
+          Changing your relationship with food is a journey, not a destination. There will be days when you eat emotionally, and that's okay. Progress isn't about perfection—it's about growing awareness, developing new skills, and gradually creating new patterns.
+        </p>
+
+        <p>
+          As you move forward, remember that you're working to add coping tools, not just remove one. You're learning to meet your emotional needs in a variety of ways. Over time, food will become just one option among many, rather than your default response.
+        </p>
+
+        <p>
+          Be patient with yourself. Be curious about your patterns rather than critical. And know that support is available whenever you need it. You don't have to figure this out alone.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Ready to explore your relationship with food?</p>
+          <p class="text-text-secondary text-sm">
+            At Laurel Tree Counseling, we take a compassionate, whole-person approach to emotional eating. Our team includes both counselors and a registered dietitian who work together to address the emotional and nutritional aspects of your relationship with food. <a href="/contact" class="text-primary hover:text-primary-hover">Reach out</a> to learn more about how we can support you.
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/kristen-ross.png"
+          alt="Kristen Ross, LPC"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Kristen Ross, LPC
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Kristen Ross is a Licensed Professional Counselor with over 14 years of experience in holistic health counseling. She specializes in helping clients develop healthier relationships with food, their bodies, and themselves. Her integrative approach addresses the emotional, physical, and spiritual aspects of wellness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Ready to Transform Your Relationship with Food?"
+    description="Schedule a consultation to explore how compassionate, holistic support can help."
+  />
+</BaseLayout>

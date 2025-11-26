@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Anxiety & Depression Treatment"
+  description="Evidence-based therapy for anxiety and depression in Michigan. CBT, mindfulness, and holistic approaches to help you find relief and build resilience."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <p class="text-primary font-medium mb-2">Our Services</p>
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Anxiety & Depression Treatment
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Evidence-based therapy combined with holistic approaches to help you find relief, build resilience, and rediscover joy in your daily life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            You Don't Have to Face This Alone
+          </h2>
+        </div>
+      </div>
+      <div class="lg:col-span-3 space-y-4 text-text-secondary text-lg stagger-children">
+        <p class="fade-in fade-in-delay-1">
+          Anxiety and depression can feel overwhelming, affecting every aspect of your life—your relationships, work, sleep, and overall sense of well-being. These conditions are among the most common mental health challenges, and they're also highly treatable with the right support.
+        </p>
+        <p class="fade-in fade-in-delay-2">
+          Our approach combines proven therapeutic techniques with a holistic understanding of how your mind, body, and life circumstances interact. We don't just treat symptoms—we help you understand the root causes and develop lasting skills for managing your mental health.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Symptoms -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Signs We Can Help With
+          </h2>
+        </div>
+        <p class="subtitle">
+          Recognizing the symptoms is the first step toward healing.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 grid md:grid-cols-2 gap-8 stagger-children">
+        <div class="fade-in fade-in-delay-1">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-2">
+            <!-- Lightning bolt for anxiety (represents nervous energy, agitation) -->
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Anxiety Symptoms
+          </h3>
+          <ul class="space-y-2">
+            {[
+              'Persistent worry or racing thoughts',
+              'Difficulty relaxing or feeling on edge',
+              'Physical tension, headaches, or stomach issues',
+              'Sleep problems or fatigue',
+              'Panic attacks or intense fear',
+              'Avoidance of situations or activities',
+              'Difficulty concentrating',
+              'Irritability or restlessness',
+            ].map((item) => (
+              <li class="flex gap-2 text-text-secondary">
+                <span class="text-primary">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="fade-in fade-in-delay-2">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-2">
+            <!-- Cloud icon for depression (represents gray, heavy feelings) -->
+            <svg class="w-6 h-6 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+            Depression Symptoms
+          </h3>
+          <ul class="space-y-2">
+            {[
+              'Persistent sadness or emptiness',
+              'Loss of interest in activities you once enjoyed',
+              'Changes in appetite or weight',
+              'Sleep disturbances (too much or too little)',
+              'Fatigue or low energy',
+              'Feelings of worthlessness or guilt',
+              'Difficulty making decisions',
+              'Thoughts of death or suicide',
+            ].map((item) => (
+              <li class="flex gap-2 text-text-secondary">
+                <span class="text-gold-dark">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Approach -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="lg:sticky lg:top-24">
+          <div class="accent-line">
+            <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+              Our Treatment Approach
+            </h2>
+          </div>
+          <p class="subtitle">
+            We use proven therapeutic techniques tailored to your unique needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 space-y-4 stagger-children">
+        <div class="card fade-in fade-in-delay-1">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Cognitive Behavioral Therapy (CBT)</h3>
+          <p class="text-text-secondary">The gold standard for treating anxiety and depression. CBT helps you identify negative thought patterns and develop healthier ways of thinking and responding to challenges.</p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-2">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Mindfulness-Based Techniques</h3>
+          <p class="text-text-secondary">Learn to stay present, reduce rumination, and develop a different relationship with difficult thoughts and emotions through mindfulness practices.</p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-3">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Somatic Awareness</h3>
+          <p class="text-text-secondary">Anxiety and depression live in the body as well as the mind. We help you tune into physical sensations and release stored tension.</p>
+        </div>
+
+        <div class="card fade-in fade-in-delay-4">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Holistic Integration</h3>
+          <p class="text-text-secondary">We consider all aspects of your well-being—sleep, nutrition, exercise, relationships, and life circumstances—to create a comprehensive treatment plan.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- What to Expect -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            What to Expect in Therapy
+          </h2>
+        </div>
+      </div>
+      <div class="lg:col-span-3 space-y-4 stagger-children">
+        <p class="text-text-secondary text-lg fade-in fade-in-delay-1">
+          In our sessions, you'll have a safe, non-judgmental space to explore your thoughts and feelings. Together, we'll work to understand your unique experience, identify patterns that keep you stuck, and develop practical skills you can use in your daily life. Many clients begin to notice improvements within the first few weeks of treatment.
+        </p>
+        <p class="text-text-secondary fade-in fade-in-delay-2">
+          Sessions are typically weekly to start, then may decrease in frequency as you build skills and confidence. Our goal is to help you develop the tools you need to manage your mental health independently.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Relief Is Possible"
+    description="You don't have to keep feeling this way. Book a free consultation to explore how we can help."
+  />
+</BaseLayout>

@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('emotional-side-bariatric-surgery');
+const relatedPosts = getRelatedPosts('emotional-side-bariatric-surgery', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+---
+
+<BaseLayout
+  title="The Emotional Side of Bariatric Surgery: What No One Tells You"
+  description="Bariatric surgery transforms your body, but the emotional journey is equally profound. Learn about the psychological aspects of weight loss surgery and how therapy can support lasting success."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge">Bariatric Support</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight">
+          The Emotional Side of Bariatric Surgery: What No One Tells You
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-text-secondary">
+          <span>By Kristen Ross, LPC</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>8 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          If you're considering bariatric surgery or have already scheduled your procedure, you've probably spent countless hours researching the physical aspects—the types of surgeries, recovery timelines, dietary requirements, and expected weight loss. But there's another side to this journey that often catches people off guard: the profound emotional transformation that accompanies the physical one.
+        </p>
+
+        <p>
+          After more than 14 years of working with bariatric patients, I've walked alongside hundreds of individuals through this life-changing experience. And if there's one thing I've learned, it's that the emotional journey is just as significant as the physical one—sometimes even more so. Understanding what to expect emotionally can help you prepare for lasting success and find the support you need along the way.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Emotional Rollercoaster Before Surgery
+        </h2>
+
+        <p>
+          The months leading up to bariatric surgery are filled with a complex mix of emotions that can feel overwhelming. You might experience excitement about the possibilities ahead, fear about the surgery itself, hope that this will finally be the solution, and doubt about whether you can really change. All of these feelings are completely normal.
+        </p>
+
+        <p>
+          Many of my clients describe feeling like they're standing at the edge of a cliff, about to jump into a completely new life. There's anticipation, but also grief for the familiar patterns you're leaving behind—even if those patterns haven't served you well. Food has likely been a comfort, a friend, a coping mechanism for years or even decades. Recognizing that your relationship with it is about to fundamentally change can bring up unexpected sadness.
+        </p>
+
+        <p>
+          You might also find yourself dealing with well-meaning but hurtful comments from friends and family. Some may question your decision, others may project their own fears onto you, and still others may offer unsolicited advice. This is a time when establishing boundaries and building a strong support system becomes essential.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Identity Shift Nobody Warns You About
+        </h2>
+
+        <p>
+          Here's something that surprises many people: significant weight loss doesn't just change your body—it changes how you see yourself and how others see you. This identity shift can be disorienting, even when the changes are positive.
+        </p>
+
+        <p>
+          After surgery, you may find yourself wondering who you are without the weight that has defined so much of your experience. For years, your weight may have influenced your career choices, your relationships, your social activities, even your personality. You may have developed coping mechanisms like self-deprecating humor, people-pleasing behaviors, or withdrawing from social situations. As the weight comes off, these familiar patterns may no longer fit—but new ones haven't fully formed yet.
+        </p>
+
+        <p>
+          Some clients describe feeling like a stranger in their own body. Others notice that people treat them differently—more kindly, more respectfully—and this brings up complicated feelings. There can be anger at how weight bias affected their past, confusion about new social dynamics, and sometimes even guilt about "taking up less space" or receiving privileges they didn't have before.
+        </p>
+
+        <p>
+          This identity reconstruction is a process, not an event. It takes time, patience, and often professional support to integrate your new physical self with your sense of who you are.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Grieving Food and Old Coping Mechanisms
+        </h2>
+
+        <p>
+          One of the most profound emotional experiences after bariatric surgery is grieving your old relationship with food. This might sound strange if you've spent years feeling tortured by food, but the truth is that food has served important purposes in your life beyond nutrition.
+        </p>
+
+        <p>
+          Food may have been your celebration partner, your comfort during hard times, your reward after a long day, your companion during lonely moments. After surgery, when you physically cannot turn to food in the same way, you may feel the loss of this familiar coping tool acutely.
+        </p>
+
+        <p>
+          This grief is real and valid. I encourage my clients to acknowledge it rather than push it away. You're not being dramatic or ungrateful for mourning something that brought you comfort, even if it also caused you pain. Honoring this loss while developing healthier coping strategies is part of the healing process.
+        </p>
+
+        <p>
+          The good news is that you can develop new ways to cope with stress, celebrate victories, and comfort yourself. It takes intentional work and practice, but many of my clients eventually find these new tools more satisfying and sustainable than food ever was.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Transfer Addictions and New Challenges
+        </h2>
+
+        <p>
+          Something that doesn't get discussed enough in pre-surgery consultations is the phenomenon of transfer addiction. When food is no longer available as your primary coping mechanism, the underlying need for comfort or numbing doesn't simply disappear. Sometimes it transfers to other behaviors.
+        </p>
+
+        <p>
+          Some bariatric patients develop problems with alcohol, shopping, gambling, or other compulsive behaviors after surgery. This isn't a character flaw—it's a sign that the emotional needs that were being met through food still need to be addressed.
+        </p>
+
+        <p>
+          Being aware of this possibility allows you to watch for warning signs and get help early if needed. It's one of the reasons I'm such a strong advocate for ongoing therapy as part of the bariatric journey, not just a pre-surgery requirement to check off a list.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Relationship Shifts
+        </h2>
+
+        <p>
+          Your relationships will likely change after bariatric surgery, sometimes in unexpected ways. Partners may struggle with the new dynamic as your confidence grows or your interests change. Friends who bonded with you over food may feel left out. Family members might express jealousy or concern.
+        </p>
+
+        <p>
+          Some relationships will grow stronger through this process. Others may need renegotiation. And some, unfortunately, may not survive the transformation. This can be one of the hardest aspects of the journey—realizing that not everyone in your life will support your growth.
+        </p>
+
+        <p>
+          Open communication, patience, and sometimes couples or family therapy can help navigate these shifts. Remember that your health and well-being deserve support, and surround yourself with people who celebrate your progress.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          How Therapy Supports the Full Journey
+        </h2>
+
+        <p>
+          Having a therapist who understands the unique challenges of bariatric surgery can make an enormous difference in your outcomes—both physical and emotional. Research consistently shows that patients who engage in ongoing psychological support have better long-term weight maintenance and improved mental health.
+        </p>
+
+        <p>
+          In therapy, you can process the complex emotions that arise, develop new coping strategies, work through identity changes, and address any underlying issues like trauma, depression, or anxiety that may have contributed to emotional eating. You have a safe space to explore the full range of your experience without judgment.
+        </p>
+
+        <p>
+          I believe in meeting clients where they are, recognizing that everyone's journey is unique. Some people need intensive support right after surgery, while others find they need more help a year or two down the road when the "honeymoon phase" ends. There's no wrong time to seek support.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Importance of Mental Health Alongside Physical Transformation
+        </h2>
+
+        <p>
+          Your mind and body are not separate systems—they're deeply interconnected. Sustainable success after bariatric surgery requires attending to both. The surgery changes your anatomy, but lasting change requires transforming your relationship with food, your body image, your coping strategies, and often your deepest beliefs about yourself.
+        </p>
+
+        <p>
+          This isn't about being "fixed" or reaching some perfect endpoint. It's about ongoing growth, learning to care for yourself in new ways, and building a life that supports your well-being in all its dimensions.
+        </p>
+
+        <p>
+          If you're considering bariatric surgery or are somewhere on the post-surgery journey, know that you don't have to navigate these emotional waters alone. Reaching out for support is a sign of strength, not weakness. Your emotional health matters just as much as the number on the scale.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Moving Forward with Compassion
+        </h2>
+
+        <p>
+          The bariatric journey is one of the most courageous things a person can undertake. You're choosing to dramatically change your life, face deep-seated patterns, and become a new version of yourself. That takes tremendous bravery.
+        </p>
+
+        <p>
+          As you move forward, practice compassion with yourself. There will be hard days. There will be setbacks. There will be moments when you feel lost or scared. These are not failures—they're part of the process. What matters is that you keep moving forward, keep reaching out for support, and keep believing in your ability to create the life you deserve.
+        </p>
+
+        <p>
+          You are more than your weight has ever defined you to be. And this journey, with all its challenges, is an opportunity to discover that for yourself.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Ready to explore support for your bariatric journey?</p>
+          <p class="text-text-secondary text-sm">
+            At Laurel Tree Counseling, we specialize in supporting individuals through all stages of bariatric surgery—from pre-surgery preparation to long-term success. <a href="/contact" class="text-primary hover:text-primary-hover">Reach out</a> to schedule a consultation and learn how we can walk alongside you on this transformative journey.
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/kristen-ross.png"
+          alt="Kristen Ross, LPC"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Kristen Ross, LPC
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Kristen Ross is a Licensed Professional Counselor with over 14 years of experience specializing in bariatric surgery support. She spent more than a decade at Corewell Health Hospital helping clients navigate the complex journey of weight loss surgery. As founder of Laurel Tree Counseling, she brings a holistic approach to mental health, addressing mind, body, and spirit together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Ready to Start Your Journey?"
+    description="Schedule a free consultation to discuss how we can support your bariatric journey."
+  />
+</BaseLayout>

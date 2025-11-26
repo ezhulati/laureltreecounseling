@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Bariatric Surgery Support"
+  description="Specialized counseling for before and after bariatric surgery in Michigan. Expert support for weight loss surgery patients from clinicians with 14+ years of experience."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <p class="text-primary font-medium mb-2">Our Services</p>
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Bariatric Surgery Support
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Compassionate, knowledgeable support for your entire weight loss surgery journey—from pre-operative preparation to long-term lifestyle transformation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Expert Support for Your Weight Loss Journey
+          </h2>
+        </div>
+        <div class="space-y-4 text-text-secondary stagger-children">
+          <p class="fade-in fade-in-delay-1">
+            Bariatric surgery is a life-changing decision that involves much more than the procedure itself. The emotional, psychological, and lifestyle adjustments can be just as significant as the physical changes. Our team brings over 14 years of specialized experience working with bariatric patients at Corewell Health Hospital.
+          </p>
+          <p class="fade-in fade-in-delay-2">
+            We understand the unique challenges you face—from navigating surgical protocols to managing emotional shifts, body image changes, relationship dynamics, and establishing new habits. Our holistic approach addresses all aspects of your transformation, not just the physical.
+          </p>
+        </div>
+      </div>
+      <div class="lg:col-span-3 bg-background-elevated rounded-xl p-8 fade-in fade-in-delay-3">
+        <h3 class="text-xl font-bold text-text-primary mb-4">What We Help With</h3>
+        <ul class="grid sm:grid-cols-2 gap-3">
+          {[
+            'Pre-surgery psychological preparation',
+            'Emotional eating and food relationships',
+            'Body image and identity shifts',
+            'Anxiety about surgery and outcomes',
+            'Post-surgery mood changes',
+            'Relationship dynamics after weight loss',
+            'Building sustainable new habits',
+            'Long-term emotional maintenance',
+          ].map((item, i) => (
+            <li class="flex gap-3">
+              <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${i % 2 === 0 ? 'text-primary' : 'text-gold-dark'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-secondary">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Pre-Surgery Support -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
+        Pre-Surgery Support
+      </h2>
+      <div class="space-y-6">
+        <p class="text-text-secondary text-lg text-center">
+          Preparing mentally and emotionally for bariatric surgery is just as important as the physical preparation. Our pre-surgery support helps you:
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="card">
+            <h3 class="text-xl font-bold text-text-primary mb-3">Understand Your Motivations</h3>
+            <p class="text-text-secondary">Clarify your goals and expectations to ensure you're making this decision for the right reasons.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-xl font-bold text-text-primary mb-3">Address Emotional Eating</h3>
+            <p class="text-text-secondary">Identify and work through patterns of emotional eating before surgery.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-xl font-bold text-text-primary mb-3">Develop Coping Skills</h3>
+            <p class="text-text-secondary">Build healthy coping mechanisms to replace food as an emotional comfort.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-xl font-bold text-text-primary mb-3">Prepare for Change</h3>
+            <p class="text-text-secondary">Set realistic expectations and prepare for the lifestyle changes ahead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Post-Surgery Support -->
+  <Section>
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
+        Post-Surgery Support
+      </h2>
+      <p class="text-text-secondary text-lg text-center mb-8">
+        The months and years after bariatric surgery bring their own unique challenges. Our ongoing support helps you navigate:
+      </p>
+      <div class="space-y-4">
+        {[
+          { title: 'Body Image Adjustment', desc: 'As your body changes rapidly, your self-image needs time to catch up. We help you develop a healthy relationship with your changing body.' },
+          { title: 'Relationship Changes', desc: 'Weight loss can shift dynamics with partners, family, and friends. We help you navigate these changes while maintaining healthy relationships.' },
+          { title: 'Emotional Processing', desc: 'Many patients experience unexpected emotions after surgery—grief, anxiety, or even depression. We provide a safe space to process these feelings.' },
+          { title: 'Long-term Success', desc: 'Building sustainable habits for lifelong success requires ongoing support. We\'re here for the long haul.' },
+        ].map((item, i) => (
+          <div class="flex gap-4 p-5 rounded-lg bg-background-elevated">
+            <svg class={`w-7 h-7 flex-shrink-0 mt-0.5 ${i % 2 === 0 ? 'text-primary' : 'text-gold-dark'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <h3 class="text-lg font-bold text-text-primary mb-1">{item.title}</h3>
+              <p class="text-text-secondary">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Meet Kristen -->
+  <Section background="surface">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-1">
+          <img
+            src="/images/kristen-ross.png"
+            alt="Kristen Ross, LPC"
+            width="192"
+            height="192"
+            loading="lazy"
+            class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg"
+          />
+        </div>
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+            Meet Your Bariatric Support Specialist
+          </h2>
+          <p class="text-text-secondary mb-4">
+            <strong>Kristen Ross, LPC</strong> brings over 14 years of experience working with bariatric surgery patients at Corewell Health Hospital. She has helped thousands of clients navigate the complex journey of weight loss surgery, combining evidence-based therapies with a deep understanding of the bariatric experience.
+          </p>
+          <Button href="/team#kristen-ross" variant="secondary">
+            Learn More About Kristen
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Ready to Start Your Journey?"
+    description="Whether you're considering bariatric surgery, preparing for your procedure, or navigating life after surgery—we're here to support you."
+  />
+</BaseLayout>

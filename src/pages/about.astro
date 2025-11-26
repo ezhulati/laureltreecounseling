@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about Laurel Tree Counseling's holistic approach to mental health, our mission, and our commitment to supporting adults across Michigan."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            At the Root of Wellness
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          We believe healing is most effective when it addresses the whole person—not just symptoms. Our practice integrates emotional, physical, and spiritual well-being.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach - Asymmetric -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-3">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
+            Our Holistic Approach
+          </h2>
+        </div>
+        <div class="space-y-6 text-text-secondary">
+          <p class="fade-in fade-in-delay-1">
+            At Laurel Tree Counseling, we understand that true wellness encompasses mind, body, and spirit. Our team brings together diverse expertise in counseling, psychology, and nutrition to provide comprehensive care that addresses your unique needs.
+          </p>
+          <p class="fade-in fade-in-delay-2">
+            We specialize in supporting adults through anxiety, depression, relationship issues, chronic health conditions, and life transitions. Whether you're preparing for bariatric surgery, recovering from trauma, or seeking support through a major life change, we're here to help.
+          </p>
+          <p class="fade-in fade-in-delay-3">
+            Our clinicians blend evidence-based therapies like Cognitive Behavioral Therapy (CBT) and Motivational Interviewing with mindfulness, somatic techniques, and complementary wellness principles. This integrative approach allows us to meet you where you are and support your journey toward lasting change.
+          </p>
+        </div>
+      </div>
+      <div class="lg:col-span-2 fade-in fade-in-delay-4">
+        <div class="bg-background-elevated rounded-xl p-8">
+          <h3 class="text-xl font-heading font-bold text-text-primary mb-6">
+            What Sets Us Apart
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-secondary"><strong class="text-text-primary">Holistic Integration:</strong> We address mind, body, and spirit together</span>
+            </li>
+            <li class="flex gap-3">
+              <svg class="w-6 h-6 text-gold-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-secondary"><strong class="text-text-primary">Specialized Expertise:</strong> Deep experience in bariatric support and nutrition</span>
+            </li>
+            <li class="flex gap-3">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-secondary"><strong class="text-text-primary">Statewide Access:</strong> Telehealth services across all of Michigan</span>
+            </li>
+            <li class="flex gap-3">
+              <svg class="w-6 h-6 text-gold-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-secondary"><strong class="text-text-primary">Collaborative Team:</strong> Counselors, psychologists, and dietitians working together</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Mission & Values -->
+  <Section background="surface">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="accent-line accent-line-center">
+        <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
+          Our Mission
+        </h2>
+      </div>
+      <p class="subtitle text-xl">
+        To provide compassionate, expert care that honors each person's unique path to wellness. We believe that healing is rooted in connection—and your growth is our priority.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 stagger-children">
+      <div class="text-center fade-in">
+        <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-2">Compassion</h3>
+        <p class="text-text-secondary">We meet you where you are with empathy and understanding, creating a safe space for healing.</p>
+      </div>
+
+      <div class="text-center fade-in">
+        <div class="icon-container-gold mx-auto mb-4">
+          <svg class="w-7 h-7 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-2">Expertise</h3>
+        <p class="text-text-secondary">Our team brings decades of specialized training and real-world experience to every session.</p>
+      </div>
+
+      <div class="text-center fade-in">
+        <div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-2">Connection</h3>
+        <p class="text-text-secondary">We believe the therapeutic relationship is the foundation of meaningful, lasting change.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Telehealth - Asymmetric -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-3">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
+            Telehealth Across Michigan
+          </h2>
+        </div>
+        <p class="subtitle mb-8">
+          Our virtual sessions bring quality mental health care directly to you, wherever you are in Michigan. From the Upper Peninsula to Metro Detroit, we're here to support your wellness journey from the comfort and privacy of your own space.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/contact" variant="primary">
+            Get Started Today
+          </Button>
+          <Button href="/team" variant="secondary">
+            Meet Our Team
+          </Button>
+        </div>
+      </div>
+      <div class="lg:col-span-2 flex justify-end">
+        <div class="bg-primary-light rounded-xl p-8 max-w-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-text-primary">HIPAA Compliant</p>
+              <p class="text-sm text-text-secondary">Secure video sessions</p>
+            </div>
+          </div>
+          <p class="text-text-secondary text-sm">All sessions conducted through our secure, HIPAA-compliant telehealth platform.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA />
+</BaseLayout>

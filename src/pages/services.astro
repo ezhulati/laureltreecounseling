@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTA from '../components/CTA.astro';
+
+const services = [
+  {
+    title: 'Anxiety & Depression',
+    description: 'Evidence-based treatment combining CBT, mindfulness, and holistic approaches to help you find relief, build resilience, and rediscover joy in daily life.',
+    icon: 'anxiety',
+    href: '/services/anxiety-depression',
+  },
+  {
+    title: 'Bariatric Surgery Support',
+    description: 'Specialized counseling for before and after bariatric surgery, helping you navigate the emotional and lifestyle changes that come with your weight loss journey.',
+    icon: 'bariatric',
+    href: '/services/bariatric-support',
+  },
+  {
+    title: 'Trauma & PTSD',
+    description: 'Compassionate, trauma-informed care using somatic therapy and CBT to help you process past experiences and build a path toward healing.',
+    icon: 'trauma',
+    href: '/services/trauma',
+  },
+  {
+    title: 'Nutrition Counseling',
+    description: 'Weight-inclusive, holistic nutrition therapy addressing eating disorders, GI issues, metabolic health, and the powerful connection between food and mood.',
+    icon: 'nutrition',
+    href: '/services/nutrition',
+  },
+  {
+    title: 'Life Transitions',
+    description: 'Support through major life changes including career shifts, relationship changes, grief, retirement, and other pivotal moments in your journey.',
+    icon: 'default',
+    href: '/services/life-transitions',
+  },
+  {
+    title: 'Relationship Challenges',
+    description: 'Individual therapy to improve communication, set healthy boundaries, and navigate the complexities of relationships and family dynamics.',
+    icon: 'relationships',
+    href: '/services/relationship-challenges',
+  },
+];
+
+const approaches = [
+  {
+    name: 'Cognitive Behavioral Therapy (CBT)',
+    description: 'Evidence-based therapy that helps identify and change negative thought patterns and behaviors.',
+  },
+  {
+    name: 'Motivational Interviewing',
+    description: 'A collaborative approach that strengthens your motivation for positive change.',
+  },
+  {
+    name: 'Mindfulness Techniques',
+    description: 'Practices that cultivate present-moment awareness and reduce stress and anxiety.',
+  },
+  {
+    name: 'Somatic Therapy',
+    description: 'Body-centered techniques that address trauma stored in the body.',
+  },
+  {
+    name: 'Solution-Focused Therapy',
+    description: 'Goal-oriented approach that focuses on solutions rather than problems.',
+  },
+  {
+    name: 'Person-Centered Therapy',
+    description: 'A non-directive approach that honors your unique experience and inner wisdom.',
+  },
+];
+---
+
+<BaseLayout
+  title="Our Services"
+  description="Explore our therapy services including anxiety treatment, depression counseling, bariatric surgery support, trauma therapy, and nutrition counseling across Michigan."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Our Services
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          We offer a range of therapeutic services tailored to your unique needs, combining evidence-based approaches with holistic wellness principles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <Section>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+      {services.map((service) => (
+        <ServiceCard {...service} class="fade-in" />
+      ))}
+    </div>
+  </Section>
+
+  <!-- Conditions We Treat - Asymmetric -->
+  <Section background="surface">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            Conditions We Treat
+          </h2>
+        </div>
+        <p class="subtitle">
+          We provide compassionate, evidence-based care for a wide range of mental health concerns.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div class="grid sm:grid-cols-2 gap-4 stagger-children">
+          {[
+            'Anxiety Disorders',
+            'Depression',
+            'Trauma & PTSD',
+            'Grief & Loss',
+            'Life Transitions',
+            'Chronic Health Conditions',
+            'Workplace & Financial Stress',
+            'Self-Esteem Issues',
+            'Eating Disorders',
+            'Body Image Concerns',
+            'Relationship Difficulties',
+            'Family Challenges',
+          ].map((condition) => (
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-background-surface fade-in">
+              <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-primary font-medium">{condition}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Approach -->
+  <Section>
+    <div class="text-center mb-12">
+      <div class="accent-line accent-line-center">
+        <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+          Our Therapeutic Approaches
+        </h2>
+      </div>
+      <p class="subtitle max-w-2xl mx-auto">
+        We use an eclectic blend of evidence-based approaches tailored to your unique needs and goals.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto stagger-children">
+      {approaches.map((approach) => (
+        <div class="p-6 rounded-lg border border-border bg-background-surface fade-in">
+          <h3 class="text-lg font-bold text-text-primary mb-2">{approach.name}</h3>
+          <p class="text-text-secondary">{approach.description}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Virtual Sessions - Asymmetric -->
+  <Section background="elevated">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-3">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
+            Convenient Virtual Sessions
+          </h2>
+        </div>
+        <p class="subtitle mb-8">
+          All of our services are available via secure telehealth, allowing you to access quality mental health care from anywhere in Michigan. Our virtual sessions are conducted through a HIPAA-compliant platform, ensuring your privacy and comfort.
+        </p>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-4 rounded-lg bg-background-surface">
+            <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-text-primary">HIPAA Compliant</p>
+              <p class="text-sm text-text-secondary">Secure, encrypted sessions</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-lg bg-background-surface">
+            <div class="w-12 h-12 rounded-full bg-gold-light flex items-center justify-center flex-shrink-0" style="background-color: hsl(48, 90%, 92%);">
+              <svg class="w-6 h-6 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-text-primary">Flexible Scheduling</p>
+              <p class="text-sm text-text-secondary">Evening & weekend slots</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-lg bg-background-surface">
+            <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-text-primary">No Commute</p>
+              <p class="text-sm text-text-secondary">Connect from anywhere</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Let's Find the Right Support for You"
+    description="Not sure which service fits? Book a free consultation and we'll help you figure it out."
+  />
+</BaseLayout>

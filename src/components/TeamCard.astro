@@ -1,0 +1,74 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  credentials: string;
+  image: string;
+  bio: string;
+  specializations?: string[];
+  href?: string;
+}
+
+const {
+  name,
+  title,
+  credentials,
+  image,
+  bio,
+  specializations = [],
+  href,
+} = Astro.props;
+---
+
+<article class="card text-center group relative">
+  <!-- Full card clickable link -->
+  {href && (
+    <a href={href} class="absolute inset-0 z-10" aria-label={`Read full bio of ${name}`}>
+      <span class="sr-only">Read full bio of {name}</span>
+    </a>
+  )}
+
+  <!-- Photo -->
+  <div class="relative mb-6 mx-auto w-40 h-40 md:w-48 md:h-48">
+    <img
+      src={image}
+      alt={`${name}, ${credentials}`}
+      width="192"
+      height="192"
+      loading="lazy"
+      class="w-full h-full object-cover rounded-full shadow-md transition-transform duration-fast group-hover:scale-105"
+    />
+  </div>
+
+  <!-- Info -->
+  <header class="mb-4">
+    <h3 class="text-xl font-heading font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">
+      {name}, {credentials}
+    </h3>
+    <p class="text-primary font-medium">{title}</p>
+  </header>
+
+  <!-- Bio -->
+  <p class="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-3">
+    {bio}
+  </p>
+
+  <!-- Specializations -->
+  {specializations.length > 0 && (
+    <div class="flex flex-wrap justify-center gap-2 mb-4">
+      {specializations.slice(0, 4).map((spec) => (
+        <span class="badge-gold text-xs">{spec}</span>
+      ))}
+    </div>
+  )}
+
+  <!-- Visual Link Indicator -->
+  {href && (
+    <span class="text-primary font-medium text-sm inline-flex items-center gap-1">
+      Read full bio
+      <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </span>
+  )}
+</article>

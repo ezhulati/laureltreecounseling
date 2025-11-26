@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Laurel Tree Counseling offers individual virtual counseling for adults in Michigan, blending holistic and evidence-based approaches for anxiety, depression, trauma, and bariatric support.",
+  canonicalUrl,
+  ogImage = "/images/og-default.jpg"
+} = Astro.props;
+
+const siteTitle = title === "Home" ? "Laurel Tree Counseling | At the Root of Wellness" : `${title} | Laurel Tree Counseling`;
+const fullCanonicalUrl = canonicalUrl || Astro.url.href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/ltc-icon.png" />
+    <link rel="apple-touch-icon" href="/images/ltc-icon.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={fullCanonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonicalUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullCanonicalUrl} />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Fonts - Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>{siteTitle}</title>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Laurel Tree Counseling",
+      "description": description,
+      "url": "https://laureltreecounseling.com",
+      "telephone": "586-244-8087",
+      "email": "info@laureltreecounseling.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Clinton Township",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Michigan"
+      },
+      "priceRange": "$$",
+      "medicalSpecialty": [
+        "Mental Health",
+        "Psychology",
+        "Nutrition"
+      ]
+    })} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded">
+      Skip to main content
+    </a>
+
+    <Header />
+
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

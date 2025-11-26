@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Nutrition Counseling"
+  description="Weight-inclusive, trauma-informed nutrition counseling in Michigan. Expert care for eating disorders, GI issues, maternal health, and the food-mood connection."
+>
+  <!-- Hero -->
+  <section class="bg-primary-light py-16 md:py-20">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <p class="text-primary font-medium mb-2">Our Services</p>
+        <div class="accent-line">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6">
+            Nutrition Counseling
+          </h1>
+        </div>
+        <p class="subtitle text-xl">
+          Weight-inclusive, trauma-informed nutrition therapy that honors your unique relationship with food and body.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-2">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+            A Holistic Approach to Nutrition
+          </h2>
+        </div>
+        <div class="space-y-4 text-text-secondary stagger-children">
+          <p class="fade-in fade-in-delay-1">
+            Our nutrition counseling goes beyond meal plans and calorie counting. We understand the powerful connection between what you eat, how you feel, and your overall mental well-being. Our Registered Dietitian provides compassionate, individualized care that meets you where you are.
+          </p>
+          <p class="fade-in fade-in-delay-2">
+            Whether you're recovering from an eating disorder, managing a GI condition, navigating pregnancy, or simply wanting to improve your relationship with food—we're here to support your journey without judgment or restriction.
+          </p>
+          <p class="font-medium text-text-primary fade-in fade-in-delay-3">
+            Note: You don't need to be in therapy with us to receive nutrition counseling. Meghan works with clients independently.
+          </p>
+        </div>
+      </div>
+      <div class="lg:col-span-3 bg-background-elevated rounded-xl p-8 fade-in fade-in-delay-4">
+        <h3 class="text-xl font-bold text-text-primary mb-4">Our Approach</h3>
+        <ul class="grid sm:grid-cols-2 gap-3">
+          {[
+            'Weight-inclusive (Health at Every Size aligned)',
+            'Trauma-informed care',
+            'Intuitive eating principles',
+            'Anti-diet philosophy',
+            'Holistic mind-body connection',
+            'Collaborative goal-setting',
+            'Evidence-based medical nutrition therapy',
+          ].map((item, i) => (
+            <li class="flex gap-3">
+              <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${i % 2 === 0 ? 'text-primary' : 'text-gold-dark'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text-secondary">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Specializations -->
+  <Section background="surface">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
+        Areas of Specialization
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Eating Disorder Recovery</h3>
+          <p class="text-text-secondary">Support for anorexia, bulimia, binge eating disorder, ARFID, chronic dieting, and disordered eating patterns.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">GI Health</h3>
+          <p class="text-text-secondary">IBS, SIBO, GERD, inflammatory bowel disease, food intolerances, and digestive wellness.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Maternal Health</h3>
+          <p class="text-text-secondary">Fertility nutrition, prenatal care, pregnancy nutrition, postpartum recovery, and breastfeeding support.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Metabolic & Cardiovascular</h3>
+          <p class="text-text-secondary">Heart health, diabetes management, metabolic syndrome, and blood pressure support.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Hormonal & Women's Health</h3>
+          <p class="text-text-secondary">PCOS, menopause, thyroid conditions, and hormone-related nutrition needs.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-bold text-text-primary mb-3">Bariatric Support</h3>
+          <p class="text-text-secondary">Pre and post-bariatric surgery nutrition guidance, working alongside our counseling team.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Food-Mood Connection -->
+  <Section>
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
+        The Food-Mood Connection
+      </h2>
+      <p class="text-text-secondary text-lg mb-8">
+        What we eat directly impacts how we feel. Research shows clear connections between nutrition and mental health, including anxiety, depression, energy levels, and cognitive function. Our nutrition counseling addresses these connections, helping you nourish both body and mind.
+      </p>
+      <p class="text-text-secondary">
+        When needed, our dietitian works collaboratively with our counseling team to provide truly integrated care—addressing the emotional and nutritional aspects of your wellness journey together.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Meet Meghan -->
+  <Section background="surface">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-1">
+          <img
+            src="/images/meghan-pendleton.png"
+            alt="Meghan Pendleton, RD"
+            width="192"
+            height="192"
+            loading="lazy"
+            class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg"
+          />
+        </div>
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+            Meet Your Dietitian
+          </h2>
+          <p class="text-text-secondary mb-4">
+            <strong>Meghan Pendleton, RD</strong> is a Registered Dietitian specializing in weight-inclusive, trauma-informed nutrition therapy. She understands that there's no one-size-fits-all approach to nutrition and works collaboratively with each client to build a healthier relationship with food.
+          </p>
+          <Button href="/team#meghan-pendleton" variant="secondary">
+            Learn More About Meghan
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <CTA
+    title="Ready to Improve Your Relationship with Food?"
+    description="Schedule a consultation to learn how nutrition counseling can support your wellness journey."
+  />
+</BaseLayout>
