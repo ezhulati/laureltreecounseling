@@ -295,38 +295,65 @@ const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed
 
   <!-- Team Preview -->
   <Section background="surface">
-    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-      <div class="lg:col-span-2">
-        <div class="accent-line">
-          <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
-            Meet Your {city.name} Care Team
-          </h2>
-        </div>
-        <p class="subtitle mb-6">
-          Our licensed professionals are ready to support your wellness journey.
-        </p>
-        <Button href="/team" variant="secondary">
-          Read Full Bios
-        </Button>
+    <div class="text-center mb-8">
+      <div class="accent-line-center">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-4">
+          Meet Your {city.name} Care Team
+        </h2>
       </div>
+      <p class="subtitle max-w-2xl mx-auto">
+        Our licensed professionals are ready to support your wellness journey.
+      </p>
+    </div>
 
-      <div class="lg:col-span-3 grid grid-cols-3 gap-6 stagger-children">
-        <div class="text-center fade-in fade-in-delay-1">
-          <img src="/images/kristen-ross.png" alt="Kristen Ross, LPC" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md" loading="lazy" />
-          <h3 class="text-sm font-semibold text-text-primary">Kristen Ross, LPC</h3>
-          <p class="text-primary text-xs">Lead Counselor</p>
+    <!-- Mobile: Horizontal cards / Desktop: Grid -->
+    <div class="space-y-4 md:hidden">
+      <a href="/team" class="flex items-center gap-4 bg-background-surface border border-border rounded-xl p-4 hover:border-primary transition-colors">
+        <img src="/images/kristen-ross.png" alt="Kristen Ross, LPC" class="w-16 h-16 rounded-full object-cover flex-shrink-0" loading="lazy" />
+        <div>
+          <h3 class="font-semibold text-text-primary">Kristen Ross, LPC</h3>
+          <p class="text-primary text-sm">Lead Counselor</p>
         </div>
-        <div class="text-center fade-in fade-in-delay-2">
-          <img src="/images/michele-meyers.png" alt="Michele Meyers, PsyD" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md" loading="lazy" />
-          <h3 class="text-sm font-semibold text-text-primary">Michele Meyers, PsyD</h3>
-          <p class="text-primary text-xs">Psychologist</p>
+      </a>
+      <a href="/team" class="flex items-center gap-4 bg-background-surface border border-border rounded-xl p-4 hover:border-primary transition-colors">
+        <img src="/images/michele-meyers.png" alt="Michele Meyers, PsyD" class="w-16 h-16 rounded-full object-cover flex-shrink-0" loading="lazy" />
+        <div>
+          <h3 class="font-semibold text-text-primary">Michele Meyers, PsyD</h3>
+          <p class="text-primary text-sm">Psychologist</p>
         </div>
-        <div class="text-center fade-in fade-in-delay-3">
-          <img src="/images/meghan-pendleton.png" alt="Meghan Pendleton, RD" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md" loading="lazy" />
-          <h3 class="text-sm font-semibold text-text-primary">Meghan Pendleton, RD</h3>
-          <p class="text-primary text-xs">Dietitian</p>
+      </a>
+      <a href="/team" class="flex items-center gap-4 bg-background-surface border border-border rounded-xl p-4 hover:border-primary transition-colors">
+        <img src="/images/meghan-pendleton.png" alt="Meghan Pendleton, RD" class="w-16 h-16 rounded-full object-cover flex-shrink-0" loading="lazy" />
+        <div>
+          <h3 class="font-semibold text-text-primary">Meghan Pendleton, RD</h3>
+          <p class="text-primary text-sm">Dietitian</p>
         </div>
-      </div>
+      </a>
+    </div>
+
+    <!-- Desktop: Card grid -->
+    <div class="hidden md:grid md:grid-cols-3 gap-6">
+      <a href="/team" class="text-center bg-background-surface border border-border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all">
+        <img src="/images/kristen-ross.png" alt="Kristen Ross, LPC" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy" />
+        <h3 class="font-semibold text-text-primary">Kristen Ross, LPC</h3>
+        <p class="text-primary text-sm">Lead Counselor</p>
+      </a>
+      <a href="/team" class="text-center bg-background-surface border border-border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all">
+        <img src="/images/michele-meyers.png" alt="Michele Meyers, PsyD" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy" />
+        <h3 class="font-semibold text-text-primary">Michele Meyers, PsyD</h3>
+        <p class="text-primary text-sm">Psychologist</p>
+      </a>
+      <a href="/team" class="text-center bg-background-surface border border-border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all">
+        <img src="/images/meghan-pendleton.png" alt="Meghan Pendleton, RD" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy" />
+        <h3 class="font-semibold text-text-primary">Meghan Pendleton, RD</h3>
+        <p class="text-primary text-sm">Dietitian</p>
+      </a>
+    </div>
+
+    <div class="text-center mt-8">
+      <Button href="/team" variant="secondary">
+        Read Full Bios
+      </Button>
     </div>
   </Section>
 
