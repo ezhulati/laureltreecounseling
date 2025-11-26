@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('depression-more-than-feeling-sad');
+const relatedPosts = getRelatedPosts('depression-more-than-feeling-sad', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Depression: More Than Just Feeling Sad",
+  "description": "Depression isn't just sadness—it's a complex condition that affects your whole being. Learn to recognize the signs, understand what's happening, and discover paths toward healing.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_6_(1).webp",
+  "datePublished": "2025-01-10",
+  "author": {
+    "@type": "Person",
+    "name": "Kristen Ross, LPC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
+---
+
+<BaseLayout
+  title="Depression: More Than Just Feeling Sad"
+  description="Depression isn't just sadness—it's a complex condition that affects your whole being. Learn to recognize the signs, understand what's happening, and discover paths toward healing."
+  ogImage="/images/assets/laurel_tree_counseling_6_(1).webp"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_6_(1).webp"
+        alt="Understanding and healing from depression with compassionate support"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge badge-gold">Mental Health</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+          Depression: More Than Just Feeling Sad
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-white/80">
+          <span>By Kristen Ross, LPC</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          You don't remember the last time you felt like yourself. Everything takes effort—getting out of bed, showering, responding to texts, going through the motions of your day. The things that used to bring you joy feel flat or meaningless. You're tired all the time, but sleep doesn't refresh you. Or maybe you can't sleep at all, lying awake with a mind that won't quiet and a heaviness you can't shake.
+        </p>
+
+        <p>
+          People tell you to cheer up, to think positive, to be grateful for what you have. And maybe you try. Maybe you list your blessings, force a smile, push yourself through the day. But underneath, something is deeply wrong, and positive thinking isn't touching it. You might wonder if you're just lazy, weak, or somehow broken.
+        </p>
+
+        <p>
+          You're not. What you're experiencing has a name—depression—and it's far more common and more complex than many people realize. It's not a character flaw or a choice. It's a real condition that affects your brain, your body, and your ability to function. And most importantly, it's treatable.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Depression Actually Is
+        </h2>
+
+        <p>
+          Depression is often misunderstood as simply feeling sad. But clinical depression—what mental health professionals call major depressive disorder—is something different and more pervasive. While sadness is a normal human emotion that comes and goes, depression is a persistent state that colors everything.
+        </p>
+
+        <p>
+          Depression affects how you think, influencing your perception of yourself, others, and the future. It creates a lens of negativity that distorts reality—making problems seem insurmountable, your worth seem diminished, and hope seem naive. It affects how you feel emotionally, but also how you feel physically. And it affects what you do, often making even basic tasks feel impossible.
+        </p>
+
+        <p>
+          Research has shown that depression involves actual changes in brain chemistry and function. Neurotransmitters like serotonin, norepinephrine, and dopamine—chemicals that regulate mood, energy, motivation, and pleasure—are affected. Brain regions involved in emotion regulation may function differently. This isn't weakness; it's biology.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Many Faces of Depression
+        </h2>
+
+        <p>
+          Depression doesn't look the same in everyone. Some people experience profound sadness and tearfulness. Others feel numb—an absence of feeling rather than an excess of painful feelings. Some become irritable, snapping at loved ones over minor frustrations. Others withdraw completely, isolating themselves from the world.
+        </p>
+
+        <p>
+          Common symptoms include persistent low mood or emptiness that doesn't lift, loss of interest or pleasure in activities you used to enjoy, significant changes in appetite or weight (in either direction), sleep disturbances—either sleeping too much or struggling with insomnia, fatigue and loss of energy even after rest, difficulty concentrating, making decisions, or remembering things, feelings of worthlessness or excessive guilt, and in severe cases, thoughts of death or suicide.
+        </p>
+
+        <p>
+          Not everyone experiences all of these symptoms, and symptoms can range from mild to severe. Some people maintain high functionality—going to work, caring for their families—while experiencing significant depression internally. This "high-functioning depression" can be particularly isolating because others don't see the struggle.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Physical Reality of Depression
+        </h2>
+
+        <p>
+          One of the most important things to understand about depression is that it's not "just in your head" in the dismissive sense that phrase often implies. Depression has profound physical manifestations.
+        </p>
+
+        <p>
+          The fatigue of depression is different from normal tiredness. It's a bone-deep exhaustion that sleep doesn't resolve. Your body feels heavy. Simple physical tasks—climbing stairs, doing laundry, cooking a meal—can feel genuinely difficult.
+        </p>
+
+        <p>
+          Many people with depression experience physical pain—headaches, backaches, digestive problems—that has no other medical explanation. The <a href="/blog/mind-body-connection-holistic-therapy" class="text-primary hover:underline">mind-body connection</a> is real, and emotional pain often manifests physically.
+        </p>
+
+        <p>
+          Depression also affects the body's stress response system. Cortisol levels may be chronically elevated. Inflammation markers may be increased. The immune system may be compromised. These physical effects are part of why depression is associated with increased risk of other health conditions and why treating depression is important for overall health.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Causes Depression?
+        </h2>
+
+        <p>
+          There's no single cause of depression. Like most complex conditions, it results from an interplay of factors:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Biology</strong> plays a role. Depression tends to run in families, suggesting genetic vulnerability. Brain chemistry and structure are involved. Hormonal changes—during puberty, pregnancy, postpartum, perimenopause—can trigger depressive episodes.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Life experiences</strong> matter profoundly. <a href="/blog/understanding-trauma-beginning-healing-journey" class="text-primary hover:underline">Trauma</a>, loss, chronic stress, difficult relationships, and adverse childhood experiences all increase risk. Major <a href="/blog/navigating-life-transitions-finding-footing" class="text-primary hover:underline">life transitions</a>—even positive ones—can trigger depression.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Physical health</strong> influences mental health. Chronic illness, chronic pain, hormonal imbalances, nutritional deficiencies, and certain medications can contribute to depression. The <a href="/blog/gut-brain-connection-mood-food" class="text-primary hover:underline">gut-brain connection</a> means that digestive health affects mood.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Lifestyle factors</strong> can protect against or contribute to depression. Sleep deprivation, sedentary lifestyle, poor nutrition, substance use, and social isolation all increase vulnerability.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Thought patterns</strong> developed over time—persistent self-criticism, hopeless thinking, rumination—can maintain and deepen depression even if they didn't initially cause it.
+        </p>
+
+        <p>
+          Usually, depression results from some combination of these factors. Understanding your particular constellation of contributors can help guide treatment.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Lies Depression Tells
+        </h2>
+
+        <p>
+          One of the cruelest aspects of depression is how it distorts thinking. Depression lies—and its lies are convincing because they feel like truth.
+        </p>
+
+        <p>
+          Depression says you're worthless, a burden, unlovable. It says nothing will ever get better, so why try. It says you deserve to feel this way. It says asking for help is weakness, or that you're beyond help. It says the people who love you would be better off without you.
+        </p>
+
+        <p>
+          These thoughts feel real when you're depressed. They feel like clear-eyed assessments of reality. But they're symptoms of the illness, not facts. Depression creates a filter that screens out positive information and amplifies negative information. It narrows your perspective so you can only see evidence that confirms its bleak worldview.
+        </p>
+
+        <p>
+          Recognizing that depression lies—even when you can't fully believe it—is important. It creates a small space of doubt in the depression's narrative, a crack through which hope can eventually enter.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Getting Help: What Treatment Looks Like
+        </h2>
+
+        <p>
+          Depression is highly treatable. Most people who get appropriate treatment experience significant improvement. But depression itself often creates barriers to seeking help—the exhaustion, the hopelessness, the belief that nothing will work.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Psychotherapy</strong> is a first-line treatment for depression. Cognitive Behavioral Therapy (CBT) helps you identify and change the thought patterns that maintain depression. Other evidence-based approaches include behavioral activation (gradually rebuilding engagement with life), interpersonal therapy (addressing relationship issues), and mindfulness-based approaches. In our practice, we often integrate multiple approaches in a <a href="/services/anxiety-depression" class="text-primary hover:underline">holistic treatment plan</a> tailored to each person.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Medication</strong> can be an important tool, especially for moderate to severe depression. Antidepressants work by affecting neurotransmitter levels in the brain. They're not "happy pills" or personality changers—they help restore normal brain function so you can feel like yourself again. Finding the right medication sometimes takes trial and error, but when it works, the relief can be significant.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Lifestyle factors</strong> support recovery. Regular exercise has been shown to have antidepressant effects. Sleep hygiene matters. Nutrition affects brain chemistry. Social connection counters the isolation depression creates. These aren't substitutes for professional treatment, but they're important complements.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Support systems</strong> make a difference. Connecting with others who understand—whether through support groups, trusted friends, or family—reduces isolation and provides practical and emotional support.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          When to Seek Help
+        </h2>
+
+        <p>
+          If you're experiencing symptoms of depression—particularly if they've lasted more than two weeks or are affecting your ability to function—it's time to seek help. You don't need to wait until you're in crisis. Earlier intervention typically leads to faster recovery.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Seek immediate help</strong> if you're having thoughts of suicide or self-harm. These thoughts are symptoms of depression, not reflections of reality, and they signal that you need support right now. The National Suicide Prevention Lifeline is available 24/7 at 988. You can also text HOME to 741741 to reach the Crisis Text Line.
+        </p>
+
+        <p>
+          If you're unsure whether what you're experiencing is depression, that's okay. A mental health professional can help you figure out what's going on and what might help. You don't need a diagnosis to benefit from support.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Hope Is Real
+        </h2>
+
+        <p>
+          Depression makes hope feel foolish. It tells you that you'll always feel this way, that treatment won't work for you, that you're somehow different from the people who get better. This is the depression talking.
+        </p>
+
+        <p>
+          The truth is that depression is one of the most treatable mental health conditions. The majority of people who receive appropriate treatment see significant improvement. Recovery is possible—not just coping, not just surviving, but actually feeling good again.
+        </p>
+
+        <p>
+          Recovery isn't linear. There may be setbacks and difficult days. But gradually, with treatment and support, the heaviness lifts. Colors come back. Things start to matter again. You remember what it feels like to be yourself.
+        </p>
+
+        <p>
+          If you're struggling with depression, please reach out. To a friend, a family member, a doctor, a therapist. Depression thrives in isolation and secrecy. Connection and help are its antidotes. You don't have to feel this way forever, and you don't have to figure this out alone.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Struggling with depression?</p>
+          <p class="text-text-secondary text-sm">
+            At Laurel Tree Counseling, we provide compassionate, evidence-based treatment for depression. Our holistic approach addresses mind, body, and spirit—helping you understand your depression, develop coping strategies, and rebuild a life that feels meaningful. You don't have to keep suffering in silence. Schedule a free consultation to learn how we can help.
+          </p>
+        </div>
+
+        <div class="mt-6 p-4 bg-gold/10 border border-gold/30 rounded-lg">
+          <p class="text-text-primary font-medium text-sm mb-1">If you're in crisis</p>
+          <p class="text-text-secondary text-sm">
+            National Suicide Prevention Lifeline: <strong>988</strong> | Crisis Text Line: Text <strong>HOME</strong> to <strong>741741</strong>
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/kristen-ross.png"
+          alt="Kristen Ross, LPC"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Kristen Ross, LPC
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Kristen Ross is a Licensed Professional Counselor with over 14 years of experience treating depression and anxiety. Her holistic approach integrates evidence-based therapies like CBT with mindfulness, somatic awareness, and lifestyle factors. She believes in treating the whole person—not just symptoms—and has helped countless clients find their way back to themselves.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Take the First Step Toward Feeling Better"
+    description="Schedule a free consultation to explore how we can support your journey out of depression."
+  />
+</BaseLayout>

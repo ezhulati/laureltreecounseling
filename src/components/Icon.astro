@@ -1,0 +1,35 @@
+---
+/**
+ * Icon Component - Wrapper for Lucide Icons
+ * Provides consistent defaults and easy usage across the site
+ */
+import * as icons from 'lucide-astro';
+
+interface Props {
+  name: string;
+  size?: number;
+  strokeWidth?: number;
+  class?: string;
+}
+
+const {
+  name,
+  size = 24,
+  strokeWidth = 2,
+  class: className = '',
+} = Astro.props;
+
+// Get the icon component dynamically
+const IconComponent = icons[name as keyof typeof icons];
+---
+
+{IconComponent ? (
+  <IconComponent
+    size={size}
+    strokeWidth={strokeWidth}
+    class={className}
+    aria-hidden="true"
+  />
+) : (
+  <span class={className}>?</span>
+)}
