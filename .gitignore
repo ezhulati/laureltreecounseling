@@ -29,3 +29,6 @@ npm-debug.log*
 # Audit files (generated)
 audit-report.json
 audit-screenshots/
+
+# Local Netlify folder
+.netlify
