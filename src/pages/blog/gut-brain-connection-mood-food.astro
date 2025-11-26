@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('gut-brain-connection-mood-food');
+const relatedPosts = getRelatedPosts('gut-brain-connection-mood-food', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Gut-Brain Connection: How What You Eat Affects How You Feel",
+  "description": "Your gut and brain are in constant communication. Learn how nutrition impacts mental health and practical ways to support your mood through food.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_5_(1).webp",
+  "datePublished": "2025-01-22",
+  "author": {
+    "@type": "Person",
+    "name": "Meghan Pendleton, RD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
+---
+
+<BaseLayout
+  title="The Gut-Brain Connection: How What You Eat Affects How You Feel"
+  description="Your gut and brain are in constant communication. Learn how nutrition impacts mental health and practical ways to support your mood through food."
+  ogImage="/images/assets/laurel_tree_counseling_5_(1).webp"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_5_(1).webp"
+        alt="Nutrition and mental health - the gut-brain connection"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge badge-gold">Nutrition</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+          The Gut-Brain Connection: How What You Eat Affects How You Feel
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-white/80">
+          <span>By Meghan Pendleton, RD</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          Have you ever had a "gut feeling" about something? Felt butterflies in your stomach before a big moment? Noticed that stress goes straight to your digestive system? These aren't just figures of speech—they're reflections of a profound biological reality: your gut and your brain are in constant, two-way communication. And this connection has significant implications for your mental health.
+        </p>
+
+        <p>
+          As a registered dietitian who works alongside mental health therapists, I see every day how nutrition intersects with emotional well-being. When my clients start addressing their nutritional needs, they often report improvements not just in physical health, but in mood, energy, anxiety levels, and overall mental clarity. This isn't coincidental—it's the gut-brain connection at work.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Your Second Brain: The Gut-Brain Axis
+        </h2>
+
+        <p>
+          Your digestive system contains an extensive network of neurons—about 500 million of them—that scientists call the enteric nervous system. It's so sophisticated that it's often referred to as your "second brain." This system can operate independently of your brain, managing digestion without conscious input, but it's also in constant communication with your central nervous system through what's called the gut-brain axis.
+        </p>
+
+        <p>
+          This communication happens through multiple pathways. The vagus nerve, the longest nerve in your body, serves as a direct information highway between your gut and your brain. Neurotransmitters produced in the gut—including a significant portion of your body's serotonin—influence brain function. And the trillions of bacteria living in your digestive tract, collectively called the gut microbiome, produce compounds that affect mood, cognition, and behavior.
+        </p>
+
+        <p>
+          Here's a fact that surprises many people: approximately 95% of your body's serotonin—the neurotransmitter often called the "happiness chemical"—is produced in your gut, not your brain. This alone speaks to the importance of gut health in mental well-being.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          How Nutrition Affects Your Mood
+        </h2>
+
+        <p>
+          The food you eat affects your mental health through several mechanisms:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Blood sugar regulation.</strong> When blood sugar spikes and crashes—common with highly processed foods, refined carbohydrates, and irregular eating patterns—mood tends to follow. The crash after a blood sugar spike can trigger or worsen anxiety, irritability, fatigue, and difficulty concentrating. Many of my clients with <a href="/services/anxiety-depression" class="text-primary hover:underline">anxiety</a> notice significant improvement when we stabilize their blood sugar through more balanced meals and snacks.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Inflammation.</strong> Chronic low-grade inflammation has been linked to depression and other mental health conditions. The foods we eat can either promote or reduce inflammation. Diets high in processed foods, sugar, and unhealthy fats tend to increase inflammation, while diets rich in vegetables, fruits, whole grains, fatty fish, and olive oil tend to reduce it.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Microbiome health.</strong> The bacteria in your gut influence the production of neurotransmitters, the integrity of your gut lining, inflammation levels, and even how your genes are expressed. A diverse, healthy microbiome supports mental health, while an imbalanced microbiome (called dysbiosis) has been associated with depression, anxiety, and other conditions.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Nutrient availability.</strong> Your brain requires specific nutrients to function optimally. Deficiencies in B vitamins, vitamin D, omega-3 fatty acids, iron, zinc, and magnesium have all been linked to mood disturbances. Even mild deficiencies can affect how you feel.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Research on Food and Mental Health
+        </h2>
+
+        <p>
+          This isn't just theory—a growing body of research supports the connection between diet and mental health.
+        </p>
+
+        <p>
+          The SMILES trial, a landmark 2017 study, found that people with moderate to severe depression who received dietary counseling (focusing on a Mediterranean-style diet) showed significantly greater improvement than those who received social support alone. About a third of participants in the diet group achieved remission, compared to just 8% in the control group.
+        </p>
+
+        <p>
+          Multiple large observational studies have found that Mediterranean-style diets—rich in vegetables, fruits, legumes, whole grains, fish, and olive oil—are associated with lower rates of depression. Traditional diets in various cultures that emphasize whole foods also show protective effects against mental health disorders.
+        </p>
+
+        <p>
+          Research on the microbiome has shown that people with depression often have different gut bacteria compositions than those without depression. Probiotic interventions have shown promising results in some studies for improving mood, though this research is still emerging.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What This Means for You
+        </h2>
+
+        <p>
+          If you're struggling with mood, anxiety, or other mental health challenges, nutrition is worth considering as part of your overall approach to well-being. This doesn't mean food is a substitute for therapy or medication when those are needed—it means nutrition can be a valuable complement to other treatments.
+        </p>
+
+        <p>
+          Here are some practical ways to support your mental health through nutrition:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Eat regularly.</strong> Skipping meals or going too long between eating can cause blood sugar drops that affect mood and energy. Aim for regular meals and snacks that include protein, fiber, and healthy fats to maintain stable blood sugar.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Include omega-3 fatty acids.</strong> Found in fatty fish (salmon, sardines, mackerel), walnuts, flaxseeds, and chia seeds, omega-3s are crucial for brain health and have been associated with reduced inflammation and improved mood.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Eat plenty of fiber-rich plants.</strong> Vegetables, fruits, legumes, and whole grains provide fiber that feeds beneficial gut bacteria. A diverse range of plant foods supports a diverse microbiome.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Include fermented foods.</strong> Yogurt, kefir, sauerkraut, kimchi, and other fermented foods contain beneficial bacteria that support gut health. Start slowly if you're not used to these foods.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Limit ultra-processed foods.</strong> Foods that are highly processed tend to be high in added sugars, unhealthy fats, and additives while being low in fiber and nutrients. They're associated with worse mental health outcomes in research.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Stay hydrated.</strong> Even mild dehydration can affect mood, energy, and cognitive function. Water is usually the best choice; excessive caffeine can increase anxiety in sensitive individuals.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Consider key nutrients.</strong> If you suspect nutritional deficiencies might be contributing to how you feel, working with a dietitian to assess and address these can be valuable. Supplements may be helpful in some cases, but they're best used strategically based on individual needs.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Nutrition Counseling Looks Like
+        </h2>
+
+        <p>
+          When I work with clients on the food-mood connection, we take a personalized, compassionate approach. This isn't about strict diets, food rules, or adding more "shoulds" to your already full plate. It's about understanding how food affects your unique body and mind, and making sustainable changes that support your well-being.
+        </p>
+
+        <p>
+          We might explore your current eating patterns and how they relate to your energy and mood. We might work on blood sugar stabilization if that's relevant for you. We might address gut health if digestive symptoms are present. We might look at nutrient intake and whether any adjustments could help.
+        </p>
+
+        <p>
+          Perhaps most importantly, we address your relationship with food itself. For many people, <a href="/blog/understanding-emotional-eating" class="text-primary hover:underline">emotional eating</a> patterns, a history of dieting, or disordered eating complicate the picture. My approach is weight-inclusive and trauma-informed—meaning we focus on nourishment and well-being rather than weight, and we're sensitive to how past experiences affect your relationship with food.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Bigger Picture: Food as Part of Whole-Person Care
+        </h2>
+
+        <p>
+          At Laurel Tree Counseling, <a href="/services/nutrition" class="text-primary hover:underline">nutrition counseling</a> exists alongside mental health therapy because we recognize that you're a whole person. Mind and body aren't separate systems—they're deeply interconnected. Addressing one without considering the other misses part of the picture.
+        </p>
+
+        <p>
+          For some clients, working on nutrition alongside therapy accelerates progress. Stable blood sugar can reduce anxiety symptoms. Addressing gut issues can improve mood. Proper nourishment supports the brain work of therapy. For others, nutrition work comes first, or comes separately from therapy—and that's fine too.
+        </p>
+
+        <p>
+          The goal isn't perfection. It's not about eating "perfectly" or following rigid rules. It's about understanding your body, nourishing yourself adequately, and recognizing food as one of many factors that influence how you feel. Small, sustainable changes often make a meaningful difference.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Getting Started
+        </h2>
+
+        <p>
+          If you're curious about how nutrition might be affecting your mental health, there are several ways to explore further:
+        </p>
+
+        <p>
+          Notice patterns. Start paying attention to how you feel after different meals. Do you notice energy crashes? Mood shifts? Digestive symptoms? This awareness can provide valuable information.
+        </p>
+
+        <p>
+          Make one small change. Rather than overhauling your diet overnight, try adding something beneficial—more vegetables, a serving of fatty fish weekly, a breakfast that includes protein. Notice how it affects you.
+        </p>
+
+        <p>
+          Consider working with a professional. A registered dietitian can provide personalized guidance based on your unique needs, health history, and goals. This is especially valuable if you have medical conditions, a complicated relationship with food, or have tried dietary changes without success.
+        </p>
+
+        <p>
+          Remember that food is just one piece. Nutrition matters, but so do sleep, movement, stress management, relationships, and addressing underlying mental health concerns. A holistic approach considers all of these factors.
+        </p>
+
+        <p>
+          Your gut and brain are having a conversation right now—through every meal, every snack, every choice you make about nourishing yourself. When you support your gut health, you're also supporting your mental health. And that's a conversation worth investing in.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Interested in nutrition counseling?</p>
+          <p class="text-text-secondary text-sm">
+            Our registered dietitian, Meghan Pendleton, offers weight-inclusive, trauma-informed nutrition therapy. Whether you're dealing with digestive issues, emotional eating, disordered eating, or simply want to understand how food affects your mood, personalized nutrition counseling can help. You don't need to be in therapy with us to work with Meghan—nutrition counseling is available as a standalone service.
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/meghan-pendleton.png"
+          alt="Meghan Pendleton, RD"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Meghan Pendleton, RD
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Meghan Pendleton is a Registered Dietitian at Laurel Tree Counseling specializing in weight-inclusive, trauma-informed nutrition therapy. She helps clients navigate eating disorders, GI issues, bariatric surgery nutrition, maternal health, and the complex relationship between food and mood. Meghan believes in meeting clients where they are and building sustainable, nourishing approaches to eating.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Explore the Food-Mood Connection"
+    description="Schedule a consultation to learn how nutrition counseling can support your mental health journey."
+  />
+</BaseLayout>

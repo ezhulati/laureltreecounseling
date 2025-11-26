@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('understanding-trauma-beginning-healing-journey');
+const relatedPosts = getRelatedPosts('understanding-trauma-beginning-healing-journey', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Understanding Trauma: What It Is, How It Affects You, and Beginning the Healing Journey",
+  "description": "Trauma isn't just what happened to you—it's how your nervous system responded. Learn what trauma really means, how it shows up in daily life, and what healing looks like.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_9_(1).webp",
+  "datePublished": "2025-01-18",
+  "author": {
+    "@type": "Person",
+    "name": "Michele Meyers, PsyD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
+---
+
+<BaseLayout
+  title="Understanding Trauma: What It Is, How It Affects You, and Beginning the Healing Journey"
+  description="Trauma isn't just what happened to you—it's how your nervous system responded. Learn what trauma really means, how it shows up in daily life, and what healing looks like."
+  ogImage="/images/assets/laurel_tree_counseling_9_(1).webp"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_9_(1).webp"
+        alt="Beginning the journey of trauma healing with compassionate support"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge badge-gold">Trauma & PTSD</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+          Understanding Trauma: What It Is, How It Affects You, and Beginning the Healing Journey
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-white/80">
+          <span>By Michele Meyers, PsyD</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>11 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          Maybe you startle at sounds that don't seem to bother anyone else. Maybe you find yourself constantly on guard, scanning for danger even in safe situations. Maybe certain places, smells, or dates on the calendar bring waves of distress you can't fully explain. Maybe you struggle with relationships, always waiting for the other shoe to drop. Maybe you feel disconnected from your body, from your emotions, from your life—going through the motions without really being present.
+        </p>
+
+        <p>
+          If experiences like these sound familiar, you may be living with the effects of trauma. And if so, please know this: what you're experiencing isn't weakness or a character flaw. It's your nervous system doing exactly what it was designed to do—trying to protect you. The problem is that protection mechanisms that made sense during the original threat can persist long after the danger has passed, affecting your daily life in ways that feel confusing, frustrating, or overwhelming.
+        </p>
+
+        <p>
+          After 25 years as a psychologist, I've walked alongside countless people on their trauma healing journeys. What I've learned is that understanding trauma—what it really is and how it works—is often the first step toward healing. When you understand why you respond the way you do, it becomes easier to approach yourself with compassion rather than judgment, and to believe that change is possible.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Trauma Actually Is (And Isn't)
+        </h2>
+
+        <p>
+          Trauma isn't simply a bad experience. Many difficult things happen to us in life that don't become traumatic. What makes something traumatic isn't just the event itself—it's how your nervous system responds to the event, and whether that response gets stuck.
+        </p>
+
+        <p>
+          When we encounter overwhelming stress or threat, our nervous system activates survival responses: fight, flight, freeze, or fawn. These are automatic, involuntary—your body's way of trying to keep you safe. In an ideal scenario, once the threat passes, our nervous system returns to baseline. The stress response completes, and we move on.
+        </p>
+
+        <p>
+          But sometimes this doesn't happen. Sometimes the threat is too overwhelming, too prolonged, too early in life, or happens without adequate support afterward. When this occurs, the survival response can become stuck. The body continues to act as if the threat is present or could return at any moment. This is trauma—not the event itself, but the lasting imprint it leaves on your nervous system.
+        </p>
+
+        <p>
+          This understanding is important because it shifts how we think about trauma. It's not about being weak or dramatic. It's not a choice or a character failing. It's a physiological response to overwhelming experience. And because it's physiological, healing involves the body as well as the mind.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Types of Trauma
+        </h2>
+
+        <p>
+          When most people hear "trauma," they think of dramatic, life-threatening events—combat, assault, serious accidents. These acute traumas are real and significant. But trauma takes many forms:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Acute trauma</strong> results from a single overwhelming event: an accident, assault, natural disaster, sudden loss, medical emergency, or witnessing violence.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Chronic trauma</strong> comes from repeated or prolonged exposure to highly stressful events: ongoing abuse or neglect, domestic violence, living in a war zone, chronic bullying, or long-term medical trauma.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Complex trauma</strong> typically occurs in childhood within caregiving relationships. When the people who are supposed to protect you are instead sources of harm or consistent neglect, it affects not just your sense of safety but your developing sense of self, your ability to regulate emotions, and your capacity for relationships.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Developmental trauma</strong> happens when essential needs aren't met during critical periods of childhood development—even without overt abuse. Emotional neglect, having chronically overwhelmed or unavailable parents, or growing up in a chaotic or unpredictable environment can all create lasting effects.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Medical trauma</strong> can result from serious illness, invasive procedures, frightening diagnoses, or experiences of helplessness in medical settings.
+        </p>
+
+        <p>
+          Many people don't recognize their experiences as traumatic because they're comparing to the most dramatic examples. "My childhood wasn't that bad" or "Other people have been through worse" are common refrains. But trauma isn't a competition. What matters is how your nervous system responded and whether lasting effects remain.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          How Trauma Shows Up in Daily Life
+        </h2>
+
+        <p>
+          Trauma doesn't always announce itself with obvious flashbacks or nightmares. Often it shows up in subtler ways that people don't connect to past experiences:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Hypervigilance</strong>—being constantly on alert for danger, difficulty relaxing, startling easily, trouble sleeping because you can't let your guard down.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Emotional dysregulation</strong>—intense emotional reactions that seem disproportionate to current situations, difficulty calming down once upset, or emotional numbness and difficulty feeling anything.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Avoidance</strong>—steering clear of places, people, situations, or topics that might trigger distress, sometimes to the point of significantly limiting your life.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Intrusive symptoms</strong>—unwanted memories, flashbacks, nightmares, or sudden overwhelming emotions that seem to come from nowhere.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Negative self-beliefs</strong>—persistent feelings of shame, worthlessness, or self-blame; believing you're fundamentally broken, unlovable, or bad.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Relationship difficulties</strong>—trouble trusting others, fear of abandonment or engulfment, repeating unhealthy relationship patterns, difficulty with intimacy or connection.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Dissociation</strong>—feeling disconnected from your body, your emotions, or the present moment; sense of watching yourself from outside; gaps in memory.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Physical symptoms</strong>—chronic pain, digestive issues, autoimmune conditions, and other physical health problems have been linked to trauma. The body keeps the score, as trauma researcher Bessel van der Kolk famously put it.
+        </p>
+
+        <p>
+          Often people come to therapy for <a href="/services/anxiety-depression" class="text-primary hover:underline">anxiety or depression</a>, relationship problems, or difficulty managing life, not realizing that trauma underlies these struggles. Recognizing the trauma connection can be both validating ("No wonder I've been struggling—this makes sense now") and hopeful ("If this is trauma, there are ways to heal").
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Why "Just Getting Over It" Doesn't Work
+        </h2>
+
+        <p>
+          Well-meaning people often suggest that trauma survivors should "move on," "let go of the past," or "stop living in the past." This advice, though usually intended helpfully, misunderstands how trauma works.
+        </p>
+
+        <p>
+          Trauma isn't stored as ordinary memory. When an experience is traumatic, the brain processes and stores it differently. Trauma memories are often fragmented, disorganized, and encoded with their original emotional intensity. They don't have the "this was then, this is now" quality that regular memories have. When triggered, a trauma memory can feel like the event is happening right now—complete with the same fear, helplessness, and physiological activation.
+        </p>
+
+        <p>
+          You can't think your way out of a nervous system response. You can't simply decide not to be triggered. This isn't weakness; it's biology. And it's why trauma treatment needs to involve more than just talking about what happened.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Trauma Healing Actually Looks Like
+        </h2>
+
+        <p>
+          Effective <a href="/services/trauma" class="text-primary hover:underline">trauma therapy</a> works with both mind and body to help your nervous system recognize that the danger has passed. This typically involves several elements:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Establishing safety and stability.</strong> Before processing trauma, we need to ensure you have resources for managing distress. This includes developing grounding techniques, building capacity for emotional regulation, and creating external stability in your life where possible.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Understanding your responses.</strong> Psychoeducation about trauma helps you understand why you react the way you do. This understanding reduces shame and self-blame, and helps you work with your nervous system rather than against it.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Processing traumatic memories.</strong> Various evidence-based approaches help "digest" traumatic memories so they become ordinary memories rather than present-tense threats. This might involve approaches like EMDR, somatic experiencing, cognitive processing therapy, or other trauma-focused methods.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Working with the body.</strong> Because trauma lives in the body, healing often involves body-based interventions. This might include breathing practices, movement, body awareness exercises, or techniques for discharging stored tension from the nervous system.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Rebuilding connection.</strong> Trauma, especially relational trauma, often damages our capacity for connection. Part of healing is learning to trust again—both yourself and others—and developing relationships that support your well-being.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Creating new meaning.</strong> As healing progresses, many people find themselves reconstructing their narrative—understanding their past differently, integrating their experiences into their identity, and finding meaning or even growth from their journey.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Is Trauma Therapy Scary?
+        </h2>
+
+        <p>
+          Many people who would benefit from trauma therapy avoid it because they're afraid of being retraumatized, overwhelmed by memories, or unable to function during treatment. These fears are understandable—and a skilled trauma therapist takes them seriously.
+        </p>
+
+        <p>
+          Modern trauma therapy is not about diving into the deep end and reliving your worst experiences. It's about titrating exposure—going slowly, building capacity, and staying within what's called the "window of tolerance." A good trauma therapist will pace the work to what you can handle, provide tools for managing distress, and prioritize your stability throughout the process.
+        </p>
+
+        <p>
+          You should never feel pushed to disclose more than you're ready to share or to move faster than feels safe. You should feel empowered to set boundaries and take breaks. The goal is not to suffer through therapy—it's to gradually build capacity for processing difficult material while maintaining your ability to function in daily life.
+        </p>
+
+        <p>
+          It's also worth noting that trauma therapy doesn't necessarily require detailed recounting of traumatic events. Some approaches work more with present-moment body sensations than with narrative memory. Your therapist will work with you to find an approach that fits your needs.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          When to Seek Help
+        </h2>
+
+        <p>
+          You don't have to wait until you're in crisis to seek trauma treatment. Consider reaching out if past experiences continue to affect your daily life, if you recognize trauma symptoms in yourself that are interfering with your well-being, if you find yourself stuck in patterns you can't seem to change, if you're curious about whether trauma might underlie other struggles you're facing, or simply if you're tired of feeling the way you feel and ready for something different.
+        </p>
+
+        <p>
+          Finding the right therapist matters. You want someone who has specific training in trauma treatment, not just general therapy skills. You also want someone you feel comfortable with—the therapeutic relationship itself is part of the healing, especially for relational trauma.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Hope for Healing
+        </h2>
+
+        <p>
+          If you're living with the effects of trauma, I want to leave you with hope. Trauma is not a life sentence. The nervous system that learned to respond to threat can learn, over time, that the threat has passed. The brain is capable of remarkable change throughout life.
+        </p>
+
+        <p>
+          Healing is possible at any age, regardless of how long ago the trauma occurred or how severe it was. I've witnessed profound transformation in people who had struggled for decades, who believed change wasn't possible for them, who had tried other approaches without success. The right treatment, at the right time, with the right support, can make a real difference.
+        </p>
+
+        <p>
+          Healing isn't linear—there will be harder days and easier days, steps forward and steps back. It takes time and patience. But gradually, things shift. The triggers become less frequent, less intense. The window of tolerance expands. Life becomes less about surviving and more about living.
+        </p>
+
+        <p>
+          You've already survived what happened to you. With support, you can do more than survive—you can heal, grow, and build a life that feels genuinely good.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Ready to begin healing?</p>
+          <p class="text-text-secondary text-sm">
+            At Laurel Tree Counseling, we provide compassionate, evidence-based trauma therapy that honors both mind and body. Our team will work with you at your pace, providing tools for stability while gently helping your nervous system recognize that you're safe now. Schedule a free consultation to learn how trauma therapy can help you.
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/michele-meyers.png"
+          alt="Michele Meyers, PsyD"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Michele Meyers, PsyD
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Michele Meyers is a Licensed Psychologist with 25 years of clinical experience. She specializes in trauma-informed care, helping clients heal from both acute and complex trauma. Her approach integrates evidence-based treatments with body-centered practices, recognizing that lasting healing must address both mind and body. Michele is passionate about creating a safe, supportive space where clients can process their experiences at their own pace.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Take the First Step Toward Healing"
+    description="Schedule a free consultation to explore how trauma therapy can help you move from surviving to thriving."
+  />
+</BaseLayout>

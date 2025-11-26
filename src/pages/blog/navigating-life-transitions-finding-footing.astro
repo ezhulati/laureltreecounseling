@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import CTA from '../../components/CTA.astro';
+import { getBlogPostBySlug, getRelatedPosts } from '../../data/blog-posts';
+
+const post = getBlogPostBySlug('navigating-life-transitions-finding-footing');
+const relatedPosts = getRelatedPosts('navigating-life-transitions-finding-footing', 3);
+
+const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Navigating Life Transitions: Finding Your Footing When Everything Changes",
+  "description": "Life transitions—whether chosen or unexpected—can shake our sense of identity and stability. Learn how to move through change with resilience and self-compassion.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_11_(1).webp",
+  "datePublished": "2025-01-20",
+  "author": {
+    "@type": "Person",
+    "name": "Kristen Ross, LPC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
+---
+
+<BaseLayout
+  title="Navigating Life Transitions: Finding Your Footing When Everything Changes"
+  description="Life transitions—whether chosen or unexpected—can shake our sense of identity and stability. Learn how to move through change with resilience and self-compassion."
+  ogImage="/images/assets/laurel_tree_counseling_11_(1).webp"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/assets/laurel_tree_counseling_11_(1).webp"
+        alt="Finding stability and support during major life transitions"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/85"></div>
+    </div>
+    <div class="container-custom relative z-10 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <div class="mb-4">
+          <span class="badge badge-gold">Life Transitions</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+          Navigating Life Transitions: Finding Your Footing When Everything Changes
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-white/80">
+          <span>By Kristen Ross, LPC</span>
+          <span aria-hidden="true">·</span>
+          <span>{formattedDate}</span>
+          <span aria-hidden="true">·</span>
+          <span>10 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <Section>
+    <article class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none text-text-secondary">
+        <p class="text-xl leading-relaxed mb-8">
+          One day you're living your familiar life—the routines you know by heart, the identity you've built over years, the future you thought you could see. And then something shifts. Maybe it's a job loss that came without warning. A divorce you didn't anticipate, or one you initiated but still find devastating. A diagnosis that changes everything. The last child leaving home, leaving you in a silence you don't recognize. Retirement, after decades of being defined by your work. A move to a new city. The death of someone who shaped your world.
+        </p>
+
+        <p>
+          Life transitions—whether we choose them or they choose us—have a way of shaking the very ground we stand on. Suddenly, the person we thought we were doesn't quite fit anymore. The future we imagined has dissolved, and we're left standing in uncertainty, wondering who we are now and what comes next.
+        </p>
+
+        <p>
+          If you're in the midst of a major life transition right now, I want you to know: what you're experiencing is profound, and it's okay to struggle. Transitions are genuinely hard, even the ones we want. And you don't have to navigate this alone.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Why Transitions Are So Disorienting
+        </h2>
+
+        <p>
+          Major life transitions are challenging for reasons that go beyond the practical adjustments they require. When significant aspects of our lives change, we often experience what psychologists call an "identity disruption." So much of who we think we are is tied to our roles, our routines, our relationships, our plans for the future. When these shift dramatically, we can feel untethered from ourselves.
+        </p>
+
+        <p>
+          Consider retirement, for example. For many people, especially those who've had demanding careers, work provides not just income but also structure, purpose, social connection, and a significant part of their identity. When that ends—even if you've looked forward to it for years—there can be a profound sense of loss alongside the relief or excitement. "Who am I if I'm not [job title]?" is a question that often surfaces, sometimes consciously, sometimes as a vague sense of emptiness.
+        </p>
+
+        <p>
+          Or consider divorce. Even when leaving a marriage is clearly the right choice, even when it brings relief from a difficult situation, divorce involves grieving—not just for the relationship, but for the future you imagined, the family structure you had, the identity of being someone's spouse, the shared history and dreams.
+        </p>
+
+        <p>
+          The empty nest transition catches many parents off guard. You may have been counting down to this moment, eager for freedom and space. And then the last child leaves, and you're struck by a grief you didn't expect—grief for the daily presence of your children, for the active parenting role that defined so much of your adult life, for the passage of time itself.
+        </p>
+
+        <p>
+          These responses aren't signs that something is wrong with you. They're signs that you're human, that you've been deeply invested in your life, and that significant change naturally brings significant feelings.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Stages of Transition (And Why They're Not Linear)
+        </h2>
+
+        <p>
+          Researcher William Bridges, who spent decades studying life transitions, identified three phases that people typically move through: endings, the neutral zone, and new beginnings.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Endings</strong> involve letting go of the old situation and the identity that went with it. This phase often includes grief, even for transitions we wanted. There's loss embedded in even the most positive changes—the loss of familiarity, certainty, or a chapter of life that mattered.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">The neutral zone</strong> is that disorienting in-between time when the old is gone but the new hasn't fully formed. This is often the most difficult phase—marked by confusion, uncertainty, anxiety, and a feeling of being lost. It can also be a time of great creativity and growth, though it rarely feels that way while you're in it.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">New beginnings</strong> emerge gradually as you start to develop a new identity, new routines, new sources of meaning. This phase involves experimentation, learning, and slowly building a new sense of self and life.
+        </p>
+
+        <p>
+          Here's the important thing: these phases don't progress neatly from one to the next. You might move into new beginnings in some areas of your life while still processing endings in others. You might think you're through the neutral zone and then get pulled back into it. You might grieve in waves that come and go for months or even years.
+        </p>
+
+        <p>
+          This isn't failure; it's how transitions actually work. Expecting a linear progression often leads to self-criticism when reality proves messier. Accepting that transitions are inherently non-linear can help you be gentler with yourself.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          The Grief That Accompanies Change
+        </h2>
+
+        <p>
+          We don't often talk about grief outside the context of death, but grief is present in many life transitions. Whenever we lose something or someone important—including roles, identities, relationships, abilities, or futures we'd imagined—grief is a natural response.
+        </p>
+
+        <p>
+          You might be grieving even if you're also relieved. You might be grieving even if the change was your choice. You might be grieving things you can't quite name—a sense of possibility that's shifted, an innocence that's been lost, a chapter that's closed forever.
+        </p>
+
+        <p>
+          Unacknowledged grief tends to go underground and emerge in other ways—as depression, anxiety, irritability, physical symptoms, or numbness. Allowing yourself to grieve, to name what you've lost, to feel the sadness and anger and fear that naturally accompany loss—this is part of healthy transition.
+        </p>
+
+        <p>
+          If people in your life don't understand your grief—if they expect you to be "over it" or "grateful" or "excited about new opportunities"—know that their timeline isn't yours. Grief takes as long as it takes, and honoring it is essential to moving through it.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Common Transitions in Adulthood
+        </h2>
+
+        <p>
+          While every transition is unique, certain life changes are particularly common in the adults I work with:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Career transitions</strong>—job loss, career change, retirement, shifting from full-time work to part-time, starting a business—often involve identity disruption and practical stress simultaneously. Work provides structure, income, social connection, and purpose. When it changes significantly, ripple effects touch every area of life.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Relationship transitions</strong>—divorce, the end of a long-term relationship, becoming widowed, adult children's marriages or divorces—reshape our closest connections and often our living situations, financial circumstances, and social networks.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Family transitions</strong>—empty nest, becoming a grandparent, caring for aging parents, estrangement from family members—change our roles within the family system and often trigger reflection on our own aging and mortality.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Health transitions</strong>—new diagnoses, surgeries like <a href="/services/bariatric-support" class="text-primary hover:underline">bariatric surgery</a>, chronic illness management, menopause, age-related changes—require adapting to new realities about our bodies and sometimes our capabilities.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Geographic transitions</strong>—moving to a new city or state, downsizing, moving to assisted living—involve leaving behind familiar places, routines, and often relationships.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Identity transitions</strong>—coming to terms with a new understanding of yourself, whether related to sexuality, gender, values, beliefs, or priorities—can be profoundly disorienting even when ultimately liberating.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          What Helps During Transitions
+        </h2>
+
+        <p>
+          While every transition is unique, certain approaches tend to support healthy navigation of change:
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Acknowledge what you're going through.</strong> Transitions are genuinely difficult. Pretending they're not, pushing through without pause, or comparing yourself to others who seem to handle change effortlessly—none of this serves you. Naming the challenge honors your experience and opens space for genuine support.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Allow yourself to grieve.</strong> Whatever you've lost deserves acknowledgment. This might mean crying, journaling, talking to trusted friends, creating rituals of closure, or simply sitting with sadness when it arises. Grief that's allowed to flow tends to move through more completely than grief that's suppressed.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Tolerate uncertainty.</strong> The neutral zone is uncomfortable precisely because we don't yet know what's next. Our minds hate uncertainty and will often generate anxiety or push us toward premature decisions to escape it. Learning to sit with not-knowing, to trust that clarity will emerge in time, is a crucial skill.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Maintain some anchors.</strong> When everything is changing, maintaining some stable elements of your life can help. This might mean keeping certain routines, staying connected to relationships that remain constant, continuing practices that ground you, or holding onto aspects of your identity that feel continuous.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Be patient with yourself.</strong> Major transitions take time—often more time than we expect or than others allow. You're not just making logistical adjustments; you're reorganizing your sense of self and your understanding of your life. That's profound work.
+        </p>
+
+        <p>
+          <strong class="text-text-primary">Seek support.</strong> Transitions are often easier to navigate with help. This might mean leaning more heavily on friends and family, joining a support group for people going through similar changes, or working with a therapist who can provide space to process what you're experiencing.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          When Transitions Trigger Deeper Issues
+        </h2>
+
+        <p>
+          Sometimes life transitions bring up more than just the immediate change. They can activate old wounds, unresolved grief, long-standing patterns, or <a href="/services/trauma" class="text-primary hover:underline">past traumas</a> that had been manageable but now demand attention.
+        </p>
+
+        <p>
+          A divorce might bring up childhood experiences of family instability. Job loss might trigger deep fears of inadequacy rooted in early messages about worth. An empty nest might connect to unprocessed grief about your own childhood or your relationship with your parents. A health diagnosis might activate old trauma responses.
+        </p>
+
+        <p>
+          If you find that a transition is bringing up intense reactions that seem disproportionate to the current situation, or if you're experiencing symptoms of <a href="/services/anxiety-depression" class="text-primary hover:underline">depression or anxiety</a> that interfere with daily functioning, this is a sign that deeper work might be helpful. Sometimes transitions are invitations to heal things we've carried for a long time.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          Finding Meaning in Change
+        </h2>
+
+        <p>
+          While transitions are difficult, they also hold potential for growth, clarification, and positive change. Crisis often creates an opening for reflection and reorientation that wouldn't happen in more stable times.
+        </p>
+
+        <p>
+          Questions that can help you find meaning in transition include: What is this change asking me to let go of? What values do I want to carry forward into whatever comes next? What have I learned about myself through this experience? What do I want to do differently in my next chapter? What matters most to me now?
+        </p>
+
+        <p>
+          These aren't questions to rush to answer. They're questions to sit with, to return to over time, to let inform the choices you make as new beginnings start to emerge.
+        </p>
+
+        <h2 class="text-2xl font-heading font-bold text-text-primary mt-12 mb-6">
+          You Don't Have to Navigate This Alone
+        </h2>
+
+        <p>
+          Life transitions are some of the most challenging experiences we face—and also some of the most transformative. The disorientation you feel is not a sign of weakness. It's a sign that you've been shaken at a foundational level, that you're being asked to grow and change in significant ways.
+        </p>
+
+        <p>
+          If you're struggling with a major life transition, know that support is available. Our <a href="/services/life-transitions" class="text-primary hover:underline">life transitions counseling</a> provides space to process what you're experiencing, grieve what you've lost, explore who you're becoming, and navigate the uncertainty of the neutral zone with guidance and support.
+        </p>
+
+        <p>
+          You can get through this. Not by pretending it's easy, not by rushing to the other side, but by moving through it with honesty, self-compassion, and support. The person you're becoming on the other side of this transition has the potential to be more authentic, more resilient, and more aligned with what truly matters to you.
+        </p>
+
+        <p>
+          The ground may feel shaky now, but you will find your footing again. And the new ground you stand on might just be more solid than what came before.
+        </p>
+
+        <div class="mt-12 p-6 bg-primary-light rounded-lg">
+          <p class="text-text-primary font-medium mb-2">Going through a major life change?</p>
+          <p class="text-text-secondary text-sm">
+            At Laurel Tree Counseling, we specialize in supporting adults through life's most significant transitions—whether that's career change, divorce, retirement, empty nest, or something else entirely. Our holistic approach helps you process grief, navigate uncertainty, and emerge stronger. Schedule a consultation to learn how we can support your journey.
+          </p>
+        </div>
+      </div>
+    </article>
+  </Section>
+
+  <!-- Author Bio -->
+  <Section background="surface">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex gap-6 items-start">
+        <img
+          src="/images/kristen-ross.png"
+          alt="Kristen Ross, LPC"
+          width="80"
+          height="80"
+          class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">
+            About Kristen Ross, LPC
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Kristen Ross is a Licensed Professional Counselor and founder of Laurel Tree Counseling. With over 14 years of experience, she has guided countless adults through major life transitions including career changes, divorce, retirement, and family changes. Her holistic approach honors both the grief and the growth potential inherent in life's most significant changes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <Section>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">
+          Related Articles
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((relatedPost) => (
+            <BlogCard {...relatedPost} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- CTA -->
+  <CTA
+    title="Ready for Support Through Your Transition?"
+    description="Schedule a free consultation to explore how we can help you navigate change with resilience and self-compassion."
+  />
+</BaseLayout>

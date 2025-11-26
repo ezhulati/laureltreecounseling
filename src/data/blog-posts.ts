@@ -5,6 +5,7 @@ export interface BlogPost {
   category: string;
   author: string;
   authorCredentials: string;
+  authorSlug: string;
   publishDate: string;
   readTime: string;
   featured: boolean;
@@ -12,15 +13,52 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'gut-brain-connection-mood-food',
+    title: 'The Gut-Brain Connection: How What You Eat Affects How You Feel',
+    excerpt: 'Your gut and brain are in constant communication. Learn how nutrition impacts mental health and practical ways to support your mood through food.',
+    category: 'Nutrition',
+    author: 'Meghan Pendleton',
+    authorCredentials: 'RD',
+    authorSlug: 'meghan-pendleton',
+    publishDate: '2025-01-22',
+    readTime: '9 min read',
+    featured: true,
+  },
+  {
+    slug: 'navigating-life-transitions-finding-footing',
+    title: 'Navigating Life Transitions: Finding Your Footing When Everything Changes',
+    excerpt: 'Life transitions—whether chosen or unexpected—can shake our sense of identity and stability. Learn how to move through change with resilience and self-compassion.',
+    category: 'Life Transitions',
+    author: 'Kristen Ross',
+    authorCredentials: 'LPC',
+    authorSlug: 'kristen-ross',
+    publishDate: '2025-01-20',
+    readTime: '10 min read',
+    featured: true,
+  },
+  {
+    slug: 'understanding-trauma-beginning-healing-journey',
+    title: 'Understanding Trauma: What It Is, How It Affects You, and Beginning the Healing Journey',
+    excerpt: 'Trauma isn\'t just what happened to you—it\'s how your nervous system responded. Learn what trauma really means, how it shows up in daily life, and what healing looks like.',
+    category: 'Trauma & PTSD',
+    author: 'Michele Meyers',
+    authorCredentials: 'PsyD',
+    authorSlug: 'michele-meyers',
+    publishDate: '2025-01-18',
+    readTime: '11 min read',
+    featured: true,
+  },
+  {
     slug: 'emotional-side-bariatric-surgery',
     title: 'The Emotional Side of Bariatric Surgery Nobody Tells You About',
     excerpt: 'Bariatric surgery transforms your body, but the emotional journey is equally profound. Understanding the psychological aspects of weight loss surgery can help you prepare for lasting success.',
     category: 'Bariatric Support',
     author: 'Kristen Ross',
     authorCredentials: 'LPC',
+    authorSlug: 'kristen-ross',
     publishDate: '2025-01-15',
     readTime: '8 min read',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'understanding-emotional-eating',
@@ -29,9 +67,10 @@ export const blogPosts: BlogPost[] = [
     category: 'Wellness',
     author: 'Kristen Ross',
     authorCredentials: 'LPC',
+    authorSlug: 'kristen-ross',
     publishDate: '2025-01-08',
     readTime: '7 min read',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'living-with-anxiety-holistic-approach',
@@ -40,6 +79,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Mental Health',
     author: 'Kristen Ross',
     authorCredentials: 'LPC',
+    authorSlug: 'kristen-ross',
     publishDate: '2025-01-01',
     readTime: '9 min read',
     featured: false,
@@ -51,6 +91,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Wellness',
     author: 'Kristen Ross',
     authorCredentials: 'LPC',
+    authorSlug: 'kristen-ross',
     publishDate: '2024-12-20',
     readTime: '8 min read',
     featured: false,
