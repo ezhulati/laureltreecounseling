@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
   items: string[];
   columns?: 1 | 2;
@@ -14,18 +16,11 @@ const gridClass = columns === 2 ? 'grid sm:grid-cols-2 gap-3' : 'space-y-2';
 <ul class:list={[gridClass, className]}>
   {items.map((item, i) => (
     <li class="flex gap-3">
-      <svg
-        class:list={[
-          'w-5 h-5 flex-shrink-0 mt-0.5',
-          alternateColors && i % 2 === 1 ? 'text-gold-dark' : 'text-primary'
-        ]}
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-      </svg>
+      <Icon
+        name="Check"
+        size={20}
+        class={`flex-shrink-0 mt-0.5 ${alternateColors && i % 2 === 1 ? 'text-gold-dark' : 'text-primary'}`}
+      />
       <span class="text-text-secondary">{item}</span>
     </li>
   ))}

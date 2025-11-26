@@ -1,32 +1,16 @@
 ---
+import Icon from './Icon.astro';
+import { serviceIcons, type ServiceIconKey } from '../lib/icons';
+
 interface Props {
   title: string;
   description: string;
-  icon?: string;
+  icon?: ServiceIconKey;
   href?: string;
 }
 
-const { title, description, icon, href } = Astro.props;
-
-const icons: Record<string, string> = {
-  // Anxiety & Depression: Cloud with sun peeking - mood/emotional weather
-  anxiety: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 9.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />',
-  // Trauma: Shield with heart - protection and healing
-  trauma: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />',
-  // Bariatric: Heart with pulse - health transformation
-  bariatric: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h2l1-2 2 4 1-2h2" />',
-  // Nutrition: Apple/food - wholesome nutrition
-  nutrition: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5c1.5-2 3-2.5 4.5-2 .5 1.5 0 3-2 4.5M12 6.5c-1.5-2-3-2.5-4.5-2-.5 1.5 0 3 2 4.5M12 6.5V4" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12c0 4-2.5 8-5 8s-5-4-5-8c0-3 2-5 5-5s5 2 5 5z" />',
-  // Depression: Sun rays - hope and light (same as anxiety for combined service)
-  depression: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />',
-  // Relationships: Two people connected
-  relationships: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />',
-  // Life Transitions: Compass/direction - navigating change
-  transitions: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />',
-  default: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />',
-};
-
-const iconPath = icon && icons[icon] ? icons[icon] : icons.default;
+const { title, description, icon = 'default', href } = Astro.props;
+const iconName = serviceIcons[icon] || serviceIcons.default;
 ---
 
 <article class="card group h-full flex flex-col relative">
@@ -39,13 +23,10 @@ const iconPath = icon && icons[icon] ? icons[icon] : icons.default;
 
   <!-- Icon -->
   <div class="w-12 h-12 rounded-lg bg-primary-light flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-fast">
-    <svg
-      class="w-6 h-6 text-primary group-hover:text-white transition-colors duration-fast"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      set:html={iconPath}
+    <Icon
+      name={iconName}
+      size={24}
+      class="text-primary group-hover:text-white transition-colors duration-fast"
     />
   </div>
 
@@ -62,9 +43,11 @@ const iconPath = icon && icons[icon] ? icons[icon] : icons.default;
   {href && (
     <span class="text-primary font-medium text-sm inline-flex items-center gap-1 mt-auto">
       See how we can help
-      <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
+      <Icon
+        name="ChevronRight"
+        size={16}
+        class="transition-transform group-hover:translate-x-1"
+      />
     </span>
   )}
 </article>

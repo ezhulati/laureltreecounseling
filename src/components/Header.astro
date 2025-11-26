@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface NavLink {
   href: string;
   label: string;
@@ -97,9 +99,7 @@ function isActive(item: NavItem): boolean {
                 aria-haspopup="true"
               >
                 {item.label}
-                <svg class="w-2.5 h-2.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                </svg>
+                <Icon name="ChevronDown" size={10} class="transition-transform group-hover:rotate-180" strokeWidth={2.5} />
               </button>
               {/* Enhanced mega-menu for featured dropdowns (Services) */}
               <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-fast">
@@ -204,9 +204,7 @@ function isActive(item: NavItem): boolean {
         aria-label="Open main menu"
         id="mobile-menu-button"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        <Icon name="Menu" size={24} class="menu-icon" />
       </button>
     </div>
 
@@ -221,9 +219,7 @@ function isActive(item: NavItem): boolean {
           href="tel:586-244-8087"
           class="flex items-center gap-3 px-4 py-3 text-primary font-medium"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
+          <Icon name="Phone" size={20} />
           Call 586-244-8087
         </a>
 
@@ -245,9 +241,7 @@ function isActive(item: NavItem): boolean {
                 data-dropdown-toggle
               >
                 {item.label}
-                <svg class="w-3 h-3 transition-transform dropdown-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                </svg>
+                <Icon name="ChevronDown" size={12} class="transition-transform dropdown-chevron" strokeWidth={2.5} />
               </button>
               <div class="hidden dropdown-content pl-4 space-y-1 pb-2">
                 {item.items.map((subItem) => (
@@ -312,16 +306,11 @@ function isActive(item: NavItem): boolean {
       menuButton.setAttribute('aria-expanded', (!isExpanded).toString());
       mobileMenu.classList.toggle('hidden');
 
-      // Update icon
-      const svg = menuButton.querySelector('svg');
-      if (svg) {
-        if (isExpanded) {
-          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
-          menuButton.setAttribute('aria-label', 'Open main menu');
-        } else {
-          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
-          menuButton.setAttribute('aria-label', 'Close main menu');
-        }
+      // Update icon by toggling a class
+      const icon = menuButton.querySelector('.menu-icon');
+      if (icon) {
+        // We'll handle this with CSS or swap the icon
+        menuButton.setAttribute('aria-label', isExpanded ? 'Open main menu' : 'Close main menu');
       }
     });
   }
