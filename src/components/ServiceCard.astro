@@ -9,20 +9,20 @@ interface Props {
 const { title, description, icon, href } = Astro.props;
 
 const icons: Record<string, string> = {
-  // Anxiety: Brain/mind with sparkles representing racing thoughts
-  anxiety: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />',
-  // Trauma: Hand holding heart - healing/care
-  trauma: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V9m0 0V6m0 3h3m-3 0H9" />',
-  // Bariatric: Scale/balance for weight management
-  bariatric: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />',
-  // Nutrition: Leaf for wholesome food/health
-  nutrition: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />',
-  // Depression: Sun rays - hope and light
+  // Anxiety & Depression: Cloud with sun peeking - mood/emotional weather
+  anxiety: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 9.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />',
+  // Trauma: Shield with heart - protection and healing
+  trauma: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />',
+  // Bariatric: Heart with pulse - health transformation
+  bariatric: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h2l1-2 2 4 1-2h2" />',
+  // Nutrition: Apple/food - wholesome nutrition
+  nutrition: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5c1.5-2 3-2.5 4.5-2 .5 1.5 0 3-2 4.5M12 6.5c-1.5-2-3-2.5-4.5-2-.5 1.5 0 3 2 4.5M12 6.5V4" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12c0 4-2.5 8-5 8s-5-4-5-8c0-3 2-5 5-5s5 2 5 5z" />',
+  // Depression: Sun rays - hope and light (same as anxiety for combined service)
   depression: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />',
-  // Relationships: Two people
+  // Relationships: Two people connected
   relationships: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />',
-  // Life Transitions: Path/journey with turning point
-  transitions: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />',
+  // Life Transitions: Compass/direction - navigating change
+  transitions: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />',
   default: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />',
 };
 
