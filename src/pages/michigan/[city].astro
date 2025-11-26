@@ -225,7 +225,7 @@ const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed
         </Button>
       </div>
 
-      <div class="lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-4 stagger-children">
         {services.map((service, index) => (
           <div class={`fade-in fade-in-delay-${Math.min(index + 1, 4)}`}>
             <ServiceCard {...service} />
