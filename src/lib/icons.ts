@@ -5,7 +5,7 @@
 export const serviceIcons = {
   anxiety: 'Brain',           // Mental clarity, calm mind
   depression: 'Sun',          // Light, hope, new beginning
-  bariatric: 'Scale',         // Weight, balance, transformation
+  bariatric: 'Sparkles',      // Transformation, new beginnings
   trauma: 'HeartHandshake',   // Compassionate support and healing
   nutrition: 'Apple',         // Natural wellness, wholesome food
   transitions: 'Compass',     // Navigation, finding direction
