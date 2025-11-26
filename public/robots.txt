@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://laureltreecounseling.com/sitemap-index.xml
+Sitemap: https://laureltreecounseling.com/sitemap.xml

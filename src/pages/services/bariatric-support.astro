@@ -3,6 +3,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import Button from '../../components/Button.astro';
 import CTA from '../../components/CTA.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTherapy",
+  "name": "Bariatric Surgery Support",
+  "description": "Specialized counseling for before and after bariatric surgery in Michigan. Expert support for weight loss surgery patients from clinicians with 14+ years of experience.",
+  "provider": {
+    "@type": "MedicalBusiness",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  },
+  "relevantSpecialty": ["Mental Health", "Bariatric Medicine", "Psychology"],
+  "procedureType": "Telehealth"
+};
 ---
 
 <BaseLayout
@@ -10,12 +24,15 @@ import CTA from '../../components/CTA.astro';
   description="Specialized counseling for before and after bariatric surgery in Michigan. Expert support for weight loss surgery patients from clinicians with 14+ years of experience."
   ogImage="/images/assets/laurel_tree_counseling_5_(1).webp"
 >
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_5_(1).webp"
-        alt=""
+        alt="Specialized bariatric surgery counseling and weight loss support in Michigan"
         class="w-full h-full object-cover"
         loading="eager"
       />
@@ -113,13 +130,27 @@ import CTA from '../../components/CTA.astro';
 
   <!-- Post-Surgery Support -->
   <Section>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center max-w-5xl mx-auto mb-8">
+      <div class="lg:col-span-2">
+        <img
+          src="/images/assets/laurel_tree_counseling_17.webp"
+          alt="Ongoing support for your post-bariatric surgery journey"
+          width="400"
+          height="400"
+          loading="lazy"
+          class="w-full rounded-xl shadow-lg object-cover"
+        />
+      </div>
+      <div class="lg:col-span-3">
+        <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
+          Post-Surgery Support
+        </h2>
+        <p class="text-text-secondary text-lg">
+          The months and years after bariatric surgery bring their own unique challenges. Our ongoing support helps you navigate:
+        </p>
+      </div>
+    </div>
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-heading font-bold text-text-primary mb-8 text-center">
-        Post-Surgery Support
-      </h2>
-      <p class="text-text-secondary text-lg text-center mb-8">
-        The months and years after bariatric surgery bring their own unique challenges. Our ongoing support helps you navigate:
-      </p>
       <div class="space-y-4">
         {[
           { title: 'Body Image Adjustment', desc: 'As your body changes rapidly, your self-image needs time to catch up. We help you develop a healthy relationship with your changing body.' },
@@ -166,6 +197,32 @@ import CTA from '../../components/CTA.astro';
             Learn More About Kristen
           </Button>
         </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Services -->
+  <Section background="elevated">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-heading font-bold text-text-primary">
+          Related Services
+        </h2>
+        <p class="text-text-secondary mt-2">Comprehensive support for your wellness journey</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/services/nutrition" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Nutrition Counseling</h3>
+          <p class="text-sm text-text-secondary">Weight-inclusive nutrition therapy with our registered dietitian</p>
+        </a>
+        <a href="/services/anxiety-depression" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Anxiety & Depression</h3>
+          <p class="text-sm text-text-secondary">Evidence-based treatment for emotional well-being</p>
+        </a>
+        <a href="/services/life-transitions" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Life Transitions</h3>
+          <p class="text-sm text-text-secondary">Support through major life changes</p>
+        </a>
       </div>
     </div>
   </Section>

@@ -1,0 +1,421 @@
+# Laurel Tree Counseling - Entity Model for Internal Linking
+# Generated: 2025-11-25
+# Purpose: Define canonical URLs, anchors, and relationships for internal linking
+
+entities:
+  # =============================================================================
+  # SERVICES (Hub: /services)
+  # =============================================================================
+
+  anxiety-depression:
+    canonical_url: /services/anxiety-depression
+    canonical_anchor: "anxiety and depression treatment"
+    derivative_anchors:
+      - "anxiety therapy"
+      - "depression therapy"
+      - "anxiety treatment"
+      - "depression treatment"
+      - "anxiety & depression"
+      - "anxiety counseling"
+      - "depression counseling"
+    parent: services
+    related:
+      - trauma
+      - life-transitions
+      - relationship-challenges
+      - bariatric-support
+    conditions:
+      - Anxiety Disorders
+      - Depression
+      - Panic Attacks
+      - Racing Thoughts
+      - Persistent Worry
+    team_members:
+      - kristen-ross
+      - michele-meyers
+    blog_topics:
+      - living-with-anxiety-holistic-approach
+      - mind-body-connection-holistic-therapy
+
+  bariatric-support:
+    canonical_url: /services/bariatric-support
+    canonical_anchor: "bariatric surgery support"
+    derivative_anchors:
+      - "bariatric support"
+      - "weight loss surgery support"
+      - "bariatric counseling"
+      - "pre-surgery support"
+      - "post-surgery support"
+      - "bariatric surgery counseling"
+    parent: services
+    related:
+      - nutrition
+      - anxiety-depression
+      - life-transitions
+    conditions:
+      - Pre-surgery Preparation
+      - Post-surgery Support
+      - Emotional Eating
+      - Body Image
+      - Weight Loss Journey
+    team_members:
+      - kristen-ross
+    blog_topics:
+      - emotional-side-bariatric-surgery
+      - understanding-emotional-eating
+    specialty_note: "Primary differentiator - 14+ years experience at Corewell Health"
+
+  trauma:
+    canonical_url: /services/trauma
+    canonical_anchor: "trauma and PTSD treatment"
+    derivative_anchors:
+      - "trauma therapy"
+      - "PTSD treatment"
+      - "trauma-informed care"
+      - "trauma counseling"
+      - "PTSD therapy"
+    parent: services
+    related:
+      - anxiety-depression
+      - relationship-challenges
+      - life-transitions
+    conditions:
+      - PTSD
+      - Complex Trauma
+      - Childhood Trauma
+      - Medical Trauma
+      - Grief and Loss
+    team_members:
+      - kristen-ross
+      - michele-meyers
+    blog_topics:
+      - mind-body-connection-holistic-therapy
+
+  nutrition:
+    canonical_url: /services/nutrition
+    canonical_anchor: "nutrition counseling"
+    derivative_anchors:
+      - "nutrition therapy"
+      - "dietitian services"
+      - "eating disorder treatment"
+      - "weight-inclusive nutrition"
+      - "holistic nutrition"
+      - "nutrition support"
+    parent: services
+    related:
+      - bariatric-support
+      - anxiety-depression
+    conditions:
+      - Eating Disorders
+      - GI Issues
+      - Emotional Eating
+      - Body Image Concerns
+      - Maternal Nutrition
+      - Metabolic Health
+    team_members:
+      - meghan-pendleton
+    blog_topics:
+      - understanding-emotional-eating
+      - mind-body-connection-holistic-therapy
+    note: "Standalone service - clients can work with RD without therapy"
+
+  life-transitions:
+    canonical_url: /services/life-transitions
+    canonical_anchor: "life transitions therapy"
+    derivative_anchors:
+      - "life transitions support"
+      - "grief counseling"
+      - "retirement support"
+      - "career change therapy"
+      - "major life changes"
+    parent: services
+    related:
+      - anxiety-depression
+      - relationship-challenges
+      - trauma
+    conditions:
+      - Career Changes
+      - Divorce
+      - Retirement
+      - Grief and Loss
+      - Empty Nest
+      - Relocation
+    team_members:
+      - kristen-ross
+      - michele-meyers
+
+  relationship-challenges:
+    canonical_url: /services/relationship-challenges
+    canonical_anchor: "relationship therapy"
+    derivative_anchors:
+      - "relationship challenges"
+      - "relationship counseling"
+      - "individual therapy for relationships"
+      - "boundary setting"
+      - "communication skills"
+    parent: services
+    related:
+      - anxiety-depression
+      - life-transitions
+      - trauma
+    conditions:
+      - Communication Issues
+      - Boundary Setting
+      - Codependency
+      - Family Dynamics
+      - Trust Issues
+    team_members:
+      - kristen-ross
+      - michele-meyers
+
+  services-hub:
+    canonical_url: /services
+    canonical_anchor: "our services"
+    derivative_anchors:
+      - "therapy services"
+      - "counseling services"
+      - "view all services"
+      - "explore our services"
+    children:
+      - anxiety-depression
+      - bariatric-support
+      - trauma
+      - nutrition
+      - life-transitions
+      - relationship-challenges
+
+  # =============================================================================
+  # TEAM MEMBERS
+  # =============================================================================
+
+  kristen-ross:
+    canonical_url: /team#kristen-ross
+    canonical_anchor: "Kristen Ross, LPC"
+    derivative_anchors:
+      - "Kristen Ross"
+      - "our lead counselor"
+      - "bariatric specialist"
+    parent: team
+    specializations:
+      - bariatric-support
+      - anxiety-depression
+      - life-transitions
+      - trauma
+
+  michele-meyers:
+    canonical_url: /team#michele-meyers
+    canonical_anchor: "Michele Meyers, PsyD"
+    derivative_anchors:
+      - "Michele Meyers"
+      - "Dr. Meyers"
+      - "our psychologist"
+    parent: team
+    specializations:
+      - anxiety-depression
+      - trauma
+      - relationship-challenges
+
+  meghan-pendleton:
+    canonical_url: /team#meghan-pendleton
+    canonical_anchor: "Meghan Pendleton, RD"
+    derivative_anchors:
+      - "Meghan Pendleton"
+      - "our dietitian"
+      - "registered dietitian"
+    parent: team
+    specializations:
+      - nutrition
+
+  team-hub:
+    canonical_url: /team
+    canonical_anchor: "our team"
+    derivative_anchors:
+      - "meet our team"
+      - "our clinicians"
+      - "our providers"
+    children:
+      - kristen-ross
+      - michele-meyers
+      - meghan-pendleton
+
+  # =============================================================================
+  # BLOG POSTS
+  # =============================================================================
+
+  understanding-emotional-eating:
+    canonical_url: /blog/understanding-emotional-eating
+    canonical_anchor: "Understanding Emotional Eating"
+    derivative_anchors:
+      - "emotional eating guide"
+      - "breaking the cycle of emotional eating"
+    related_services:
+      - nutrition
+      - bariatric-support
+    author: kristen-ross
+
+  emotional-side-bariatric-surgery:
+    canonical_url: /blog/emotional-side-bariatric-surgery
+    canonical_anchor: "The Emotional Side of Bariatric Surgery"
+    derivative_anchors:
+      - "bariatric surgery emotional journey"
+      - "emotional aspects of weight loss surgery"
+    related_services:
+      - bariatric-support
+    author: kristen-ross
+
+  living-with-anxiety-holistic-approach:
+    canonical_url: /blog/living-with-anxiety-holistic-approach
+    canonical_anchor: "Living with Anxiety: A Holistic Approach"
+    derivative_anchors:
+      - "holistic anxiety treatment"
+      - "managing anxiety holistically"
+    related_services:
+      - anxiety-depression
+    author: kristen-ross
+
+  mind-body-connection-holistic-therapy:
+    canonical_url: /blog/mind-body-connection-holistic-therapy
+    canonical_anchor: "The Mind-Body Connection in Therapy"
+    derivative_anchors:
+      - "mind-body therapy"
+      - "holistic therapy approach"
+    related_services:
+      - anxiety-depression
+      - trauma
+      - nutrition
+    author: kristen-ross
+
+  blog-hub:
+    canonical_url: /blog
+    canonical_anchor: "our blog"
+    derivative_anchors:
+      - "blog"
+      - "articles"
+      - "mental health insights"
+
+  # =============================================================================
+  # LOCATIONS (Hub: /michigan)
+  # =============================================================================
+
+  michigan-hub:
+    canonical_url: /michigan
+    canonical_anchor: "telehealth therapy across Michigan"
+    derivative_anchors:
+      - "Michigan locations"
+      - "serving all of Michigan"
+      - "therapy in Michigan"
+      - "Michigan telehealth"
+    regions:
+      - Metro Detroit
+      - West Michigan
+      - Central Michigan
+      - Southwest Michigan
+      - Northern Michigan
+      - Upper Peninsula
+      - East Michigan
+
+  # Note: 50+ city pages are dynamically generated
+  # Key cities for internal linking:
+  detroit:
+    canonical_url: /michigan/detroit
+    canonical_anchor: "therapy in Detroit"
+    region: Metro Detroit
+
+  ann-arbor:
+    canonical_url: /michigan/ann-arbor
+    canonical_anchor: "therapy in Ann Arbor"
+    region: Metro Detroit
+
+  grand-rapids:
+    canonical_url: /michigan/grand-rapids
+    canonical_anchor: "therapy in Grand Rapids"
+    region: West Michigan
+
+  lansing:
+    canonical_url: /michigan/lansing
+    canonical_anchor: "therapy in Lansing"
+    region: Central Michigan
+
+  traverse-city:
+    canonical_url: /michigan/traverse-city
+    canonical_anchor: "therapy in Traverse City"
+    region: Northern Michigan
+
+  # =============================================================================
+  # INFORMATIONAL PAGES
+  # =============================================================================
+
+  about:
+    canonical_url: /about
+    canonical_anchor: "about us"
+    derivative_anchors:
+      - "about Laurel Tree Counseling"
+      - "our approach"
+      - "our holistic approach"
+    related:
+      - team
+      - services
+
+  contact:
+    canonical_url: /contact
+    canonical_anchor: "contact us"
+    derivative_anchors:
+      - "get in touch"
+      - "schedule a consultation"
+      - "reach out"
+      - "book a consultation"
+
+  insurance:
+    canonical_url: /insurance
+    canonical_anchor: "insurance and payment"
+    derivative_anchors:
+      - "insurance we accept"
+      - "payment options"
+      - "insurance information"
+
+  faq:
+    canonical_url: /faq
+    canonical_anchor: "frequently asked questions"
+    derivative_anchors:
+      - "FAQ"
+      - "common questions"
+
+  for-providers:
+    canonical_url: /for-providers
+    canonical_anchor: "for healthcare providers"
+    derivative_anchors:
+      - "refer a patient"
+      - "provider referrals"
+      - "healthcare provider information"
+
+# =============================================================================
+# LINKING RULES
+# =============================================================================
+
+linking_rules:
+  density:
+    target_links_per_words: 120  # 1 link per ~120 words
+    max_links_short: 8          # <800 words
+    max_links_medium: 12        # 800-2000 words
+    max_links_long: 18          # >2000 words
+
+  constraints:
+    no_stack_limit: 3           # Max consecutive internal links in one sentence
+    proximity_skip: 150         # Skip if same target linked within this many words
+    skip_elements:
+      - H1
+      - buttons (except navigation)
+      - image captions
+
+  hub_pages:
+    intro_links: 1
+    per_section: 2
+    related_block: 6
+
+  cluster_pages:
+    hub_link: 1
+    sibling_links: 2
+    related_block: 4
+
+  anchor_conformity:
+    target_percentage: 85       # Use canonical anchor at least 85% of time

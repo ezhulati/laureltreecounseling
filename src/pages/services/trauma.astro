@@ -2,6 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import CTA from '../../components/CTA.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTherapy",
+  "name": "Trauma & PTSD Treatment",
+  "description": "Compassionate trauma therapy in Michigan. Trauma-informed care using somatic therapy and CBT to help you heal from past experiences and build a path forward.",
+  "provider": {
+    "@type": "MedicalBusiness",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  },
+  "relevantSpecialty": ["Mental Health", "Psychology", "Trauma"],
+  "procedureType": "Telehealth"
+};
 ---
 
 <BaseLayout
@@ -9,12 +23,15 @@ import CTA from '../../components/CTA.astro';
   description="Compassionate trauma therapy in Michigan. Trauma-informed care using somatic therapy and CBT to help you heal from past experiences and build a path forward."
   ogImage="/images/assets/laurel_tree_counseling_7_(1).webp"
 >
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_7_(1).webp"
-        alt=""
+        alt="Trauma-informed PTSD therapy and healing support through telehealth in Michigan"
         class="w-full h-full object-cover"
         loading="eager"
       />
@@ -37,13 +54,21 @@ import CTA from '../../components/CTA.astro';
 
   <!-- Introduction -->
   <Section>
-    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
       <div class="lg:col-span-2">
         <div class="accent-line">
           <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
             Healing is Possible
           </h2>
         </div>
+        <img
+          src="/images/assets/laurel_tree_counseling_16.webp"
+          alt="Compassionate trauma-informed care and support"
+          width="400"
+          height="400"
+          loading="lazy"
+          class="w-full rounded-xl shadow-lg object-cover mt-6 hidden lg:block"
+        />
       </div>
       <div class="lg:col-span-3 space-y-4 text-text-secondary text-lg stagger-children">
         <p class="fade-in fade-in-delay-1">
@@ -193,6 +218,32 @@ import CTA from '../../components/CTA.astro';
             <span class="badge">{tech}</span>
           ))}
         </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Services -->
+  <Section background="elevated">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-heading font-bold text-text-primary">
+          Related Services
+        </h2>
+        <p class="text-text-secondary mt-2">Additional support for your healing journey</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/services/anxiety-depression" class="group p-4 rounded-lg bg-background-surface border border-border hover:border-primary hover:shadow-md transition-all">
+          <h3 class="text-base font-bold text-text-primary group-hover:text-primary mb-1">Anxiety & Depression</h3>
+          <p class="text-sm text-text-secondary">Evidence-based treatment</p>
+        </a>
+        <a href="/services/life-transitions" class="group p-4 rounded-lg bg-background-surface border border-border hover:border-primary hover:shadow-md transition-all">
+          <h3 class="text-base font-bold text-text-primary group-hover:text-primary mb-1">Life Transitions</h3>
+          <p class="text-sm text-text-secondary">Support through major changes</p>
+        </a>
+        <a href="/services/relationship-challenges" class="group p-4 rounded-lg bg-background-surface border border-border hover:border-primary hover:shadow-md transition-all">
+          <h3 class="text-base font-bold text-text-primary group-hover:text-primary mb-1">Relationships</h3>
+          <p class="text-sm text-text-secondary">Rebuild trust and connection</p>
+        </a>
       </div>
     </div>
   </Section>

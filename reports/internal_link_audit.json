@@ -1,0 +1,317 @@
+{
+  "audit_date": "2025-11-25",
+  "site": "Laurel Tree Counseling",
+  "domain": "laureltreecounseling.com",
+
+  "summary": {
+    "total_pages": 67,
+    "service_pages": 6,
+    "blog_posts": 4,
+    "city_pages": 50,
+    "informational_pages": 7,
+    "orphan_pages": 5,
+    "weak_anchor_instances": 8,
+    "missing_cross_links": 42,
+    "overall_health_score": 58
+  },
+
+  "page_inventory": {
+    "hub_pages": [
+      "/",
+      "/services",
+      "/team",
+      "/michigan",
+      "/blog"
+    ],
+    "service_pages": [
+      "/services/anxiety-depression",
+      "/services/bariatric-support",
+      "/services/trauma",
+      "/services/nutrition",
+      "/services/life-transitions",
+      "/services/relationship-challenges"
+    ],
+    "blog_posts": [
+      "/blog/understanding-emotional-eating",
+      "/blog/emotional-side-bariatric-surgery",
+      "/blog/living-with-anxiety-holistic-approach",
+      "/blog/mind-body-connection-holistic-therapy"
+    ],
+    "informational_pages": [
+      "/about",
+      "/contact",
+      "/insurance",
+      "/faq",
+      "/for-providers"
+    ],
+    "city_pages": "50 pages under /michigan/[city]"
+  },
+
+  "orphan_pages": {
+    "description": "Pages with 0-1 contextual internal links pointing to them",
+    "critical": [
+      {
+        "url": "/services/life-transitions",
+        "inlinks_from_content": 0,
+        "inlinks_from_navigation": 0,
+        "note": "NOT in header/footer navigation, zero body links"
+      },
+      {
+        "url": "/services/relationship-challenges",
+        "inlinks_from_content": 0,
+        "inlinks_from_navigation": 0,
+        "note": "NOT in header/footer navigation, zero body links"
+      }
+    ],
+    "moderate": [
+      {
+        "url": "/about",
+        "inlinks_from_content": 0,
+        "inlinks_from_navigation": 1,
+        "note": "Only linked from header dropdown, no body links"
+      },
+      {
+        "url": "/for-providers",
+        "inlinks_from_content": 0,
+        "inlinks_from_navigation": 1,
+        "note": "Only linked from header/footer, no body links"
+      },
+      {
+        "url": "/faq",
+        "inlinks_from_content": 0,
+        "inlinks_from_navigation": 1,
+        "note": "Only linked from header/footer, no body links"
+      }
+    ]
+  },
+
+  "current_link_distribution": {
+    "homepage": {
+      "outlinks": 8,
+      "targets": [
+        "/services (2x)",
+        "/michigan (4x)",
+        "/insurance (1x)",
+        "/team (via TeamCards)"
+      ],
+      "missing": [
+        "No link to /about",
+        "No link to /blog",
+        "No links to individual service pages in body text"
+      ]
+    },
+    "services_hub": {
+      "outlinks": 6,
+      "targets": [
+        "All 6 service detail pages via ServiceCards"
+      ],
+      "missing": [
+        "No link to /team",
+        "No link to relevant blog posts",
+        "No link to /michigan"
+      ]
+    },
+    "service_detail_pages": {
+      "anxiety-depression": {
+        "outlinks": 0,
+        "missing": [
+          "No cross-links to related services (trauma, bariatric)",
+          "No link to team members",
+          "No link to anxiety blog post",
+          "No Related Services section"
+        ]
+      },
+      "bariatric-support": {
+        "outlinks": 1,
+        "current": ["/team#kristen-ross"],
+        "missing": [
+          "No link to /services/nutrition",
+          "No link to bariatric blog post",
+          "No Related Services section"
+        ]
+      },
+      "trauma": {
+        "outlinks": 0,
+        "missing": [
+          "No cross-links to related services",
+          "No link to team members",
+          "No Related Services section"
+        ]
+      },
+      "nutrition": {
+        "outlinks": 1,
+        "current": ["/team#meghan-pendleton"],
+        "missing": [
+          "No link to /services/bariatric-support",
+          "No link to emotional eating blog post",
+          "No Related Services section"
+        ]
+      },
+      "life-transitions": {
+        "outlinks": 0,
+        "missing": [
+          "CRITICAL: Zero inlinks AND outlinks",
+          "No Related Services section"
+        ]
+      },
+      "relationship-challenges": {
+        "outlinks": 0,
+        "missing": [
+          "CRITICAL: Zero inlinks AND outlinks",
+          "No Related Services section"
+        ]
+      }
+    },
+    "blog_posts": {
+      "all_posts": {
+        "common_issue": "Only link is generic /contact CTA at bottom",
+        "missing": [
+          "No links to relevant service pages in body text",
+          "No links to team member profiles",
+          "No links between related blog posts in body"
+        ]
+      },
+      "understanding-emotional-eating": {
+        "should_link_to": [
+          "/services/nutrition",
+          "/services/bariatric-support",
+          "/team#meghan-pendleton"
+        ]
+      },
+      "emotional-side-bariatric-surgery": {
+        "should_link_to": [
+          "/services/bariatric-support",
+          "/services/nutrition",
+          "/team#kristen-ross"
+        ]
+      },
+      "living-with-anxiety-holistic-approach": {
+        "should_link_to": [
+          "/services/anxiety-depression",
+          "/services/trauma",
+          "/team#kristen-ross"
+        ]
+      },
+      "mind-body-connection-holistic-therapy": {
+        "should_link_to": [
+          "/services/trauma",
+          "/services/anxiety-depression",
+          "/services/nutrition",
+          "/about"
+        ]
+      }
+    },
+    "city_pages": {
+      "template_outlinks": 5,
+      "targets": [
+        "/services (1x)",
+        "/services/anxiety-depression",
+        "/services/bariatric-support",
+        "/services/trauma",
+        "/services/nutrition",
+        "/insurance",
+        "/team",
+        "/contact"
+      ],
+      "missing": [
+        "No links to /services/life-transitions",
+        "No links to /services/relationship-challenges",
+        "No links to blog posts",
+        "No links to nearby city pages"
+      ]
+    }
+  },
+
+  "weak_anchors": {
+    "instances": [
+      {
+        "file": "index.astro",
+        "text": "View our full list",
+        "target": "/insurance",
+        "recommendation": "View insurance plans we accept"
+      },
+      {
+        "file": "CTA.astro",
+        "text": "Contact Us",
+        "target": "/contact",
+        "note": "Generic but acceptable for CTA buttons"
+      },
+      {
+        "file": "blog posts (all)",
+        "text": "Reach out",
+        "target": "/contact",
+        "recommendation": "Schedule a consultation"
+      }
+    ]
+  },
+
+  "navigation_coverage": {
+    "header": {
+      "services_dropdown": [
+        "/services/anxiety-depression",
+        "/services/bariatric-support",
+        "/services/trauma",
+        "/services/nutrition",
+        "/services"
+      ],
+      "missing_from_services": [
+        "/services/life-transitions",
+        "/services/relationship-challenges"
+      ],
+      "about_dropdown": [
+        "/about",
+        "/team",
+        "/michigan"
+      ],
+      "resources_dropdown": [
+        "/insurance",
+        "/faq",
+        "/blog",
+        "/for-providers"
+      ]
+    },
+    "footer": {
+      "services_column": [
+        "/services/anxiety-depression",
+        "/services/bariatric-support",
+        "/services/trauma",
+        "/services/nutrition",
+        "/services"
+      ],
+      "missing_from_services": [
+        "/services/life-transitions",
+        "/services/relationship-challenges"
+      ],
+      "company_column": [
+        "/about",
+        "/team",
+        "/blog",
+        "/contact"
+      ],
+      "resources_column": [
+        "/insurance",
+        "/faq",
+        "/michigan",
+        "/for-providers"
+      ]
+    }
+  },
+
+  "recommendations_summary": {
+    "priority_1_critical": [
+      "Add life-transitions and relationship-challenges to header/footer navigation",
+      "Add Related Services sections to all service detail pages",
+      "Add contextual links to blog posts from their relevant service pages"
+    ],
+    "priority_2_high": [
+      "Add internal links within blog post body text to relevant services",
+      "Cross-link related services (trauma/anxiety, bariatric/nutrition)",
+      "Link from homepage to blog posts or /blog hub"
+    ],
+    "priority_3_medium": [
+      "Add links to team member profiles from service pages",
+      "Add links from FAQ answers to relevant service pages",
+      "Add related city links between nearby Michigan locations"
+    ]
+  }
+}

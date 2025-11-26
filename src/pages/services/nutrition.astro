@@ -3,6 +3,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import Button from '../../components/Button.astro';
 import CTA from '../../components/CTA.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTherapy",
+  "name": "Nutrition Counseling",
+  "description": "Weight-inclusive, trauma-informed nutrition counseling in Michigan. Expert care for eating disorders, GI issues, maternal health, and the food-mood connection.",
+  "provider": {
+    "@type": "MedicalBusiness",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  },
+  "relevantSpecialty": ["Nutrition", "Dietetics", "Mental Health"],
+  "procedureType": "Telehealth"
+};
 ---
 
 <BaseLayout
@@ -10,12 +24,15 @@ import CTA from '../../components/CTA.astro';
   description="Weight-inclusive, trauma-informed nutrition counseling in Michigan. Expert care for eating disorders, GI issues, maternal health, and the food-mood connection."
   ogImage="/images/assets/laurel_tree_counseling_5_(1).webp"
 >
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_5_(1).webp"
-        alt=""
+        alt="Weight-inclusive nutrition counseling with registered dietitian in Michigan"
         class="w-full h-full object-cover"
         loading="eager"
       />
@@ -119,16 +136,30 @@ import CTA from '../../components/CTA.astro';
 
   <!-- Food-Mood Connection -->
   <Section>
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
-        The Food-Mood Connection
-      </h2>
-      <p class="text-text-secondary text-lg mb-8">
-        What we eat directly impacts how we feel. Research shows clear connections between nutrition and mental health, including anxiety, depression, energy levels, and cognitive function. Our nutrition counseling addresses these connections, helping you nourish both body and mind.
-      </p>
-      <p class="text-text-secondary">
-        When needed, our dietitian works collaboratively with our counseling team to provide truly integrated care—addressing the emotional and nutritional aspects of your wellness journey together.
-      </p>
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-3">
+        <div class="accent-line">
+          <h2 class="text-3xl font-heading font-bold text-text-primary mb-6">
+            The Food-Mood Connection
+          </h2>
+        </div>
+        <p class="text-text-secondary text-lg mb-6">
+          What we eat directly impacts how we feel. Research shows clear connections between nutrition and mental health, including anxiety, depression, energy levels, and cognitive function. Our nutrition counseling addresses these connections, helping you nourish both body and mind.
+        </p>
+        <p class="text-text-secondary">
+          When needed, our dietitian works collaboratively with our counseling team to provide truly integrated care—addressing the emotional and nutritional aspects of your wellness journey together.
+        </p>
+      </div>
+      <div class="lg:col-span-2">
+        <img
+          src="/images/assets/laurel_tree_counseling_15.webp"
+          alt="Nourishing mind and body through holistic nutrition counseling"
+          width="400"
+          height="400"
+          loading="lazy"
+          class="w-full rounded-xl shadow-lg object-cover"
+        />
+      </div>
     </div>
   </Section>
 
@@ -157,6 +188,32 @@ import CTA from '../../components/CTA.astro';
             Learn More About Meghan
           </Button>
         </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Services -->
+  <Section background="elevated">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-heading font-bold text-text-primary">
+          Related Services
+        </h2>
+        <p class="text-text-secondary mt-2">Combine nutrition with therapy for holistic wellness</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/services/bariatric-support" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Bariatric Surgery Support</h3>
+          <p class="text-sm text-text-secondary">Pre and post-surgery counseling and nutrition guidance</p>
+        </a>
+        <a href="/services/anxiety-depression" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Anxiety & Depression</h3>
+          <p class="text-sm text-text-secondary">Address the food-mood connection</p>
+        </a>
+        <a href="/services/trauma" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Trauma & PTSD</h3>
+          <p class="text-sm text-text-secondary">Trauma-informed approach to eating patterns</p>
+        </a>
       </div>
     </div>
   </Section>

@@ -2,6 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import CTA from '../../components/CTA.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTherapy",
+  "name": "Life Transitions Therapy",
+  "description": "Struggling with a major life change? Get compassionate therapy for career shifts, divorce, grief, and retirement in Michigan. Virtual sessions available.",
+  "provider": {
+    "@type": "MedicalBusiness",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  },
+  "relevantSpecialty": ["Mental Health", "Psychology"],
+  "procedureType": "Telehealth"
+};
 ---
 
 <BaseLayout
@@ -9,12 +23,15 @@ import CTA from '../../components/CTA.astro';
   description="Struggling with a major life change? Get compassionate therapy for career shifts, divorce, grief, and retirement in Michigan. Virtual sessions available."
   ogImage="/images/assets/laurel_tree_counseling_7_(1).webp"
 >
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_7_(1).webp"
-        alt=""
+        alt="Life transitions therapy for career changes, grief, and retirement in Michigan"
         class="w-full h-full object-cover"
         loading="eager"
       />
@@ -212,21 +229,55 @@ import CTA from '../../components/CTA.astro';
 
   <!-- What to Expect -->
   <Section background="surface">
-    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
       <div class="lg:col-span-2">
+        <img
+          src="/images/assets/laurel_tree_counseling_17.webp"
+          alt="Supportive guidance through life's transitions and changes"
+          width="400"
+          height="400"
+          loading="lazy"
+          class="w-full rounded-xl shadow-lg object-cover"
+        />
+      </div>
+      <div class="lg:col-span-3 space-y-4 stagger-children">
         <div class="accent-line">
           <h2 class="text-3xl font-heading font-bold text-text-primary mb-4">
             What to Expect
           </h2>
         </div>
-      </div>
-      <div class="lg:col-span-3 space-y-4 stagger-children">
         <p class="text-text-secondary text-lg fade-in fade-in-delay-1">
           Our sessions offer a safe, judgment-free space. You set the pace. Some clients need to process grief before moving forward. Others want to focus on next steps right away. We meet you where you are.
         </p>
         <p class="text-text-secondary fade-in fade-in-delay-2">
           There's no "right" way to navigate a life transition. We walk alongside you, offering support, perspective, and tools as you find your way through this chapter.
         </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Related Services -->
+  <Section background="elevated">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-heading font-bold text-text-primary">
+          Related Services
+        </h2>
+        <p class="text-text-secondary mt-2">Additional support for your journey</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/services/anxiety-depression" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Anxiety & Depression</h3>
+          <p class="text-sm text-text-secondary">Manage symptoms that arise during transitions</p>
+        </a>
+        <a href="/services/relationship-challenges" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Relationship Therapy</h3>
+          <p class="text-sm text-text-secondary">Navigate relationship changes and dynamics</p>
+        </a>
+        <a href="/services/trauma" class="card group text-center hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-text-primary group-hover:text-primary mb-2">Trauma & PTSD</h3>
+          <p class="text-sm text-text-secondary">Process difficult experiences from the past</p>
+        </a>
       </div>
     </div>
   </Section>
