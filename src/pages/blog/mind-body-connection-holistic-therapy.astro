@@ -13,6 +13,24 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
   month: 'long',
   day: 'numeric'
 }) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Mind-Body Connection and Why Holistic Therapy Works",
+  "description": "Your mind and body are deeply connected. Learn why addressing both together through holistic therapy leads to more meaningful, lasting healing.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_7_(1).webp",
+  "datePublished": "2024-12-20",
+  "author": {
+    "@type": "Person",
+    "name": "Kristen Ross, LPC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
 ---
 
 <BaseLayout
@@ -20,6 +38,9 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
   description="Your mind and body are deeply connected. Learn why addressing both together through holistic therapy leads to more meaningful, lasting healing."
   ogImage="/images/assets/laurel_tree_counseling_7_(1).webp"
 >
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">

@@ -2,6 +2,26 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Laurel Tree Counseling",
+  "telephone": "586-244-8087",
+  "email": "info@laureltreecounseling.com",
+  "url": "https://laureltreecounseling.com",
+  "areaServed": {
+    "@type": "State",
+    "name": "Michigan"
+  },
+  "medicalSpecialty": ["Mental Health", "Psychology", "Nutrition"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "586-244-8087",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  }
+};
 ---
 
 <BaseLayout
@@ -9,12 +29,17 @@ import Button from '../components/Button.astro';
   description="Contact Laurel Tree Counseling to schedule a free consultation. Call 586-244-8087 or email info@laureltreecounseling.com. Serving all of Michigan via telehealth."
   ogImage="/images/assets/laurel_tree_counseling_3_(1).webp"
 >
+  <!-- Contact Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(contactSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_3_(1).webp"
         alt="Contact Laurel Tree Counseling for virtual therapy services in Michigan"
+        width="1920"
+        height="1080"
         class="w-full h-full object-cover"
         loading="eager"
       />

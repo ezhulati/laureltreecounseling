@@ -3,6 +3,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import CTA from '../components/CTA.astro';
 import { team } from '../data/team';
+
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Laurel Tree Counseling",
+  "url": "https://laureltreecounseling.com",
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Kristen Ross",
+      "jobTitle": "Licensed Professional Counselor",
+      "description": "LPC with 14+ years experience specializing in bariatric surgery support, anxiety, depression, trauma, and life transitions.",
+      "knowsAbout": ["Bariatric Surgery Support", "Anxiety", "Depression", "Trauma", "Life Transitions", "Eating Disorders"]
+    },
+    {
+      "@type": "Person",
+      "name": "Michele Meyers",
+      "jobTitle": "Licensed Psychologist",
+      "description": "PsyD with 25 years experience in weight loss support, anxiety, depression, and emotional eating.",
+      "knowsAbout": ["Weight Loss Support", "Anxiety", "Depression", "Emotional Eating", "Bariatric Surgery"]
+    },
+    {
+      "@type": "Person",
+      "name": "Meghan Pendleton",
+      "jobTitle": "Registered Dietitian",
+      "description": "RD specializing in weight-inclusive, trauma-informed nutrition therapy for eating disorders, GI health, and maternal health.",
+      "knowsAbout": ["Eating Disorder Recovery", "GI Health", "Maternal Health", "Bariatric Support", "Nutrition Therapy"]
+    }
+  ]
+};
 ---
 
 <BaseLayout
@@ -10,12 +40,17 @@ import { team } from '../data/team';
   description="Meet the compassionate team at Laurel Tree Counseling: Licensed counselors, psychologists, and dietitians dedicated to your wellness journey."
   ogImage="/images/assets/laurel_tree_counseling_8_(1).webp"
 >
+  <!-- Team Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(teamSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_8_(1).webp"
         alt="Meet the licensed therapists and dietitians at Laurel Tree Counseling in Michigan"
+        width="1920"
+        height="1080"
         class="w-full h-full object-cover"
         loading="eager"
       />

@@ -69,6 +69,55 @@ const approaches = [
     description: 'A non-directive approach that honors your unique experience and inner wisdom.',
   },
 ];
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Laurel Tree Counseling Services",
+  "description": "Explore our therapy services including anxiety treatment, depression counseling, bariatric surgery support, trauma therapy, and nutrition counseling across Michigan.",
+  "url": "https://laureltreecounseling.com/services",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Anxiety & Depression Treatment",
+        "url": "https://laureltreecounseling.com/services/anxiety-depression"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bariatric Surgery Support",
+        "url": "https://laureltreecounseling.com/services/bariatric-support"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Trauma & PTSD Treatment",
+        "url": "https://laureltreecounseling.com/services/trauma"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Nutrition Counseling",
+        "url": "https://laureltreecounseling.com/services/nutrition"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Life Transitions Therapy",
+        "url": "https://laureltreecounseling.com/services/life-transitions"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Relationship Challenges",
+        "url": "https://laureltreecounseling.com/services/relationship-challenges"
+      }
+    ]
+  }
+};
 ---
 
 <BaseLayout
@@ -76,12 +125,17 @@ const approaches = [
   description="Explore our therapy services including anxiety treatment, depression counseling, bariatric surgery support, trauma therapy, and nutrition counseling across Michigan."
   ogImage="/images/assets/laurel_tree_counseling_1_(1).webp"
 >
+  <!-- Services Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(servicesSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/assets/laurel_tree_counseling_1_(1).webp"
         alt="Holistic therapy services offered through telehealth counseling in Michigan"
+        width="1920"
+        height="1080"
         class="w-full h-full object-cover"
         loading="eager"
       />

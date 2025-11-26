@@ -13,6 +13,24 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
   month: 'long',
   day: 'numeric'
 }) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Understanding Emotional Eating and Breaking the Cycle with Compassion",
+  "description": "Emotional eating is more than a lack of willpower. Learn what drives this behavior, why shame doesn't help, and how to build a healthier relationship with food.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_5_(1).webp",
+  "datePublished": "2025-01-08",
+  "author": {
+    "@type": "Person",
+    "name": "Kristen Ross, LPC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
 ---
 
 <BaseLayout
@@ -20,6 +38,9 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
   description="Emotional eating is more than a lack of willpower. Learn what drives this behavior, why shame doesn't help, and how to build a healthier relationship with food."
   ogImage="/images/assets/laurel_tree_counseling_5_(1).webp"
 >
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">

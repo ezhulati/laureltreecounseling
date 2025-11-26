@@ -13,6 +13,24 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
   month: 'long',
   day: 'numeric'
 }) : '';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Living with Anxiety and Finding Calm Through a Holistic Approach",
+  "description": "Anxiety affects your whole being—mind, body, and spirit. Discover how a holistic approach to treatment can help you find lasting relief and build resilience.",
+  "image": "https://laureltreecounseling.com/images/assets/laurel_tree_counseling_4_(1).webp",
+  "datePublished": "2025-01-01",
+  "author": {
+    "@type": "Person",
+    "name": "Kristen Ross, LPC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Laurel Tree Counseling",
+    "url": "https://laureltreecounseling.com"
+  }
+};
 ---
 
 <BaseLayout
@@ -20,6 +38,9 @@ const formattedDate = post ? new Date(post.publishDate).toLocaleDateString('en-U
   description="Anxiety affects your whole being—mind, body, and spirit. Discover how a holistic approach to treatment can help you find lasting relief and build resilience."
   ogImage="/images/assets/laurel_tree_counseling_4_(1).webp"
 >
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
     <div class="absolute inset-0">
