@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     authorSlug: 'kristen-ross',
     publishDate: '2025-01-15',
     readTime: '8 min read',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'relationship-patterns-finding-connection',
