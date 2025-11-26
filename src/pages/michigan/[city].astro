@@ -38,16 +38,28 @@ const services = [
     href: '/services/anxiety-depression',
   },
   {
-    title: 'Bariatric Surgery Support',
-    description: 'Specialized counseling for before and after weight loss surgery.',
-    icon: 'bariatric',
-    href: '/services/bariatric-support',
-  },
-  {
     title: 'Trauma & PTSD',
     description: 'Compassionate, trauma-informed care to help you heal.',
     icon: 'trauma',
     href: '/services/trauma',
+  },
+  {
+    title: 'Life Transitions',
+    description: 'Support through career changes, grief, retirement, and major life events.',
+    icon: 'transitions',
+    href: '/services/life-transitions',
+  },
+  {
+    title: 'Relationship Challenges',
+    description: 'Individual therapy for communication, boundaries, and healthier connections.',
+    icon: 'relationships',
+    href: '/services/relationship-challenges',
+  },
+  {
+    title: 'Bariatric Surgery Support',
+    description: 'Specialized counseling for before and after weight loss surgery.',
+    icon: 'bariatric',
+    href: '/services/bariatric-support',
   },
   {
     title: 'Nutrition Counseling',
@@ -65,7 +77,7 @@ const insurances = [
   'Cigna / Priority Health',
 ];
 
-const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed counselors and psychologists offering anxiety, depression, trauma, and bariatric support. ${city.description}`;
+const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed counselors and psychologists offering anxiety, depression, trauma, life transitions, relationship, and bariatric support. ${city.description}`;
 ---
 
 <BaseLayout
@@ -211,9 +223,9 @@ const metaDescription = `Telehealth therapy for ${city.name}, Michigan. Licensed
         </Button>
       </div>
 
-      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-4 stagger-children">
+      <div class="lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
         {services.map((service, index) => (
-          <div class={`fade-in fade-in-delay-${index + 1}`}>
+          <div class={`fade-in fade-in-delay-${Math.min(index + 1, 4)}`}>
             <ServiceCard {...service} />
           </div>
         ))}
