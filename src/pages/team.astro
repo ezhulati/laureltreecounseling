@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import CTA from '../components/CTA.astro';
+import Icon from '../components/Icon.astro';
 import { team } from '../data/team';
 
 const teamSchema = {
@@ -128,9 +129,7 @@ const teamSchema = {
               <ul class="space-y-1">
                 {member.education.map((edu) => (
                   <li class="flex items-center gap-2 text-text-secondary">
-                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="Check" size={20} class="text-primary flex-shrink-0" />
                     {edu}
                   </li>
                 ))}

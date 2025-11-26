@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import CTA from '../../components/CTA.astro';
+import Icon from '../../components/Icon.astro';
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -108,9 +109,7 @@ const serviceSchema = {
           'Chronic stress or instability',
         ].map((item) => (
           <div class="flex items-center gap-2 p-3 rounded-lg bg-background-surface">
-            <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
-            </svg>
+            <Icon name="Check" size={16} class="text-primary flex-shrink-0" />
             <span class="text-text-secondary text-sm">{item}</span>
           </div>
         ))}

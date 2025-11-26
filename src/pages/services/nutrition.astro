@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import Button from '../../components/Button.astro';
 import CTA from '../../components/CTA.astro';
+import Icon from '../../components/Icon.astro';
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -87,9 +88,7 @@ const serviceSchema = {
             'Evidence-based medical nutrition therapy',
           ].map((item, i) => (
             <li class="flex gap-3">
-              <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${i % 2 === 0 ? 'text-primary' : 'text-gold-dark'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Icon name="Check" size={20} class={`flex-shrink-0 mt-0.5 ${i % 2 === 0 ? 'text-primary' : 'text-gold-dark'}`} />
               <span class="text-text-secondary">{item}</span>
             </li>
           ))}

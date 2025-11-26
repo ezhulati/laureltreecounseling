@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTA from '../components/CTA.astro';
+import Icon from '../components/Icon.astro';
 
 const services = [
   {
@@ -195,9 +196,7 @@ const servicesSchema = {
             'Family Challenges',
           ].map((condition) => (
             <div class="flex items-center gap-3 p-3 rounded-lg bg-background-surface fade-in">
-              <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Icon name="Check" size={20} class="text-primary flex-shrink-0" />
               <span class="text-text-primary font-medium">{condition}</span>
             </div>
           ))}
@@ -253,21 +252,15 @@ const servicesSchema = {
         </p>
         <ul class="space-y-3">
           <li class="flex items-center gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
+            <Icon name="Check" size={20} class="text-primary flex-shrink-0" />
             <span class="text-text-secondary"><strong class="text-text-primary">HIPAA Compliant</strong> — Secure, encrypted sessions</span>
           </li>
           <li class="flex items-center gap-3">
-            <svg class="w-5 h-5 text-gold-dark flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
+            <Icon name="Check" size={20} class="text-gold-dark flex-shrink-0" />
             <span class="text-text-secondary"><strong class="text-text-primary">Flexible Scheduling</strong> — Evening & weekend slots</span>
           </li>
           <li class="flex items-center gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
+            <Icon name="Check" size={20} class="text-primary flex-shrink-0" />
             <span class="text-text-secondary"><strong class="text-text-primary">No Commute</strong> — Connect from anywhere in Michigan</span>
           </li>
         </ul>
